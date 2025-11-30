@@ -1,0 +1,195 @@
+﻿ @model DashboardViewModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<!--
+  Admin Dashboard (Razor View)
+  - Place this file at: Areas/Admin/Views/Admin/Dashboard.cshtml
+  - Model: AdminDashboardViewModel (see notes below)
+  - Uses Bootstrap 5 and Chart.js (CDN)
+-->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<div class="container-fluid mt-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">Admin Dashboard</h1>
+        <div>
+            <a asp-area="Admin" asp-controller="Fllight" asp-action="Create" class="btn btn-primary me-2"><i class="bi bi-plus-lg"></i> Add Flight</a>
+            <a asp-area="Admin" asp-controller="Airline" asp-action="Create" class="btn btn-outline-secondary me-2"><i class="bi bi-building"></i> Add Airline</a>
+            <a asp-area="Admin" asp-controller="Airplane" asp-action="Create" class="btn btn-outline-secondary"><i class="bi bi-airplane"></i> Add Airplane</a>
+        </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-sm-6 col-md-3">
+            <div class="card shadow-sm p-3 h-100">
+                <div class="d-flex align-items-center">
+                    <div class="me-3 display-6 text-primary"><i class="bi bi-plane-fill"></i></div>
+                    <div>
+                        <div class="small text-muted">Total Flights</div>
+                        <div class="h4 mb-0">@Model.TotalFlights</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="card shadow-sm p-3 h-100">
+                <div class="d-flex align-items-center">
+                    <div class="me-3 display-6 text-success"><i class="bi bi-building"></i></div>
+                    <div>
+                        <div class="small text-muted">Total Airlines</div>
+                        <div class="h4 mb-0">@Model.TotalAirlines</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="card shadow-sm p-3 h-100">
+                <div class="d-flex align-items-center">
+                    <div class="me-3 display-6 text-warning"><i class="bi bi-box-seam"></i></div>
+                    <div>
+                        <div class="small text-muted">Total Airplanes</div>
+                        <div class="h4 mb-0">@Model.TotalAirplanes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="card shadow-sm p-3 h-100">
+                <div class="d-flex align-items-center">
+                    <div class="me-3 display-6 text-danger"><i class="bi bi-people-fill"></i></div>
+                    <div>
+                        <div class="small text-muted">Total Users</div>
+                        <div class="h4 mb-0">@Model.TotalUsers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts + Recent -->
+    <div class="row">
+        <div class="col-lg-8 mb-4">
+            <div class="card p-3 shadow-sm">
+                <h5 class="card-title">Flights by Airline</h5>
+                <canvas id="flightsByAirlineChart" height="140"></canvas>
+            </div>
+
+            <div class="card mt-3 p-3 shadow-sm">
+                <h5 class="card-title">Monthly Flights (Last 6 months)</h5>
+                <canvas id="monthlyFlightsChart" height="140"></canvas>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card p-3 shadow-sm mb-3">
+                <h5 class="card-title">Quick Actions</h5>
+                <div class="d-grid gap-2">
+                    <a asp-area="Admin" asp-controller="Fllight" asp-action="Create" class="btn btn-primary">Add Flight</a>
+                    <a asp-area="Admin" asp-controller="Fllight" asp-action="Search" class="btn btn-outline-secondary">Search Flights</a>
+                    <a asp-area="Admin" asp-controller="Airline" asp-action="Index" class="btn btn-outline-secondary">Manage Airlines</a>
+                    <a asp-area="Admin" asp-controller="Airplane" asp-action="Index" class="btn btn-outline-secondary">Manage Airplanes</a>
+                </div>
+            </div>
+
+            <div class="card p-3 shadow-sm">
+                <h5 class="card-title">Recent Flights</h5>
+                <ul class="list-group list-group-flush">
+                    @if (Model.RecentFlights != null && Model.RecentFlights.Any())
+                    {
+                        foreach (var f in Model.RecentFlights.Take(6))
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="fw-bold">@f.Airline?.Name - @f.Airplane?.Model</div>
+                                    <div class="small text-muted">@f.DepartureAirport?.Name → @f.ArrivalAirport?.Name</div>
+                                </div>
+                                <div class="text-end small">@f.DepartureTime.ToString("g")</div>
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        <li class="list-group-item text-center text-muted">No recent flights</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer small summary table -->
+    <div class="card p-3 shadow-sm mt-3">
+        <h5 class="card-title">Top Airlines by Flights</h5>
+        <div class="table-responsive">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Airline</th>
+                        <th>Flights</th>
+                        <th>Share</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.FlightsByAirline != null)
+                    {
+                        foreach (var kv in Model.FlightsByAirline)
+                        {
+                            <tr>
+                                <td>@kv.Key</td>
+                                <td>@kv.Value</td>
+                                <td>@(Model.TotalFlights == 0 ? "0%" : String.Format("{0:P1}", kv.Value / (double)Model.TotalFlights))</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+<script>
+    // prepare data from server-side Model
+    var flightsByAirline = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.FlightsByAirline ?? new Dictionary<string, int>()));
+    var monthlyFlights = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.MonthlyFlights ?? new List<int>()));
+    var monthlyLabels = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.MonthlyLabels ?? new List<string>()));
+
+    // Flights by Airline - Pie
+    (function () {
+        var ctx = document.getElementById('flightsByAirlineChart').getContext('2d');
+        var labels = Object.keys(flightsByAirline);
+        var data = Object.values(flightsByAirline);
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{ data: data, hoverOffset: 6 }]
+            },
+            options: { responsive: true }
+        });
+    })();
+
+    // Monthly Flights - Bar
+    (function () {
+        var ctx = document.getElementById('monthlyFlightsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: monthlyLabels,
+                datasets: [{ label: 'Flights', data: monthlyFlights }]
+            },
+            options: { responsive: true }
+        });
+    })();
+</script>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BookingViewModel>
+
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+<h2>Bookings List</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Add New Book</a>
+</p>
+<partial name="_notification" />
+<table class="table table-bordered table-striped text-white">
+    <thead class="table-dark text-white">
+        <tr class="text-white">
+            <th>Booking PNR</th>
+            <th>Flight Number</th>
+            <th>Booking Date</th>
+            <th>Status</th>
+            <th>Last Ubdated</th>
+            <th>Payment Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody class="text-white">
+        @foreach (var item in Model)
+        {
+            <tr class="text-white">
+                <td>@item.PNR</td>
+                <td>@item.FlightId</td>
+                <td>@item.BookingDate</td>
+                <td>@item.Status</td>
+                <td>@item.LastUpdated</td>
+                <td>@(item.Payment?.PaymentStatus.ToString() ?? "N/A")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

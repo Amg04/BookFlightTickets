@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AirportViewModel>
+
+@{
+    ViewData["Title"] = "Airports";
+}
+<partial name="_notification" />
+<h2>@ViewData["Title"] List</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Add New Airport</a>
+</p>
+
+<table class="table table-bordered table-striped text-white">
+    <thead class="table-dark text-white">
+        <tr class="text-white">
+            <th>Name</th>
+            <th>Code</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody class="text-white">
+        @foreach (var item in Model)
+        {
+            <tr class="text-white">
+                <td>@item.Name</td>
+                <td>@item.Code</td>
+                <td>@(item.City ?? "N/A")</td>
+                <td>@(item.Country ?? "N/A")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

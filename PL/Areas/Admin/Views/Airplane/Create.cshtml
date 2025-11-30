@@ -1,0 +1,45 @@
+﻿@model AirplaneViewModel
+@{
+	ViewData["Title"] = "Add New Airplane";
+}
+
+<h2 class="mb-4 text-center">Add New Airplane</h2>
+
+<form asp-action="Create" method="post">
+	@Html.AntiForgeryToken()
+	<div class="mb-3">
+		<label asp-for="Model" class="form-label">Model</label>
+		<input asp-for="Model" class="form-control" placeholder="Enter airplane model" />
+		<span asp-validation-for="Model" class="text-danger"></span>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="SeatCapacity" class="form-label">Seat Capacity</label>
+		<input asp-for="SeatCapacity" type="number" class="form-control" placeholder="Enter seat capacity" />
+		<span asp-validation-for="SeatCapacity" class="text-danger"></span>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="AirlineId" class="form-label"></label>
+		<select asp-for="AirlineId" class="form-select" asp-items="@ViewBag.Airlines">
+			<option value="">-- Select Airline --</option>
+		</select>
+		<span asp-validation-for="AirlineId" class="text-danger"></span>
+	</div>
+
+	<div asp-validation-summary="All" class="text-danger mb-3"></div>
+		<button type="submit" class="btn btn-success px-4">
+			<i class="bi bi-check-circle"></i> Create
+		</button>
+		<a asp-action="Index" class="btn btn-secondary ms-2 px-4">
+			<i class="bi bi-arrow-left-circle"></i> Back to List
+		</a>
+</form>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

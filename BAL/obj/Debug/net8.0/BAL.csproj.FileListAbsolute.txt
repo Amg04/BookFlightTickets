@@ -1,0 +1,15 @@
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\BAL.deps.json
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\BAL.dll
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\BAL.pdb
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\DAL.dll
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\DAL.pdb
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BAL.csproj.AssemblyReference.cache
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BAL.AssemblyInfoInputs.cache
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BAL.AssemblyInfo.cs
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BAL.csproj.CoreCompileInputs.cache
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BAL.csproj.Up2Date
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BAL.dll
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\refint\BAL.dll
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BAL.pdb
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\ref\BAL.dll

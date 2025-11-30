@@ -1,0 +1,37 @@
+﻿@model SeatViewModel
+
+@{
+    ViewData["Title"] = "Seats Details";
+}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+	<div class="border p-3 rounded">
+		<dl class="row">
+			
+			<dt class="col-sm-2">Airplane</dt>
+			<dd class="col-sm-10">@Model.Airplane?.Model</dd>
+			
+			<dt class="col-sm-2">Number</dt>
+			<dd class="col-sm-10">@Model.Number</dd>
+			
+			<dt class="col-sm-2">Row</dt>
+			<dd class="col-sm-10">@Model.Row</dd>
+
+			<dt class="col-sm-2">Seat Class</dt>
+			<dd class="col-sm-10">@Model.Class</dd>
+
+			<dt class="col-sm-2">Price</dt>
+			<dd class="col-sm-10">@Model.Price</dd>
+
+			<dt class="col-sm-2">Is Available</dt>
+			<dd class="col-sm-10">@Model.IsAvailable</dd>
+
+		</dl>
+	</div>
+
+    <div class="mt-3">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

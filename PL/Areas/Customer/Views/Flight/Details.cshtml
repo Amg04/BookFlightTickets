@@ -1,0 +1,43 @@
+﻿@model Flight
+
+<h2>Flight Details</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th class="text-danger">Airline</th>
+        <td class="text-danger">@Model.Airline?.Name</td>
+    </tr>
+    <tr>
+        <th class="text-danger">Airplane</th>
+        <td class="text-danger">@Model.Airplane?.Model</td>
+    </tr>
+    <tr>
+        <th class="text-danger">From</th>
+        <td class="text-danger">@Model.DepartureAirport?.Name</td>
+    </tr>
+    <tr>
+        <th class="text-danger">To</th>
+        <td class="text-danger">@Model.ArrivalAirport?.Name</td>
+    </tr>
+    <tr>
+        <th class="text-danger">Departure</th>
+        <td class="text-danger">@Model.DepartureTime</td>
+    </tr>
+    <tr>
+        <th class="text-danger">Arrival</th>
+        <td class="text-danger">@Model.ArrivalTime</td>
+    </tr>
+    <tr>
+        <th class="text-danger">Price</th>
+        <td class="text-danger">@Model.BasePrice</td>
+    </tr>
+    <tr>
+        <th class="text-danger">Status</th>
+        <td class="text-danger">@Model.Status</td>
+    </tr>
+    <tr>
+        <th class="text-danger">Available Seats</th>
+        <td class="text-danger">@ViewBag.AvailableSeats</td>
+    </tr>
+</table>
+<button class="btn btn-secondary" type="button" onclick="history.back()">Back</button>

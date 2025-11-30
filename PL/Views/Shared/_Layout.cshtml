@@ -1,0 +1,74 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="preload" as="image" href="/Images/Home.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ABooking</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom mb-3 bg-dark shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" asp-area="Customer" asp-controller="Home" asp-action="Index">
+                    ABooking
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item"><a class="nav-link text-light" asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a></li>
+                        @if(User.IsInRole(SD.Admin))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Admin Menu
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="adminDropdown">
+                                    <li><a class="dropdown-item text-light" asp-area="Admin" asp-controller="Flight" asp-action="Index">Flights</a></li>
+                                    <li><a class="dropdown-item text-light" asp-area="Admin" asp-controller="Airline" asp-action="Index">Airlines</a></li>
+                                    <li><a class="dropdown-item text-light" asp-area="Admin" asp-controller="Airport" asp-action="Index">Airports</a></li>
+                                    <li><a class="dropdown-item text-light" asp-area="Admin" asp-controller="Airplane" asp-action="Index">Airplanes</a></li>
+                                    <li><a class="dropdown-item text-light" asp-area="Admin" asp-controller="AddOn" asp-action="Index">AddOn</a></li>
+                                    <li><a class="dropdown-item text-light" asp-area="Admin" asp-controller="Seat" asp-action="Index">Seats</a></li>
+                                    <li><a class="dropdown-item text-light" asp-area="Admin" asp-controller="Tickets" asp-action="Index">Tickets</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link text-light" asp-area="Customer" asp-controller="Dashboard" asp-action="Dashboard">Dashboard</a></li>
+                        }
+                        else if (User.IsInRole(SD.Customer))
+                        {
+                            <li class="nav-item"><a class="nav-link text-light" asp-area="Customer" asp-controller="Flight" asp-action="Index">Flights</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" asp-area="Customer" asp-controller="MyBookings" asp-action="Index">My Bookings</a></li>
+                        }
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container py-4">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer border-top text-center py-2 fixed-bottom">
+        &copy; 2025 - <span class="text-info">ABooking</span> 
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

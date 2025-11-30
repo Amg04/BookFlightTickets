@@ -1,0 +1,204 @@
+﻿@model BookingCreateViewModel
+@{
+	ViewData["Title"] = "Book Flight";
+}
+
+<div class="container text-light">
+	<h2 class="mb-4">Flight Booking</h2>
+
+	<div class="card bg-dark border-info mb-4 p-3">
+		<h4 class="text-info">Flight Information</h4>
+		<p><strong>Airline:</strong> @Model.Flight?.Airline.Name</p>
+		<p><strong>From:</strong> @Model.Flight?.DepartureAirport.Name</p>
+		<p><strong>To:</strong> @Model.Flight?.ArrivalAirport.Name</p>
+		<p><strong>Date:</strong> @Model.Flight?.DepartureTime.ToString("yyyy-MM-dd HH:mm")</p>
+		<p><strong>Base Price:</strong> @Model.Flight?.BasePrice $</p>
+	</div>
+
+	<form asp-action="Book" method="post">
+		<input type="hidden" asp-for="FlightId" />
+		<input type="hidden" asp-for="Flight.AirplaneId" />
+		<input type="hidden" asp-for="Flight.BasePrice" />
+
+		<h4 class="text-info mb-3">Select Seats & Add-Ons</h4>
+
+		<div id="tickets-container">
+			@for (int i = 0; i < Model.Tickets!.Count; i++)
+			{
+				<div class="card bg-dark border-info mb-4 p-3">
+					<h5 class="text-center">Ticket @((i + 1))</h5>
+					<!-- Passenger Info -->
+					<div class="mt-3">
+						<label asp-for="Tickets[i].FirstName" class="form-label"></label>
+						<input class="form-control" asp-for="Tickets[i].FirstName" />
+						<span asp-validation-for="Tickets[i].FirstName" class="text-danger"></span>
+					</div>
+					<div class="mt-3">
+						<label asp-for="Tickets[i].LastName" class="form-label"></label>
+						<input class="form-control" asp-for="Tickets[i].LastName" />
+						<span asp-validation-for="Tickets[i].LastName" class="text-danger"></span>
+					</div>
+					<div class="mt-3">
+						<label asp-for="Tickets[i].PassportNumber" class="form-label"></label>
+						<input class="form-control" asp-for="Tickets[i].PassportNumber" />
+						<span asp-validation-for="Tickets[i].PassportNumber" class="text-danger"></span>
+					</div>
+                   
+					<div class="card bg-secondary text-light p-3 mp-3 mt-3 ticket-block">
+						<!-- Seat Selection -->
+						<label class="mt-2">Select Seat</label>
+						<select class="form-select seat-dropdown" asp-for="Tickets[i].SelectedSeatId">
+							<option value="">-- Select Seat --</option>
+
+							@foreach (var seat in Model.AvailableSeats)
+							{
+								<option value="@seat.Value">@seat.Text</option>
+							}
+						</select>
+
+						<!-- AddOns -->
+						<label class="mt-3">Add-ons:</label>
+						<div class="row">
+							@foreach (var addon in Model.AddOns)
+							{
+								<div class="col-md-4">
+									<input type="checkbox"
+										   name="Tickets[@i].SelectedAddOnIds"
+										   value="@addon.Id"
+										   data-price="@addon.price" />
+									@addon.Name (@addon.price $)
+								</div>
+							}
+						</div>
+
+                        <input type="hidden" name="Tickets[@i].TicketPrice" class="ticket-price-hidden" value="0" />
+
+						<div class="ticket-price mt-3 text-warning fw-bold">
+							Ticket Price: <span class="ticket-price-value">0</span> $
+						</div>
+
+					</div>
+				</div>
+			}
+		</div>
+		<div id="summary" class="card bg-dark border-info p-3 text-light mt-4">
+			<h4 class="text-info">Booking Summary</h4>
+			<div id="ticket-summary-list"></div>
+			<h4 class="mt-3">Total: <span id="grand-total">0</span> $</h4>
+		</div>
+
+		<button type="submit" class="btn btn-info w-100 mb-3 mt-3">payment</button>
+	</form>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+
+    <script>
+        let basePrice = @Model.Flight?.BasePrice;
+
+        function calculateTicketPrice(ticketCard) {
+            let seatPrice = 0;
+            let addOnPrice = 0;
+
+            let seatSelect = ticketCard.querySelector(".seat-dropdown");
+            if (seatSelect && seatSelect.selectedOptions.length > 0) {
+                let text = seatSelect.selectedOptions[0].textContent;
+                let priceMatch = text.match(/(\d+)\$/);
+                if (priceMatch) seatPrice = parseFloat(priceMatch[1]);
+            }
+
+            ticketCard.querySelectorAll("input[type=checkbox]:checked").forEach(ch => {
+                let price = parseFloat(ch.getAttribute("data-price")) || 0;
+                addOnPrice += price;
+            });
+
+            let total = basePrice + seatPrice + addOnPrice;
+
+            ticketCard.dataset.ticketPrice = total;
+            ticketCard.querySelector(".ticket-price-value").textContent = total;
+
+            ticketCard.querySelector(".ticket-price-hidden").value = total;
+
+            return total;
+        }
+
+
+        // --- Update All Tickets Summary ---
+        function updateSummary() {
+            let summaryList = document.getElementById("ticket-summary-list");
+            summaryList.innerHTML = "";
+            let grandTotal = 0;
+
+            document.querySelectorAll(".ticket-block").forEach((ticket, index) => {
+                let price = calculateTicketPrice(ticket);
+                grandTotal += price;
+
+                let seatSelect = ticket.querySelector(".seat-dropdown");
+                let seatPrice = 0;
+                if (seatSelect && seatSelect.selectedOptions.length > 0) {
+                    let text = seatSelect.selectedOptions[0].textContent;
+                    let priceMatch = text.match(/(\d+)\$/);
+                    if (priceMatch) seatPrice = parseFloat(priceMatch[1]);
+                }
+
+                let addOnPrice = 0;
+                ticket.querySelectorAll("input[type=checkbox]:checked").forEach(ch => {
+                    let addonPrice = parseFloat(ch.getAttribute("data-price")) || 0;
+                    addOnPrice += addonPrice;
+                });
+
+                let base = basePrice;
+                let seatText = seatPrice > 0 ? ` + ${seatPrice}$` : "";
+                let addonText = addOnPrice > 0 ? ` + ${addOnPrice}$` : "";
+
+                summaryList.innerHTML += `
+                    <p><strong>Ticket ${index + 1}:</strong> ${base}$${seatText}${addonText} = ${price}$</p>
+                `;
+            });
+
+            document.getElementById("grand-total").textContent = grandTotal;
+        }
+
+        function syncSeats() {
+            let selectedSeats = [];
+            
+            document.querySelectorAll(".seat-dropdown").forEach(dd => {
+                if (dd.value && dd.selectedOptions[0]) {
+                    selectedSeats.push(dd.value);
+                }
+            });
+
+            document.querySelectorAll(".seat-dropdown").forEach(dd => {
+                let currentValue = dd.value;
+                Array.from(dd.options).forEach(option => {
+                    if (option.value && selectedSeats.includes(option.value) && option.value != currentValue) {
+                        option.style.display = 'none';
+                    } else {
+                        option.style.display = 'block';
+                    }
+                });
+            });
+        }
+
+       
+        document.addEventListener('change', function(e) {
+            if (e.target.matches('.seat-dropdown') || e.target.matches('input[type="checkbox"]')) {
+                syncSeats();
+                updateSummary();
+            }
+        });
+
+        // Initial calculation
+        document.addEventListener('DOMContentLoaded', function() {
+            syncSeats();
+            updateSummary();
+        });
+    </script>
+}
+
+
+
+}

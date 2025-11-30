@@ -1,0 +1,36 @@
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\BLL.deps.json
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\BLL.dll
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\BLL.pdb
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\DAL.dll
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\Utility.dll
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\DAL.pdb
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\bin\Debug\net8.0\Utility.pdb
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.csproj.AssemblyReference.cache
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.AssemblyInfoInputs.cache
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.AssemblyInfo.cs
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.csproj.CoreCompileInputs.cache
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.csproj.Up2Date
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.dll
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\refint\BLL.dll
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.pdb
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\ref\BLL.dll
+E:\track\tectnical\MVC\projects\p5\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.sourcelink.json
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\bin\Debug\net8.0\BLL.deps.json
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\bin\Debug\net8.0\BLL.dll
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\bin\Debug\net8.0\BLL.pdb
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\bin\Debug\net8.0\DAL.dll
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\bin\Debug\net8.0\Utility.dll
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\bin\Debug\net8.0\DAL.pdb
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\bin\Debug\net8.0\Utility.pdb
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.csproj.AssemblyReference.cache
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.AssemblyInfoInputs.cache
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.AssemblyInfo.cs
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.sourcelink.json
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.csproj.Up2Date
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.dll
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\obj\Debug\net8.0\refint\BLL.dll
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\obj\Debug\net8.0\BLL.pdb
+C:\Users\CRIZMA MEGA STORE\source\repos\Bookify-Hotel-Reservation-System-Depi\BookFlightTickets\BAL\obj\Debug\net8.0\ref\BLL.dll

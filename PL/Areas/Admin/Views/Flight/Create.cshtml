@@ -1,0 +1,109 @@
+﻿@model FlightViewModel
+
+@{
+    ViewData["Title"] = "Create Flight";
+}
+
+<h2 class="text-center mb-4">Create Flight</h2>
+
+<div class="container">
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <div class="mb-3">
+        <label asp-for="AirlineId" class="form-label" >Airline</label>
+        <select asp-for="AirlineId" id="DrpAirline" class="form-select" asp-items="@ViewBag.Airlines">
+            <option value="">-- Select Airline --</option>
+        </select>
+        <span asp-validation-for="AirlineId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="AirplaneId" class="form-label" >Airplane</label>
+        <select asp-for="AirplaneId" id="DrpAirplane" class="form-select" asp-items="@ViewBag.Airplanes">
+            <option value="">-- Select Airplane --</option>
+        </select>
+        <span asp-validation-for="AirplaneId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DepartureAirportID" class="form-label" >Departure Airport</label>
+        <select asp-for="DepartureAirportID" class="form-select" asp-items="@ViewBag.Airports">
+            <option value="">-- Select Departure Airport --</option>
+        </select>
+        <span asp-validation-for="DepartureAirportID" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ArrivalAirportID" class="form-label" >Arrival Airport</label>
+        <select asp-for="ArrivalAirportID" class="form-select" asp-items="@ViewBag.Airports">
+            <option value="">-- Select Arrival Airport --</option>
+        </select>
+        <span asp-validation-for="ArrivalAirportID" class="text-danger"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DepartureTime" class="form-label">Departure Time</label>
+        <input asp-for="DepartureTime" type="datetime-local" class="form-control" />
+        <span asp-validation-for="DepartureTime" class="text-danger"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ArrivalTime" class="form-label">Arrival Time</label>
+        <input asp-for="ArrivalTime" type="datetime-local" class="form-control" />
+        <span asp-validation-for="ArrivalTime" class="text-danger"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="BasePrice" class="form-label">Base Price</label>
+        <input asp-for="BasePrice" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="BasePrice" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Status" class="form-label">Flight Status</label>
+        <input asp-for="Status" value="Scheduled" class="form-control" disabled />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="mb-4">
+    <button type="submit" class="btn btn-success">Create Flight</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+            $("#DrpAirline").change(function () {
+            var airlineId = $(this).val();
+            if (airlineId) {
+                $.ajax({
+                    url: '@Url.Action("GetAirplanesByAirlineId", "Flight")',
+                    type: "GET",
+                    data: { airlineId: airlineId },
+                    success: function (data) {
+                        let DrpModel = $("#DrpAirplane");
+                        DrpModel.empty().append("<option value=''>Select Model</option>");
+                        for (let i = 0; i < data.length; i++) {
+                            DrpModel.append(`<option value="${data[i].id}">${data[i].model}</option>`);
+                        }
+                    },
+                    error: function () {
+                        alert('Error loading models. Please try again.');
+                    }
+                });
+            } else {
+                $("#DrpAirplane").empty().append("<option value=''>Select Model</option>");
+            }
+        });
+
+    </script>
+}
+

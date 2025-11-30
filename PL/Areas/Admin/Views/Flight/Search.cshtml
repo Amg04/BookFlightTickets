@@ -1,0 +1,62 @@
+﻿@model IEnumerable<FlightViewModel>
+
+@{
+    ViewData["Title"] = "Search Flights";
+}
+
+<div class="container mt-5 ">
+    <h2 class="text-center mb-4 text-light">Search Flights</h2>
+
+    <form method="get" asp-action="Search" class="row g-3 mb-4 text-white">
+        <div class="col-md-5">
+            <input type="text" name="keyword" value="@ViewBag.keyword" class="form-control" placeholder="Enter Airline or Airport name..." />
+        </div>
+        <div class="col-md-4">
+            <input type="date" name="date" value="@(ViewBag.date != null ? ((DateTime)ViewBag.date).ToString("yyyy-MM-dd") : "")" class="form-control" />
+        </div>
+        <div class="col-md-3 text-center">
+            <button type="submit" class="btn btn-primary w-100">Search</button>
+        </div>
+    </form>
+
+    @if (Model != null && Model.Any())
+    {
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr class="text-white">
+                    <th>Airline</th>
+                    <th>Airplane</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Departure</th>
+                    <th>Arrival</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var flight in Model)
+                {
+                    <tr class="text-white">
+                        <td>@flight.Airline?.Name</td>
+                        <td>@flight.Airplane?.Model</td>
+                        <td>@flight.DepartureAirport?.Name</td>
+                        <td>@flight.ArrivalAirport?.Name</td>
+                        <td>@flight.DepartureTime.ToString("g")</td>
+                        <td>@flight.ArrivalTime.ToString("g")</td>
+                        <td>$@flight.BasePrice</td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@flight.Id" class="btn btn-info btn-sm">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center mt-4">
+            No flights found matching your search.
+        </div>
+    }
+</div>

@@ -1,0 +1,184 @@
+﻿@model IPagedList<Flight>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Web.Common
+
+@{
+    ViewData["Title"] = "Flights";
+    var filterModel = ViewBag.FilterModel as FlightFilterViewModel ?? new FlightFilterViewModel();
+}
+
+<h2>Available Flights</h2>
+<div style="height:250px">
+    <form method="get" asp-area="Customer" asp-controller="Flight" asp-action="Index" class="mb-4">
+
+        <div class="row g-3">
+            <!-- Sort By -->
+            <div class="col-md-4">
+                <label class="form-label fw-bold">Sort By</label>
+                <select name="sortBy" class="form-select" onchange="this.form.submit()">
+                    <option value="">Default</option>
+                    <option value="price" selected="@(filterModel.sortBy == "price")">Price</option>
+                    <option value="departure" selected="@(filterModel.sortBy == "departure")">Departure Time</option>
+                    <option value="airline" selected="@(filterModel.sortBy == "airline")">Airline</option>
+                </select>
+            </div>
+
+            <!-- Sort Direction -->
+            <div class="col-md-4">
+                <label class="form-label fw-bold">Direction</label>
+                <select name="sortDir" class="form-select" onchange="this.form.submit()">
+                    <option value="">Default</option>
+                    <option value="asc" selected="@(filterModel.sortDir == "asc")">Ascending</option>
+                    <option value="desc" selected="@(filterModel.sortDir == "desc")">Descending</option>
+                </select>
+            </div>
+
+            <!-- Filter Input -->
+            <div class="col-md-3">
+                <label class="form-label fw-bold">Filter Based on Price</label>
+                <input type="text"
+                name="filterInput"
+                value="@filterModel.filterInput"
+                class="form-control"
+                placeholder="Text or Number">
+            </div>
+
+            <!-- Search FROM -->
+            <div class="col-md-4">
+                <label class="form-label fw-bold">From</label>
+                <input type="text"
+                name="from"
+                value="@filterModel.From"
+                class="form-control"
+                placeholder="Search Departure Airport">
+            </div>
+
+            <!-- Search TO -->
+            <div class="col-md-4">
+                <label class="form-label fw-bold">To</label>
+                <input type="text"
+                name="to"
+                value="@filterModel.to"
+                class="form-control"
+                placeholder="Search Arrival Airport">
+            </div>
+
+            <!-- Filter Button -->
+            <div class="col-md-3 d-flex align-items-end">
+                <button type="submit" name="filterButton" value="1" class="btn btn-success w-100">Filter</button>
+            </div>
+
+            <div class="col-md-4 d-flex align-items-end">
+                <button class="btn btn-primary w-100" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr style="color:white">
+            <th>Airline</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Price</th>
+            <th>Available Seats</th>
+            <th>Details</th>
+            <th>BookAction</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var flight in Model)
+        {
+            <tr>
+                <td class="text-danger">@flight.Airline?.Name</td>
+                <td class="text-danger">@flight.DepartureAirport?.Name</td>
+                <td class="text-danger">@flight.ArrivalAirport?.Name</td>
+                <td class="text-danger">@flight.DepartureTime</td>
+                <td class="text-danger">@flight.ArrivalTime</td>
+                <td class="text-danger">@flight.BasePrice</td>
+                <td class="text-danger">@((ViewBag.AvailableSeats as Dictionary<int, int>)[flight.Id])</td>
+                <td>
+                    <a class="btn btn-primary" asp-area="Customer"
+                       asp-controller="Flight"
+                       asp-action="Details"
+                       asp-route-id="@flight.Id">Details</a>
+                </td>
+                <td >
+                    <button type="button" class="btn btn-success book-btn" data-bs-toggle="modal" data-bs-target="#ticketModal" data-flightid="@flight.Id">
+                        Book
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="get" asp-area="Customer" asp-controller="Book" asp-action="Book" id="ticketForm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-black" id="ticketModalLabel">Book Tickets</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="flightId" id="modalFlightId" value="" />
+                    <div class="mb-3">
+                        <label for="ticketCount" class="form-label text-black">Number of Tickets</label>
+                        <input type="number" name="ticketCount" id="ticketCount" min="1" value="1" class="form-control" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Confirm Booking</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        @Html.PagedListPager(Model, page =>
+            {
+                // بناء URL مع الحفاظ على جميع معاملات البحث
+                var queryParams = new Dictionary<string, string>
+                {
+                { "page", page.ToString() },
+                { "sortBy", filterModel.sortBy },
+                { "sortDir", filterModel.sortDir },
+                { "filterInput", filterModel.filterInput },
+                { "from", filterModel.From },
+                { "to", filterModel.to },
+                { "filterButton", filterModel.filterButton }
+                };
+
+                var queryString = string.Join("&", queryParams
+                .Where(x => !string.IsNullOrEmpty(x.Value))
+                .Select(x => $"{x.Key}={x.Value}"));
+
+                return $"{Url.Action("Index")}?{queryString}";
+            },
+                 new PagedListRenderOptions
+        {
+            LiElementClasses = new[] { "page-item" },
+            PageClasses = new[] { "page-link" }
+        })
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    var ticketModal = document.getElementById('ticketModal');
+    ticketModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget; 
+        var flightId = button.getAttribute('data-flightid');
+        var inputFlightId = ticketModal.querySelector('#modalFlightId');
+        inputFlightId.value = flightId;
+    });
+</script>
+}

@@ -1,0 +1,119 @@
+﻿@model FlightViewModel
+
+@{
+    ViewData["Title"] = "Edit Flight";
+}
+
+<div class="container">
+<h1 class="text-center mb-4 ">Edit Flight</h1>
+
+    <form asp-action="Edit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+        <div class="mb-3">
+            <label asp-for="AirlineId" class="form-label" required>Airline</label>
+            <select asp-for="AirlineId" id="DrpAirline" class="form-select" asp-items="@ViewBag.Airlines">
+                <option value="">-- Select Airline --</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="AirplaneId" class="form-label">Airplane</label>
+            <select asp-for="AirplaneId" id="DrpAirplane" asp-items="@ViewBag.Airplanes" class="form-select">
+                <option value="">-- Select Airplane --</option>
+            </select>
+            <span asp-validation-for="AirplaneId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DepartureAirportID" class="form-label">Departure Airport</label>
+            <select asp-for="DepartureAirportID" asp-items="@ViewBag.Airports" class="form-select">
+                <option value="">-- Select Departure Airport --</option>
+            </select>
+            <span asp-validation-for="DepartureAirportID" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ArrivalAirportID" class="form-label">Arrival Airport</label>
+            <select asp-for="ArrivalAirportID" asp-items="@ViewBag.Airports" class="form-select">
+                <option value="">-- Select Arrival Airport --</option>
+            </select>
+            <span asp-validation-for="ArrivalAirportID" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DepartureTime" class="form-label">Departure Time</label>
+            <input asp-for="DepartureTime" type="datetime-local" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ArrivalTime" class="form-label">Arrival Time</label>
+            <input asp-for="ArrivalTime" type="datetime-local" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="BasePrice" class="form-label">Base Price</label>
+            <input asp-for="BasePrice" class="form-control" type="number" step="0.01" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Status" class="form-label">Flight Status</label>
+            <select asp-for="Status" class="form-select">
+                <option value="1">Scheduled</option>
+                <option value="2">Cancelled</option>
+                <option value="3">Delayed</option>
+                <option value="4">Departed</option>
+                <option value="5">Landed</option>
+            </select>
+        </div>
+        
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="mb-4">
+        <button type="submit" class="btn btn-primary">Edit Flight</button>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+	<script>
+		$(document).ready(function () {
+            function loadAirplanes(airlineId, selectedAirplaneId = null) {
+                if (airlineId) {
+					$.ajax({
+                         url: '@Url.Action("GetAirplanesByAirlineId", "Flight")',
+						type: "GET",
+                        data: { airlineId: airlineId },
+						success: function (data) {
+                            let DrpAirplane = $("#DrpAirplane");
+							drpModel.empty();
+
+							for (let i = 0; i < data.length; i++) {
+								let selected = data[i].id == selectedModelId ? "selected" : "";
+                                DrpAirplane.append(`<option value="${data[i].id}" ${selected}>${data[i].model}</option>`);
+							}
+						},
+						error: function () {
+							alert('Error loading models.');
+						}
+					});
+				}
+			}
+
+            let selectedAirlineId = $("#DrpAirline").val();
+            let selectedAirplaneId = "@Model.AirplaneId";
+            loadAirplanes(selectedAirlineId, selectedAirplaneId);
+
+            $("#DrpAirline").on("change", function () {
+                let newAirlineId = $(this).val();
+                loadAirplanes(newAirlineId);
+			});
+		});
+	</script>
+}
+
+

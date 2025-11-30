@@ -1,0 +1,31 @@
+﻿@model IEnumerable<AddOnViewModel>
+@{
+    ViewData["Title"] = "Add-Ons";
+}
+<partial name="_notification" />
+<h2>Add-Ons</h2>
+<p><a asp-action="Create" class="btn btn-success">Add New Add-On</a> </p>
+
+<table class="table table-bordered table-striped text-white">
+    <thead class="table-dark text-white">
+        <tr class="text-white">
+            <th>Name</th>
+            <th>Price (EGP)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody class="text-white">
+        @foreach (var item in Model)
+        {
+            <tr class="text-white">
+                <td>@item.Name</td>
+                <td>@item.price</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

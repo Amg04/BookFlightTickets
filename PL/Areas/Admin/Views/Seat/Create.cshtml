@@ -1,0 +1,60 @@
+﻿@model SeatViewModel
+@{
+	ViewData["Title"] = "Add New Seat";
+}
+
+<h2 class="mb-4 text-center">Add New Seat</h2>
+
+<form asp-action="Create" method="post">
+	@Html.AntiForgeryToken()
+	
+	<div class="mb-3">
+		<label asp-for="AirplaneId" class="form-label"></label>
+		<select asp-for="AirplaneId" class="form-select" asp-items="@ViewBag.Airplanes">
+			<option value="">-- Select Airline --</option>
+		</select>
+		<span asp-validation-for="AirplaneId" class="text-danger"></span>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Class" class="form-label"></label>
+		<select asp-for="Class" class="form-select" asp-items="@ViewBag.SeatClasses">
+			<option value="">-- Select Airline --</option>
+		</select>
+		<span asp-validation-for="Class" class="text-danger"></span>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Number" class="form-label"></label>
+		<input asp-for="Number" type="number" class="form-control" placeholder="Enter seat capacity" />
+		<span asp-validation-for="Number" class="text-danger"></span>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Row" class="form-label"></label>
+		<input asp-for="Row" class="form-control" placeholder="Enter airplane model" />
+		<span asp-validation-for="Row" class="text-danger"></span>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Price" class="form-label"></label>
+		<input asp-for="Price" class="form-control" placeholder="Enter airplane model" />
+		<span asp-validation-for="Price" class="text-danger"></span>
+	</div>
+
+	<div asp-validation-summary="All" class="text-danger mb-3"></div>
+		<button type="submit" class="btn btn-success px-4">
+			<i class="bi bi-check-circle"></i> Create
+		</button>
+		<a asp-action="Index" class="btn btn-secondary ms-2 px-4">
+			<i class="bi bi-arrow-left-circle"></i> Back to List
+		</a>
+</form>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

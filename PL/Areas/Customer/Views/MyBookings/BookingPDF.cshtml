@@ -1,0 +1,183 @@
+﻿@model DAL.models.Booking
+@{
+	Layout = null;
+}
+
+<link href="@("http://" + Context.Request.Host.ToString() + "/css/site.css")" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+	@@media print {
+		.no-print
+
+	{
+		display: none !important;
+	}
+
+	.ticket-card {
+		page-break-inside: avoid;
+		page-break-after: always;
+		margin-bottom: 20px !important;
+	}
+
+		.ticket-card:last-child {
+			page-break-after: avoid;
+		}
+
+	body {
+		-webkit-print-color-adjust: exact !important;
+		print-color-adjust: exact !important;
+	}
+
+	}
+
+	.ticket-card {
+		background: white;
+		border: 3px solid #007bff;
+		border-radius: 15px;
+		margin-bottom: 20px;
+		page-break-inside: avoid;
+		box-shadow: 0 0 20px rgba(0,123,255,0.3);
+	}
+
+	body {
+		font-family: Arial, sans-serif;
+		background: white;
+		color: #333;
+		margin: 0;
+		padding: 20px;
+	}
+
+	.header-section {
+		page-break-after: always;
+		margin-bottom: 40px;
+	}
+</style>
+
+<!-- ✅ HEADER (صفحة 1) -->
+<div class="header-section text-center py-5">
+	<h1 class="display-3 fw-bold text-primary mb-4">BOARDING PASSES</h1>
+	<h3 class="text-muted mb-4">PNR: @Model.PNR</h3>
+
+	@if (Model.Payment != null)
+	{
+		<div class="col-lg-8 mx-auto p-4 bg-success bg-opacity-10 border border-success border-3 rounded shadow-lg">
+			<h5 class="text-success mb-3">
+				<i class="fas fa-credit-card me-2"></i>Payment Receipt
+			</h5>
+			<div class="row text-center">
+				<div class="col-md-4">
+					<div class="fs-2 fw-bold text-success">@Model.Payment.PaymentStatus</div>
+					<small class="text-success-emphasis">Status</small>
+				</div>
+				<div class="col-md-4">
+					<div class="fs-1 fw-bold text-warning">@Model.Payment.Amount.ToString("C")</div>
+					<small class="text-muted">Total Paid</small>
+				</div>
+				<div class="col-md-4">
+					<div class="fs-3">@Model.Payment.PaymentDate.ToString("MMM dd, yyyy HH:mm")</div>
+					<small class="text-muted">Payment Date</small>
+				</div>
+			</div>
+		</div>
+	}
+</div>
+
+<!-- ✅ Tickets (صفحة لكل تذكرة) -->
+@foreach (var ticket in Model.Tickets)
+{
+	<div class="ticket-card shadow-lg">
+		<!-- Header -->
+		<div class="p-4 text-white rounded-top" style="background: linear-gradient(135deg, #007bff, #0056b3);">
+			<div class="row align-items-center">
+				<div class="col-md-8">
+					<div class="d-flex align-items-center">
+						<div class="bg-white text-primary p-3 rounded fw-bold fs-2 me-4">
+							@ticket.TicketNumber
+						</div>
+						<div>
+							<h3 class="mb-1">@ticket.FirstName @ticket.LastName</h3>
+							<div>Passport: @ticket.PassportNumber</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-end">
+					<div class="badge @(Model.Status == Status.Confirmed ? "bg-success" : "bg-warning") fs-3 px-4 py-3">
+						@Model.Status
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Content -->
+		<div class="p-4">
+			<!-- Flight Route -->
+			<div class="row text-center mb-4">
+				<div class="col-5">
+					<i class="fas fa-plane-departure fa-3x text-primary mb-3"></i>
+					<h5>@Model.Flight.DepartureAirport.Name</h5>
+					<div class="fs-2 fw-bold text-primary">@Model.Flight.DepartureTime.ToString("HH:mm")</div>
+					<small>@Model.Flight.DepartureTime.ToString("MMM dd, yyyy")</small>
+				</div>
+				<div class="col-2 d-flex align-items-center justify-content-center">
+					<div style="width: 80px; height: 4px; background: linear-gradient(90deg, #007bff, #28a745); border-radius: 2px;"></div>
+					<i class="fas fa-arrow-right text-primary fs-2 mx-3"></i>
+				</div>
+				<div class="col-5">
+					<i class="fas fa-plane-arrival fa-3x text-primary mb-3"></i>
+					<h5>@Model.Flight.ArrivalAirport.Name</h5>
+					<div class="fs-2 fw-bold text-primary">@Model.Flight.ArrivalTime.ToString("HH:mm")</div>
+					<small>@Model.Flight.ArrivalTime.ToString("MMM dd, yyyy")</small>
+				</div>
+			</div>
+
+			<!-- Info Cards -->
+			<div class="row mb-4">
+				<div class="col-md-4 mb-3">
+					@if (ticket.FlightSeat?.Seat != null)
+					{
+						<div class="text-center p-4 bg-light rounded border-primary border-2">
+							<h6 class="text-primary mb-3"><i class="fas fa-chair"></i> Seat</h6>
+							<div class="fs-2 fw-bold text-info">@ticket.FlightSeat.Seat.Row@ticket.FlightSeat.Seat.Number</div>
+							<small>Class: @ticket.FlightSeat.Seat.Class</small>
+						</div>
+					}
+				</div>
+				<div class="col-md-4 mb-3">
+					<div class="text-center p-4 bg-light rounded border-warning border-2">
+						<h6 class="text-warning mb-3"><i class="fas fa-plane"></i> Flight</h6>
+						<div>@Model.Flight.Airline.Name @Model.Flight.Id</div>
+						<small>@Model.Flight.Airplane.Model</small>
+					</div>
+				</div>
+				<div class="col-md-4 mb-3">
+					<div class="text-center p-4 bg-light rounded border-success border-2">
+						<h6 class="text-success mb-3"><i class="fas fa-dollar-sign"></i> Price</h6>
+						<div class="fs-2 fw-bold text-success">@ticket.TicketPrice.ToString("C")</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Addons -->
+			@if (ticket.TicketAddOns != null && ticket.TicketAddOns.Any())
+			{
+				<div class="mb-4">
+					<h6 class="text-primary mb-3">Add-ons:</h6>
+					<div class="d-flex flex-wrap gap-2 justify-content-center">
+						@foreach (var addOn in ticket.TicketAddOns)
+						{
+							<span class="badge bg-info fs-6 px-3 py-2">@addOn.AddOn.Name</span>
+						}
+					</div>
+				</div>
+			}
+
+			<!-- QR -->
+			<div class="text-center p-4 bg-light rounded border mt-3">
+				<i class="fas fa-qrcode fa-4x text-muted mb-3"></i>
+				<div class="fs-4 text-muted mb-2">Scan QR Code at Check-in Counter</div>
+				<div class="text-muted fs-5 fw-bold">PNR: @Model.PNR</div>
+			</div>
+		</div>
+	</div>
+}

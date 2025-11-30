@@ -1,0 +1,188 @@
+﻿@model IEnumerable<Booking>
+@{
+	ViewData["Title"] = "My Bookings";
+}
+
+<div class="container text-light my-5">
+	<div class="d-flex justify-content-between align-items-center mb-5">
+		<h2 class="text-info">
+			<i class="fas fa-ticket-alt me-3"></i>My Bookings
+		</h2>
+		<div class="text-muted">
+			Total: @Model.Count() bookings
+		</div>
+	</div>
+
+	@if (!Model.Any())
+	{
+		<div class="text-center py-5">
+			<i class="fas fa-inbox fa-3x text-muted mb-4"></i>
+			<h4 class="text-muted">No bookings found</h4>
+			<p class="text-muted">Book your first flight now!</p>
+			<a asp-controller="Flight" asp-action="Index" class="btn btn-info btn-lg">
+				<i class="fas fa-plane me-2"></i>Find Flights
+			</a>
+		</div>
+	}
+	else
+	{
+		@foreach (var booking in Model)
+		{
+			<div class="card bg-dark border-info mb-4 overflow-hidden">
+				<!-- Booking Header -->
+				<div class="card-header bg-info text-dark d-flex justify-content-between align-items-center">
+					<div>
+						<strong>PNR: @booking.PNR</strong>
+						<span class="badge @(booking.Status == Status.Confirmed ? "bg-success" :
+                                     booking.Status == Status.Pending ? "bg-warning" : "bg-danger") ms-2">
+							@booking.Status
+						</span>
+					</div>
+					<small class="text-white-50">
+						@booking.BookingDate.ToString("MMM dd, yyyy HH:mm")
+					</small>
+				</div>
+
+				<!-- Flight Info -->
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="row g-3">
+								<div class="col-md-6">
+									<div class="text-center">
+										<i class="fas fa-plane-departure fa-2x text-info mb-2"></i>
+										<h6>@booking.Flight.DepartureAirport.Name</h6>
+										<small class="text-muted">@booking.Flight.DepartureTime.ToString("HH:mm")</small>
+									</div>
+								</div>
+								<div class="col-md-6 text-end">
+									<i class="fas fa-plane-arrival fa-2x text-info mb-2"></i>
+									<h6>@booking.Flight.ArrivalAirport.Name</h6>
+									<small class="text-muted">@booking.Flight.ArrivalTime.ToString("HH:mm")</small>
+								</div>
+							</div>
+							<hr class="my-3">
+							<div class="d-flex justify-content-between">
+								<div>
+									<strong>@booking.Flight.Airline.Name</strong>
+									<span class="badge bg-secondary ms-2">@booking.Flight.Airplane.Model</span>
+								</div>
+								<div class="text-warning fw-bold fs-5">
+									Total: @booking.TotalPrice.ToString("C")
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="text-center p-3 border-start border-info">
+								<h5 class="text-info">@booking.Tickets.Count() Tickets</h5>
+								<small class="text-muted">Passengers</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tickets Accordion -->
+				<div class="accordion" id="ticketsAccordion_@booking.Id">
+					@for (int i = 0; i < booking.Tickets.Count; i++)
+					{
+						var ticket = booking.Tickets.ElementAt(i);
+						<div class="accordion-item bg-secondary">
+							<h2 class="accordion-header">
+								<button class="accordion-button @(i > 0 ? "collapsed" : "") text-dark"
+										type="button" data-bs-toggle="collapse"
+										data-bs-target="#ticketCollapse_@booking.Id@i">
+									<div class="me-3">
+										<span class="badge bg-info fs-6">@ticket.TicketNumber</span>
+									</div>
+									<div class="flex-grow-1">
+										<div class="d-flex justify-content-between">
+											<div>
+												<strong>@ticket.FirstName @ticket.LastName</strong>
+												<br><small>@ticket.PassportNumber</small>
+											</div>
+											<div class="text-end">
+												<div>@ticket.TicketPrice.ToString("C")</div>
+												@if (ticket.FlightSeat != null)
+												{
+													<div class="badge bg-success">
+														@ticket.FlightSeat.Seat.Row@ticket.FlightSeat.Seat.Number
+													</div>
+												}
+											</div>
+										</div>
+									</div>
+								</button>
+							</h2>
+							<div id="ticketCollapse_@booking.Id@i"
+								 class="accordion-collapse collapse @(i == 0 ? "show" : "")"
+								 data-bs-parent="#ticketsAccordion_@booking.Id">
+								<div class="accordion-body">
+									@if (ticket.TicketAddOns != null && ticket.TicketAddOns.Any())
+									{
+										<div class="mb-3">
+											<h6 class="text-info mb-2">Add-ons:</h6>
+											<div class="d-flex flex-wrap gap-2">
+												@foreach (var addOn in ticket.TicketAddOns)
+												{
+													<span class="badge bg-light text-dark">
+														@addOn.AddOn.Name (@addOn.AddOn.price.ToString("C"))
+													</span>
+												}
+											</div>
+										</div>
+									}
+								</div>
+							</div>
+						</div>
+					}
+				</div>
+				<!-- أضف في آخر accordion-body -->
+				@if (booking.Payment != null)
+				{
+					<div class=" p-2 bg-light rounded text-black">
+						<h6 class="text-info mb-2">Payment Details:</h6>
+						<div class="row">
+							<div class="col-6">
+								<small><strong>Status:</strong> "✅ @(booking.Payment.PaymentStatus) "</small>
+							</div>
+							<div class="col-6">
+								<small><strong>Amount:</strong> @booking.Payment.Amount.ToString("C")</small>
+							</div>
+							<div class="col-12 mt-1">
+								<small><strong>Date:</strong> @booking.Payment.PaymentDate.ToString("MMM dd, yyyy HH:mm")</small>
+							</div>
+							}
+						</div>
+					</div>
+				}
+
+				<!-- Booking Footer -->
+				<div class="card-footer bg-dark text-center">
+					<div class="btn-group" role="group">
+						<a asp-action="BookingPDF" asp-route-bookingId="@booking.Id"
+						   class="btn btn-outline-success btn-sm">
+							<i class="fas fa-file-pdf me-1"></i>Download PDF
+						</a>
+
+					</div>
+				</div>
+
+			</div>
+		}
+	}
+</div>
+
+@section Scripts {
+	<script>
+		document.querySelectorAll('.accordion-button').forEach(button => {
+			button.addEventListener('click', function() {
+				const target = this.getAttribute('data-bs-target');
+				document.querySelectorAll('.accordion-collapse.show').forEach(collapse => {
+					if (collapse.id !== target.replace('#', '')) {
+						new bootstrap.Collapse(collapse, { toggle: false });
+					}
+				});
+			});
+		});
+	</script>
+}

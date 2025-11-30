@@ -1,0 +1,33 @@
+﻿@model AirportViewModel
+
+@{
+    ViewData["Title"] = "Delete Airport";
+}
+<div class="container mt-4">
+    <h2 class="text-center mb-4 ">@ViewData["Title"]</h2>
+
+<h4>Are you sure you want to delete this airport?</h4>
+<hr />
+    <div class="border p-3 rounded">
+    <dl class="row">
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">@Model.Name</dd>
+
+        <dt class="col-sm-3">Code</dt>
+        <dd class="col-sm-9">@Model.Code</dd>
+
+        <dt class="col-sm-3">City</dt>
+        <dd class="col-sm-9">@(Model.City ?? "N/A")</dd>
+
+        <dt class="col-sm-3">Country</dt>
+            <dd class="col-sm-9">@(Model.Country ?? "N/A")</dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+</div>

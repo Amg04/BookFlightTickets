@@ -1,0 +1,48 @@
+﻿@model BookingViewModel
+
+@{
+    ViewData["Title"] = "Create Book";
+}
+
+<h2 class="text-center mb-4">Create Book</h2>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group mb-3">
+        <label asp-for="FlightId" class="form-label"></label>
+        <select asp-for="FlightId" class="form-select" asp-items="@ViewBag.Flights">
+            <option value="">-- Select Flight --</option>
+        </select>
+        <span asp-validation-for="FlightId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="PNR" class="form-label"></label>
+        <input asp-for="PNR" class="form-control" />
+        <span asp-validation-for="PNR" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="TotalPrice" class="form-label"></label>
+        <input asp-for="TotalPrice" class="form-control" />
+        <span asp-validation-for="TotalPrice" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Status" class="form-label"></label>
+        <select asp-for="Status" class="form-select" asp-items="@ViewBag.Status">
+            <option value="">-- Select Status --</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
