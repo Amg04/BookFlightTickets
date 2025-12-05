@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uAKRnDzCdc5oWWjmk1QRVK+Z0AqdNfVniSGdmV6amXM=",
+  "Hash": "zxgeExt94J1t67kt6aVqcaB6F8uvINrk4GX/MQAKezM=",
   "Source": "PL",
   "BasePath": "_content/PL",
   "Mode": "Default",
@@ -2666,7 +2666,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 23 Nov 2025 16:22:42 GMT"
+          "Value": "Sun, 30 Nov 2025 12:11:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2703,7 +2703,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 23 Nov 2025 16:22:42 GMT"
+          "Value": "Sun, 30 Nov 2025 12:11:43 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5050,7 +5050,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 28 Nov 2025 06:49:48 GMT"
+          "Value": "Sun, 30 Nov 2025 12:11:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5095,7 +5095,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 28 Nov 2025 06:49:48 GMT"
+          "Value": "Sun, 30 Nov 2025 12:11:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9970,7 +9970,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 29 Nov 2025 18:51:17 GMT"
+          "Value": "Fri, 05 Dec 2025 19:54:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10007,7 +10007,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 29 Nov 2025 18:51:17 GMT"
+          "Value": "Fri, 05 Dec 2025 19:54:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10052,7 +10052,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 29 Nov 2025 18:51:17 GMT"
+          "Value": "Fri, 05 Dec 2025 19:54:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10097,7 +10097,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 29 Nov 2025 18:51:17 GMT"
+          "Value": "Fri, 05 Dec 2025 19:54:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10134,7 +10134,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Jul 2025 14:16:49 GMT"
+          "Value": "Sun, 30 Nov 2025 12:11:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10179,7 +10179,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Jul 2025 14:16:49 GMT"
+          "Value": "Sun, 30 Nov 2025 12:11:42 GMT"
         },
         {
           "Name": "Cache-Control",

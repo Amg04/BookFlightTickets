@@ -1249,6 +1249,9 @@
         }
       },
       "Utility/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Options": "8.0.2"
+        },
         "runtime": {
           "Utility.dll": {
             "assemblyVersion": "1.0.0.0",

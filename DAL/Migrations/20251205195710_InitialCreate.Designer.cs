@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(BookFilghtsDbContext))]
-    [Migration("20251129101739_SeedMoreData")]
-    partial class SeedMoreData
+    [Migration("20251205195710_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -1,4 +1,4 @@
-﻿namespace PL
+﻿namespace Utility
 {
     public class UniqueNumberGenerator
     {

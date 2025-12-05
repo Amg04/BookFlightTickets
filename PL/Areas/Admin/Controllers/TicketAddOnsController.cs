@@ -1,6 +1,8 @@
 ﻿using BLLProject.Interfaces;
+using DAL.models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PL.ViewModels;
 using Utility;
 
 namespace PL.Areas.Admin.Controllers
@@ -17,9 +19,16 @@ namespace PL.Areas.Admin.Controllers
             _unitOfWork = unitOfWork;
             _env = env;
         }
-        public IActionResult Index()
+
+        #region Index
+
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var ticketAddOn =await _unitOfWork.Repository<TicketAddOns>().GetAllAsync();
+            return View(ticketAddOn.Select(t => (TicketAddOnViewModel)t));
         }
+
+        #endregion
+
     }
 }

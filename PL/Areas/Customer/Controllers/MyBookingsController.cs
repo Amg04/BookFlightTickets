@@ -42,17 +42,16 @@ namespace PL.Areas.Customer.Controllers
                 .ThenInclude(a => a.Airline));
             spec.ComplexIncludes.Add(c => c.Include(t => t.Flight)
                 .ThenInclude(a => a.Airplane));
-            spec.Includes.Add(b => b.Payment);
+            spec.Includes.Add(b => b.Payment!);
             var MyBookings = await _unitOfWork.Repository<Booking>().GetAllWithSpecAsync(spec);
             return View(MyBookings);
         }
 
         #endregion
 
-        #region PrintTicket
+        #region BookingPDF
 
         //Rotativa.AspNetCore
-        [Authorize]
         public async Task<IActionResult> BookingPDF(int bookingId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -74,7 +73,7 @@ namespace PL.Areas.Customer.Controllers
                 .ThenInclude(a => a.Airline));
             spec.ComplexIncludes.Add(c => c.Include(t => t.Flight)
                 .ThenInclude(a => a.Airplane));
-            spec.Includes.Add(b => b.Payment);
+            spec.Includes.Add(b => b.Payment!);
             var booking = await _unitOfWork.Repository<Booking>().GetEntityWithSpecAsync(spec);
             if (booking == null)
                 return NotFound();
@@ -91,7 +90,5 @@ namespace PL.Areas.Customer.Controllers
 
 
         #endregion
-
-
     }
 }

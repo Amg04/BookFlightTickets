@@ -3,13 +3,12 @@ using BLLProject.Interfaces;
 using BLLProject.Repositories;
 using DAL.Data;
 using DAL.DBInitializer;
-using DAL.models;
 using DALProject.DBInitializer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Rotativa.AspNetCore;
 using Stripe;
+using Utility;
 
 namespace PL
 {
@@ -21,13 +20,14 @@ namespace PL
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
-
             builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
-            // using Stripe
+            #region Stripe
+
             var stripeSettings = builder.Configuration.GetSection("Stripe");
             StripeConfiguration.ApiKey = stripeSettings["SecretKey"];
+
+            #endregion 
 
             #region Dbcontext
 
@@ -37,6 +37,8 @@ namespace PL
             });
 
             #endregion
+
+            #region Identity
 
             builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
             {
@@ -53,10 +55,19 @@ namespace PL
             }).AddEntityFrameworkStores<BookFilghtsDbContext>()
                 .AddDefaultTokenProviders();
 
-            builder.Services.AddRazorPages();
+            #endregion
+
+            #region IEmailSender
+
+            builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+            builder.Services.AddTransient<IEmailSender, SmtpEmailSender>();
+
+            #endregion
+
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<IDBInitializer, DBInitializer>();
-            builder.Services.AddSingleton<IEmailSender, NoOpEmailSender>();
+
+
 
             builder.Services.ConfigureApplicationCookie(option =>
             {

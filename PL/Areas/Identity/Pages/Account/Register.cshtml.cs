@@ -3,7 +3,6 @@
 #nullable disable
 
 using BAL.model;
-using BLLProject.Repositories;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -16,6 +15,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
 using Utility;
+using IEmailSender = Microsoft.AspNetCore.Identity.UI.Services.IEmailSender;
 
 namespace PL.Areas.Identity.Pages.Account
 {

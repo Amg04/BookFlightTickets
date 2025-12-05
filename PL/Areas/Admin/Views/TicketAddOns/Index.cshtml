@@ -1,0 +1,27 @@
+﻿@model IEnumerable<TicketAddOnViewModel>
+
+@{
+    ViewData["Title"] = "TicketAddOns";
+}
+
+<h2>@ViewData["Title"] List</h2>
+<partial name="_notification" />
+<table class="table table-bordered table-striped text-white">
+    <thead class="table-dark text-white">
+        <tr class="text-white">
+            <th>Ticket Id</th>
+            <th>AddOn Id</th>
+            
+        </tr>
+    </thead>
+    <tbody class="text-white">
+        @foreach (var item in Model)
+        {
+            <tr class="text-white">
+                <td>@item.TicketId</td>
+                <td>@item.AddOnID</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

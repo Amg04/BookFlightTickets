@@ -1,0 +1,34 @@
+﻿@model IEnumerable<BookingViewModel>
+
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+<h2>Bookings List</h2>
+<partial name="_notification" />
+<table class="table table-bordered table-striped text-white">
+    <thead class="table-dark text-white">
+        <tr class="text-white">
+            <th>Booking PNR</th>
+            <th>Flight Number</th>
+            <th>Booking Date</th>
+            <th>Status</th>
+            <th>Last Ubdated</th>
+            <th>Payment Status</th>
+        </tr>
+    </thead>
+    <tbody class="text-white">
+        @foreach (var item in Model)
+        {
+            <tr class="text-white">
+                <td>@item.PNR</td>
+                <td>@item.FlightId</td>
+                <td>@item.BookingDate</td>
+                <td>@item.Status</td>
+                <td>@item.LastUpdated</td>
+                <td>@(item.Payment?.PaymentStatus.ToString() ?? "N/A")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PL.ViewModels;
+using Rotativa.AspNetCore;
 using Stripe.Checkout;
 using System.Security.Claims;
 using Utility;
@@ -13,7 +14,7 @@ using Utility;
 namespace PL.Areas.Customer.Controllers
 {
     [Area(SD.Customer)]
-    [Authorize(Roles = SD.Customer)]
+    [Authorize]
     public class BookController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -25,7 +26,6 @@ namespace PL.Areas.Customer.Controllers
         #region Book
 
         [HttpGet]
-        [Authorize]
         public async Task<IActionResult> Book(int flightId, int ticketCount)
         {
             var spec = new BaseSpecification<Flight>(f => f.Id == flightId);
@@ -249,6 +249,8 @@ namespace PL.Areas.Customer.Controllers
                 payment.PaymentStatus = PaymentStatus.Approved;
                 payment.PaymentIntentId = session.PaymentIntentId;
                 await _unitOfWork.CompleteAsync();
+
+                await SendBookingPDFEmail(payment.BookingID);
             }
             return View(payment.BookingID);
         }
@@ -291,6 +293,54 @@ namespace PL.Areas.Customer.Controllers
 
             await _unitOfWork.CompleteAsync();
             return View();
+        }
+
+        #endregion
+
+        #region method
+
+        private async Task SendBookingPDFEmail(int bookingId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var spec = new BaseSpecification<Booking>(b => b.Id == bookingId && b.UserId == userId);
+            spec.ComplexIncludes.Add(c => c.Include(t => t.Tickets)
+                 .ThenInclude(a => a.TicketAddOns)
+                 .ThenInclude(a => a.AddOn));
+            spec.ComplexIncludes.Add(c => c.Include(t => t.Flight)
+                .ThenInclude(a => a.FlightSeats)
+                .ThenInclude(a => a.Seat));
+            spec.ComplexIncludes.Add(c => c.Include(t => t.Flight)
+                .ThenInclude(a => a.DepartureAirport));
+            spec.ComplexIncludes.Add(c => c.Include(t => t.Flight)
+                .ThenInclude(a => a.ArrivalAirport));
+            spec.ComplexIncludes.Add(c => c.Include(t => t.Flight)
+                .ThenInclude(a => a.Airline));
+            spec.ComplexIncludes.Add(c => c.Include(t => t.Flight)
+                .ThenInclude(a => a.Airplane));
+            spec.Includes.Add(b => b.Payment!);
+            spec.Includes.Add(b => b.AppUser);
+            var booking = await _unitOfWork.Repository<Booking>().GetEntityWithSpecAsync(spec);
+
+            if (booking?.AppUser?.Email == null) return;
+
+            var pdfResult = new ViewAsPdf("/Areas/Customer/Views/MyBookings/BookingPDF.cshtml", booking, ViewData)
+            {
+                PageMargins = new Rotativa.AspNetCore.Options.Margins { Top = 20, Right = 20, Bottom = 20, Left = 20 },
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+                PageSize = Rotativa.AspNetCore.Options.Size.A4
+            };
+
+            var actionContext = new ActionContext(HttpContext, RouteData, ControllerContext.ActionDescriptor);
+            byte[] pdfBytes = await pdfResult.BuildFile(actionContext);
+
+            var emailSender = HttpContext.RequestServices.GetRequiredService<IEmailSender>();
+            await emailSender.SendEmailAsyncWithAttachment(
+                booking.AppUser.Email,
+                $"Your Booking Confirmation - {booking.PNR}",
+                "Dear Customer,<br/><br/>Your booking has been confirmed successfully!<br/><br/>Please find your e-ticket attached.",
+                pdfBytes,
+                $"Booking_{booking.PNR}.pdf"
+            );
         }
 
         #endregion

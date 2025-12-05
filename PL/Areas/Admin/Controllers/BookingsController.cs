@@ -1,4 +1,5 @@
 ﻿using BLLProject.Interfaces;
+using BLLProject.Specifications;
 using DAL.models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,12 +20,15 @@ namespace PL.Areas.Admin.Controllers
             _unitOfWork = unitOfWork;
             _env = env;
         }
+
         #region Index
 
         public async Task<IActionResult> Index()
         {
-            var airlines = await _unitOfWork.Repository<Airline>().GetAllAsync();
-            return View(airlines.Select(a => (AirlineViewModel)a));
+            var spec = new BaseSpecification<Booking>();
+            spec.Includes.Add(b => b.Payment!);
+            var bookings = await _unitOfWork.Repository<Booking>().GetAllWithSpecAsync(spec);
+            return View(bookings.Select(a => (BookingViewModel)a));
         }
 
         #endregion
