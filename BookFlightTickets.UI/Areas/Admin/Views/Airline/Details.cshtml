@@ -1,0 +1,38 @@
+﻿@model AirlineViewModel
+
+@{
+    ViewData["Title"] = "Airline Details";
+}
+
+<div class="card shadow border-0 my-4">
+	<div class="card-header bg-secondary bg-black ml-0 py-3 ">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h2 class="text-white py-2">Airline Details</h2>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-4">
+			<div class="row">
+				<div class="col-12">
+					<div class="border p-3">
+						<div class="form-floating py-2 col-12">
+							<input asp-for="Name" class="form-control border-0 shadow" disabled/>
+							<label asp-for="Name" class="ms-2"></label>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<input asp-for="Code" class="form-control border-0 shadow" disabled/>
+							<label asp-for="Code" class="ms-2"></label>
+						</div>
+
+					<div class="mt-3">
+						<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary"><i class="fas fa-edit"></i>Edit</a>
+						<a asp-action="Index" class="btn btn-secondary"><i class="bi bi-arrow-left me-1"></i>Cancel</a>
+					</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+

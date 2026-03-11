@@ -1,0 +1,70 @@
+﻿@model SeatViewModel
+@{
+	ViewData["Title"] = "Create Seat";
+}
+
+<div class="card shadow border-0 my-4">
+	<div class="card-header bg-secondary bg-black ml-0 py-3 ">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h2 class="text-white py-2">Create Seat</h2>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-4">
+		<form asp-action="Create" method="post">
+			@Html.AntiForgeryToken()
+			<div class="row">
+				<div class="col-12">
+					<div class="border p-3">
+						<div class="form-floating py-2 col-12">
+							<label asp-for="AirplaneId" class="form-label"></label>
+							<select asp-for="AirplaneId" class="form-select" asp-items="@ViewBag.Airplanes">
+								<option value="">-- Select Airline --</option>
+							</select>
+							<span asp-validation-for="AirplaneId" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<label asp-for="Class" class="form-label"></label>
+							<select asp-for="Class" class="form-select" asp-items="@ViewBag.SeatClasses">
+								<option value="">-- Select Airline --</option>
+							</select>
+							<span asp-validation-for="Class" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<input asp-for="Number" class="form-control border-0 shadow" />
+							<label asp-for="Number" class="ms-2"></label>
+							<span asp-validation-for="Number" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<input asp-for="Row" class="form-control border-0 shadow" />
+							<label asp-for="Row" class="ms-2"></label>
+							<span asp-validation-for="Row" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<input asp-for="Price" class="form-control border-0 shadow" />
+							<label asp-for="Price" class="ms-2"></label>
+							<span asp-validation-for="Price" class="text-danger"></span>
+						</div>
+
+						<div asp-validation-summary="All" class="text-danger"></div>
+						<div class="mt-3">
+							<button type="submit" class="btn btn-success"><i class="bi bi-check-circle me-1"></i>Create</button>
+							<a asp-action="Index" class="btn btn-secondary"><i class="bi bi-arrow-left me-1"></i>Back</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

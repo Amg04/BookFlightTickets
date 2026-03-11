@@ -1,0 +1,251 @@
+﻿@model IEnumerable<Booking>
+@{
+    ViewData["Title"] = "My Bookings";
+}
+
+<partial name="_notification" />
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <h2 class="text-primary">
+            <i class="fas fa-ticket-alt me-3"></i>My Bookings
+        </h2>
+        <div class="text-muted">
+            <span class="badge bg-primary">
+                <i class="fas fa-list me-1"></i>Total: @Model.Count() bookings
+            </span>
+        </div>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="text-center py-5">
+            <i class="fas fa-inbox fa-3x text-muted mb-4"></i>
+            <h4 class="text-muted">No bookings found</h4>
+            <p class="text-muted">Book your first flight now!</p>
+            <a asp-controller="Flight" asp-action="Index" class="btn btn-primary btn-lg">
+                <i class="fas fa-plane me-2"></i>Find Flights
+            </a>
+        </div>
+    }
+    else
+    {
+        @foreach (var booking in Model)
+        {
+            <div class="card shadow-sm border-primary mb-4 overflow-hidden">
+                <!-- Booking Header -->
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>PNR: @booking.PNR</strong>
+                        <span class="badge @(booking.Status == Status.Confirmed ? "bg-success" :
+                                     booking.Status == Status.Pending ? "bg-warning" : "bg-danger") ms-2">
+                            @booking.Status
+                        </span>
+                    </div>
+                    <small class="text-white-50">
+                        <i class="fas fa-calendar-alt me-1"></i>
+                        @booking.BookingDate.ToString("MMM dd, yyyy HH:mm")
+                    </small>
+                </div>
+
+                <!-- Flight Info -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="text-center">
+                                        <i class="fas fa-plane-departure fa-2x text-primary mb-2"></i>
+                                        <h6 class="text-dark">@booking.Flight.DepartureAirport.Name</h6>
+                                        <small class="text-muted">
+                                            <i class="fas fa-clock me-1"></i>
+                                            @booking.Flight.DepartureTime.ToString("HH:mm")
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 text-end">
+                                    <i class="fas fa-plane-arrival fa-2x text-primary mb-2"></i>
+                                    <h6 class="text-dark">@booking.Flight.ArrivalAirport.Name</h6>
+                                    <small class="text-muted">
+                                        <i class="fas fa-clock me-1"></i>
+                                        @booking.Flight.ArrivalTime.ToString("HH:mm")
+                                    </small>
+                                </div>
+                            </div>
+                            <hr class="my-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong class="text-primary">@booking.Flight.Airline.Name</strong>
+                                    <span class="badge bg-secondary ms-2">@booking.Flight.Airplane.Model</span>
+                                </div>
+                                <div class="text-success fw-bold fs-5">
+                                    <i class="fas fa-dollar-sign me-1"></i>
+                                    Total: @booking.TotalPrice.ToString("C")
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center p-3 border-start border-primary">
+                                <h5 class="text-primary">@booking.Tickets.Count() Tickets</h5>
+                                <small class="text-muted">
+                                    <i class="fas fa-users me-1"></i>Passengers
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Details -->
+                @if (booking.Payment != null)
+                {
+                    <div class="p-3 bg-light bg-opacity-25 border-top border-bottom">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h6 class="text-primary mb-2">
+                                    <i class="fas fa-credit-card me-2"></i>Payment Details
+                                </h6>
+                                <div class="d-flex gap-4">
+                                    <div>
+                                        <div class="badge @(booking.Payment.PaymentStatus == PaymentStatus.Approved ? "bg-success" : "bg-warning")">
+                                        <small class="text-muted">Status:</small>
+                                            @booking.Payment.PaymentStatus
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted">Amount:</small>
+                                        <div class="fw-bold text-success">@booking.Payment.Amount.ToString("C")</div>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted">Date:</small>
+                                        <div>@booking.Payment.PaymentDate.ToString("MMM dd, yyyy HH:mm")</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!-- Tickets Accordion -->
+                <div class="accordion" id="ticketsAccordion_@booking.Id">
+                    @for (int i = 0; i < booking.Tickets.Count; i++)
+                    {
+                        var ticket = booking.Tickets.ElementAt(i);
+                        <div class="accordion-item border-primary">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button @(i > 0 ? "collapsed" : "") bg-light"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#ticketCollapse_@booking.Id@i">
+                                    <div class="me-3">
+                                        <span class="badge bg-primary fs-6">@ticket.TicketNumber</span>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <strong class="text-dark">@ticket.FirstName @ticket.LastName</strong>
+                                                <br><small class="text-muted">@ticket.PassportNumber</small>
+                                            </div>
+                                            <div class="text-end">
+                                                <div class="text-success fw-bold">@ticket.TicketPrice.ToString("C")</div>
+                                                @if (ticket.FlightSeat != null)
+                                                {
+                                                    <div class="badge bg-success mt-1">
+                                                        <i class="fas fa-chair me-1"></i>
+                                                        @ticket.FlightSeat.Seat.Row@ticket.FlightSeat.Seat.Number
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="ticketCollapse_@booking.Id@i"
+                                 class="accordion-collapse collapse @(i == 0 ? "show" : "")"
+                                 data-bs-parent="#ticketsAccordion_@booking.Id">
+                                <div class="accordion-body bg-light">
+                                    @if (ticket.TicketAddOns != null && ticket.TicketAddOns.Any())
+                                    {
+                                        <div class="mb-3">
+                                            <h6 class="text-primary mb-2">
+                                                <i class="fas fa-plus-circle me-2"></i>Add-ons:
+                                            </h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                @foreach (var addOn in ticket.TicketAddOns)
+                                                {
+                                                    <span class="badge bg-info text-dark">
+                                                        @addOn.AddOn.Name (@addOn.AddOn.Price.ToString("C"))
+                                                    </span>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <!-- Booking Footer -->
+                <div class="card-footer bg-light text-center">
+                    <div class="btn-group" role="group">
+                        <a asp-action="BookingPDF" asp-route-bookingId="@booking.Id"
+                           class="btn btn-outline-success btn-sm">
+                            <i class="fas fa-file-pdf me-1"></i>Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = this.getAttribute('data-bs-target');
+                document.querySelectorAll('.accordion-collapse.show').forEach(collapse => {
+                    if (collapse.id !== target.replace('#', '')) {
+                        new bootstrap.Collapse(collapse, { toggle: false });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .card {
+            transition: transform 0.2s ease-in-out;
+        }
+
+            .card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            }
+
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(13, 110, 253, 0.05);
+            color: #0d6efd;
+        }
+
+        .badge {
+            font-size: 0.85em;
+            padding: 0.35em 0.65em;
+        }
+
+        .border-primary {
+            border-color: #0d6efd !important;
+        }
+
+        .text-primary {
+            color: #0d6efd !important;
+        }
+
+        .bg-primary {
+            background-color: #0d6efd !important;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #198754;
+            color: white;
+        }
+    </style>
+}

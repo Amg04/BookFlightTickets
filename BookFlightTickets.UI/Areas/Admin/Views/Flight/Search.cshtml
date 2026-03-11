@@ -1,0 +1,72 @@
+﻿@model IEnumerable<FlightViewModel>
+
+@{
+    ViewData["Title"] = "Search Flights";
+}
+
+<div class="container mt-5 ">
+    <form method="get" asp-action="Search" class="row g-3 mb-4">
+        <div class="col-md-5">
+            <input type="text" name="keyword" value="@ViewBag.keyword" class="form-control" placeholder="Enter Airline or Airport name..." />
+        </div>
+        <div class="col-md-4">
+            <input type="date" name="date" value="@(ViewBag.date != null ? ((DateTime)ViewBag.date).ToString("yyyy-MM-dd") : "")" class="form-control" />
+        </div>
+        <div class="col-md-3 text-center">
+            <button type="submit" class="btn btn-primary w-100"><i class="fas fa-search"></i> Search</button>
+        </div>
+    </form>
+    @if (Model != null && Model.Any())
+    {
+        <div class="card shadow border-0 mt-4">
+            <div class="card-header bg-secondary bg-black ml-0 py-3">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="text-white py-2">Search Flights</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-4">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Airline</th>
+                                <th>Airplane</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Departure</th>
+                                <th>Arrival</th>
+                                <th>Price</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var flight in Model)
+                            {
+                                <tr>
+                                    <td>@flight.Airline?.Name</td>
+                                    <td>@flight.Airplane?.Model</td>
+                                    <td>@flight.DepartureAirport?.Name</td>
+                                    <td>@flight.ArrivalAirport?.Name</td>
+                                    <td>@flight.DepartureTime.ToString("g")</td>
+                                    <td>@flight.ArrivalTime.ToString("g")</td>
+                                    <td>$@flight.BasePrice</td>
+                                    <td>
+                                        <a asp-action="Details" asp-route-id="@flight.Id" class="btn btn-warning btn-sm"><i class="fas fa-info-circle"></i> Details</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center mt-4">
+            No flights found matching your search.
+        </div>
+    }
+</div>

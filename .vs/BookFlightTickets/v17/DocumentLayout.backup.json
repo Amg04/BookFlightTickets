@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\track\\tectnical\\MVC\\projects\\p8\\BookFlightTickets\\BookFlightTickets\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{53EE10F2-27C5-4DF4-8042-B2B9C10CD9FD}|BookFlightTickets.IntegrationTests\\BookFlightTickets.IntegrationTests.csproj|e:\\track\\tectnical\\mvc\\projects\\p8\\bookflighttickets\\bookflighttickets\\bookflighttickets.integrationtests\\admin\\flightintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{53EE10F2-27C5-4DF4-8042-B2B9C10CD9FD}|BookFlightTickets.IntegrationTests\\BookFlightTickets.IntegrationTests.csproj|solutionrelative:bookflighttickets.integrationtests\\admin\\flightintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D79DEEFE-A08F-4BC5-A713-BEA6BC931716}|BookFlightTickets.UI\\BookFlightTickets.UI.csproj|e:\\track\\tectnical\\mvc\\projects\\p8\\bookflighttickets\\bookflighttickets\\bookflighttickets.ui\\areas\\admin\\controllers\\flightcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D79DEEFE-A08F-4BC5-A713-BEA6BC931716}|BookFlightTickets.UI\\BookFlightTickets.UI.csproj|solutionrelative:bookflighttickets.ui\\areas\\admin\\controllers\\flightcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CCA6D2E-6CC0-4600-A3BD-54F7090356FC}|BookFlightTickets.ControllerTests\\BookFlightTickets.ControllerTests.csproj|e:\\track\\tectnical\\mvc\\projects\\p8\\bookflighttickets\\bookflighttickets\\bookflighttickets.controllertests\\admin\\flightcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CCA6D2E-6CC0-4600-A3BD-54F7090356FC}|BookFlightTickets.ControllerTests\\BookFlightTickets.ControllerTests.csproj|solutionrelative:bookflighttickets.controllertests\\admin\\flightcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53EE10F2-27C5-4DF4-8042-B2B9C10CD9FD}|BookFlightTickets.IntegrationTests\\BookFlightTickets.IntegrationTests.csproj|e:\\track\\tectnical\\mvc\\projects\\p8\\bookflighttickets\\bookflighttickets\\bookflighttickets.integrationtests\\baseintegrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{53EE10F2-27C5-4DF4-8042-B2B9C10CD9FD}|BookFlightTickets.IntegrationTests\\BookFlightTickets.IntegrationTests.csproj|solutionrelative:bookflighttickets.integrationtests\\baseintegrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D79DEEFE-A08F-4BC5-A713-BEA6BC931716}|BookFlightTickets.UI\\BookFlightTickets.UI.csproj|e:\\track\\tectnical\\mvc\\projects\\p8\\bookflighttickets\\bookflighttickets\\bookflighttickets.ui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D79DEEFE-A08F-4BC5-A713-BEA6BC931716}|BookFlightTickets.UI\\BookFlightTickets.UI.csproj|solutionrelative:bookflighttickets.ui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 389,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FlightIntegrationTests.cs",
+              "DocumentMoniker": "E:\\track\\tectnical\\MVC\\projects\\p8\\BookFlightTickets\\BookFlightTickets\\BookFlightTickets.IntegrationTests\\Admin\\FlightIntegrationTests.cs",
+              "RelativeDocumentMoniker": "BookFlightTickets.IntegrationTests\\Admin\\FlightIntegrationTests.cs",
+              "ToolTip": "E:\\track\\tectnical\\MVC\\projects\\p8\\BookFlightTickets\\BookFlightTickets\\BookFlightTickets.IntegrationTests\\Admin\\FlightIntegrationTests.cs",
+              "RelativeToolTip": "BookFlightTickets.IntegrationTests\\Admin\\FlightIntegrationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T19:07:09.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BaseIntegrationTest.cs",
+              "DocumentMoniker": "E:\\track\\tectnical\\MVC\\projects\\p8\\BookFlightTickets\\BookFlightTickets\\BookFlightTickets.IntegrationTests\\BaseIntegrationTest.cs",
+              "RelativeDocumentMoniker": "BookFlightTickets.IntegrationTests\\BaseIntegrationTest.cs",
+              "ToolTip": "E:\\track\\tectnical\\MVC\\projects\\p8\\BookFlightTickets\\BookFlightTickets\\BookFlightTickets.IntegrationTests\\BaseIntegrationTest.cs",
+              "RelativeToolTip": "BookFlightTickets.IntegrationTests\\BaseIntegrationTest.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAADwv30AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T19:09:51.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\track\\tectnical\\MVC\\projects\\p8\\BookFlightTickets\\BookFlightTickets\\BookFlightTickets.UI\\appsettings.json",
+              "RelativeDocumentMoniker": "BookFlightTickets.UI\\appsettings.json",
+              "ToolTip": "E:\\track\\tectnical\\MVC\\projects\\p8\\BookFlightTickets\\BookFlightTickets\\BookFlightTickets.UI\\appsettings.json",
+              "RelativeToolTip": "BookFlightTickets.UI\\appsettings.json",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-10T19:06:08.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FlightControllerTests.cs",
+              "DocumentMoniker": "E:\\track\\tectnical\\MVC\\projects\\p8\\BookFlightTickets\\BookFlightTickets\\BookFlightTickets.ControllerTests\\Admin\\FlightControllerTests.cs",
+              "RelativeDocumentMoniker": "BookFlightTickets.ControllerTests\\Admin\\FlightControllerTests.cs",
+              "ToolTip": "E:\\track\\tectnical\\MVC\\projects\\p8\\BookFlightTickets\\BookFlightTickets\\BookFlightTickets.ControllerTests\\Admin\\FlightControllerTests.cs",
+              "RelativeToolTip": "BookFlightTickets.ControllerTests\\Admin\\FlightControllerTests.cs",
+              "ViewState": "AgIAABsBAAAAAAAAAAAQwCYBAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T13:15:40.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FlightController.cs",
+              "DocumentMoniker": "E:\\track\\tectnical\\MVC\\projects\\p8\\BookFlightTickets\\BookFlightTickets\\BookFlightTickets.UI\\Areas\\Admin\\Controllers\\FlightController.cs",
+              "RelativeDocumentMoniker": "BookFlightTickets.UI\\Areas\\Admin\\Controllers\\FlightController.cs",
+              "ToolTip": "E:\\track\\tectnical\\MVC\\projects\\p8\\BookFlightTickets\\BookFlightTickets\\BookFlightTickets.UI\\Areas\\Admin\\Controllers\\FlightController.cs",
+              "RelativeToolTip": "BookFlightTickets.UI\\Areas\\Admin\\Controllers\\FlightController.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAYwIsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T13:17:04.276Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

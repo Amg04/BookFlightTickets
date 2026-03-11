@@ -1,0 +1,464 @@
+﻿@model BookingCreateViewModel
+@{
+	ViewData["Title"] = "Book Flight";
+}
+
+<partial name="_notification" />
+<div class="container">
+	<h2 class="mb-4 text-primary">
+		<i class="fas fa-ticket-alt me-2"></i>Flight Booking
+	</h2>
+
+	<!-- Flight Information Card -->
+	<div class="card shadow-sm border-primary mb-4">
+		<div class="card-header bg-primary text-white">
+			<h4 class="mb-0">
+				<i class="fas fa-info-circle me-2"></i>Flight Information
+			</h4>
+		</div>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-6">
+					<p><strong><i class="fas fa-plane me-2"></i>Airline:</strong> @Model.Flight?.Airline.Name</p>
+					<p><strong><i class="fas fa-map-marker-alt me-2"></i>From:</strong> @Model.Flight?.DepartureAirport.Name (@Model.Flight?.DepartureAirport.Code)</p>
+					<p><strong><i class="fas fa-map-marker-alt me-2"></i>To:</strong> @Model.Flight?.ArrivalAirport.Name (@Model.Flight?.ArrivalAirport.Code)</p>
+				</div>
+				<div class="col-md-6">
+					<p><strong><i class="fas fa-calendar-alt me-2"></i>Date:</strong> @Model.Flight?.DepartureTime.ToString("ddd, dd MMM yyyy")</p>
+					<p><strong><i class="fas fa-clock me-2"></i>Time:</strong> @Model.Flight?.DepartureTime.ToString("HH:mm")</p>
+					<p><strong><i class="fas fa-money-bill-wave me-2"></i>Base Price:</strong> <span class="text-success fw-bold">@Model.Flight?.BasePrice.ToString("C")</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<form asp-action="Book" method="post" class="needs-validation" novalidate>
+		<input type="hidden" asp-for="FlightId" />
+		<input type="hidden" asp-for="Flight.AirplaneId" />
+		<input type="hidden" asp-for="Flight.BasePrice" />
+
+		<!-- Tickets Section -->
+		<div class="card shadow-sm mb-4">
+			<div class="card-header bg-info text-white">
+				<h4 class="mb-0">
+					<i class="fas fa-users me-2"></i>Passenger Information & Seat Selection
+				</h4>
+			</div>
+			<div class="card-body">
+				<div id="tickets-container">
+					@for (int i = 0; i < Model.Tickets!.Count; i++)
+					{
+						<div class="card border mb-4">
+							<div class="card-header bg-light">
+								<h5 class="mb-0 text-primary">
+									<i class="fas fa-user me-2"></i>Passenger @((i + 1))
+								</h5>
+							</div>
+							<div class="card-body">
+								<!-- Passenger Info -->
+								<div class="row g-3">
+									<div class="col-md-4">
+										<label asp-for="Tickets[i].FirstName" class="form-label fw-bold">
+											<i class="fas fa-user-circle me-1"></i>First Name
+										</label>
+										<input class="form-control" asp-for="Tickets[i].FirstName" placeholder="Enter first name" />
+										<span asp-validation-for="Tickets[i].FirstName" class="text-danger small"></span>
+									</div>
+									<div class="col-md-4">
+										<label asp-for="Tickets[i].LastName" class="form-label fw-bold">
+											<i class="fas fa-user-circle me-1"></i>Last Name
+										</label>
+										<input class="form-control" asp-for="Tickets[i].LastName" placeholder="Enter last name" />
+										<span asp-validation-for="Tickets[i].LastName" class="text-danger small"></span>
+									</div>
+									<div class="col-md-4">
+										<label asp-for="Tickets[i].PassportNumber" class="form-label fw-bold">
+											<i class="fas fa-passport me-1"></i>Passport Number
+										</label>
+										<input class="form-control" asp-for="Tickets[i].PassportNumber" placeholder="Enter passport number" />
+										<span asp-validation-for="Tickets[i].PassportNumber" class="text-danger small"></span>
+									</div>
+								</div>
+
+								<!-- Seat Selection -->
+								<div class="mt-4">
+									<h6 class="fw-bold text-primary">
+										<i class="fas fa-chair me-2"></i>Seat Selection
+									</h6>
+									<div class="alert alert-warning">
+										<i class="fas fa-exclamation-triangle me-2"></i>
+										Select a seat for better boarding experience. Premium seats have additional charges.
+									</div>
+									<select class="form-select seat-dropdown" asp-for="Tickets[i].SelectedSeatId">
+										<option value="">-- Select Seat (Optional) --</option>
+										@foreach (var seat in Model.AvailableSeats)
+										{
+											<option value="@seat.Value">@seat.Text</option>
+										}
+									</select>
+									<small class="text-muted">You can skip seat selection for now</small>
+								</div>
+
+								<!-- AddOns -->
+								<div class="mt-4">
+									<h6 class="fw-bold text-primary">
+										<i class="fas fa-plus-circle me-2"></i>Additional Services
+									</h6>
+									<div class="alert alert-info">
+										<i class="fas fa-info-circle me-2"></i>
+										Select any additional services you'd like to include with your ticket.
+									</div>
+									<div class="row">
+										@foreach (var addon in Model.AddOns)
+										{
+											<div class="col-md-4 mb-2">
+												<div class="form-check">
+													<input class="form-check-input"
+														   type="checkbox"
+														   name="Tickets[@i].SelectedAddOnIds"
+														   value="@addon.Id"
+														   id="addon-@i-@addon.Id"
+														   data-price="@addon.Price" />
+													<label class="form-check-label" for="addon-@i-@addon.Id">
+														<span class="fw-bold">@addon.Name</span>
+														<br>
+														<span class="text-success fw-bold">+@addon.Price.ToString("C")</span>
+													</label>
+												</div>
+											</div>
+										}
+									</div>
+								</div>
+
+								<!-- Ticket Price -->
+								<div class="card mt-4 border-success">
+									<div class="card-body">
+										<h6 class="fw-bold text-success mb-3">
+											<i class="fas fa-calculator me-2"></i>Ticket Price Breakdown
+										</h6>
+										<div class="row">
+											<div class="col-md-3">
+												<p class="mb-1"><small>Base Price:</small></p>
+												<p class="fw-bold">@Model.Flight?.BasePrice.ToString("C")</p>
+											</div>
+											<div class="col-md-3">
+												<p class="mb-1"><small>Seat Price:</small></p>
+												<p class="fw-bold text-info seat-price-display">+ $0.00</p>
+											</div>
+											<div class="col-md-3">
+												<p class="mb-1"><small>Add-ons:</small></p>
+												<p class="fw-bold text-warning addons-price-display">+ $0.00</p>
+											</div>
+											<div class="col-md-3">
+												<p class="mb-1"><small>Total:</small></p>
+												<p class="fw-bold fs-5 text-success ticket-price-value">$0.00</p>
+											</div>
+										</div>
+										<input type="hidden" name="Tickets[@i].TicketPrice" class="ticket-price-hidden" value="0" />
+									</div>
+								</div>
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+
+		<!-- Booking Summary -->
+		<div class="card shadow-sm border-primary">
+			<div class="card-header bg-primary text-white">
+				<h4 class="mb-0">
+					<i class="fas fa-receipt me-2"></i>Booking Summary
+				</h4>
+			</div>
+			<div class="card-body">
+				<div id="ticket-summary-list" class="mb-4">
+					<!-- Ticket summaries will be dynamically added here -->
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="alert alert-success">
+							<h5 class="mb-2"><i class="fas fa-check-circle me-2"></i>Ready to Book!</h5>
+							<p class="mb-0">Review your selections and proceed to payment.</p>
+						</div>
+					</div>
+					<div class="col-md-6 text-end">
+						<h4 class="text-primary mb-3">Grand Total</h4>
+						<h1 class="display-4 text-success" id="grand-total">$0.00</h1>
+						<p class="text-muted">Includes all taxes and fees</p>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer bg-light">
+				<div class="d-flex justify-content-between align-items-center">
+					<div>
+						<a href="javascript:history.back()" class="btn btn-outline-secondary">
+							<i class="fas fa-arrow-left me-2"></i>Back
+						</a>
+					</div>
+					<div>
+						<button type="submit" class="btn btn-success btn-lg px-5">
+							<i class="fas fa-credit-card me-2"></i>Proceed to Payment
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+
+	<script>
+		let basePrice = @Model.Flight?.BasePrice;
+
+		function calculateTicketPrice(ticketCard) {
+			let seatPrice = 0;
+			let addOnPrice = 0;
+
+			// Calculate seat price
+			let seatSelect = ticketCard.querySelector(".seat-dropdown");
+			if (seatSelect && seatSelect.selectedOptions.length > 0 && seatSelect.value) {
+				let text = seatSelect.selectedOptions[0].textContent;
+				let priceMatch = text.match(/(\d+(\.\d+)?)\$/);
+				if (priceMatch) seatPrice = parseFloat(priceMatch[1]);
+
+				// Update seat price display
+				let seatDisplay = ticketCard.querySelector(".seat-price-display");
+				if (seatDisplay) {
+					seatDisplay.textContent = `+ $${seatPrice.toFixed(2)}`;
+				}
+			}
+
+			// Calculate add-ons price
+			ticketCard.querySelectorAll("input[type=checkbox]:checked").forEach(ch => {
+				let price = parseFloat(ch.getAttribute("data-price")) || 0;
+				addOnPrice += price;
+			});
+
+			// Update add-ons price display
+			let addonsDisplay = ticketCard.querySelector(".addons-price-display");
+			if (addonsDisplay) {
+				addonsDisplay.textContent = `+ $${addOnPrice.toFixed(2)}`;
+			}
+
+			let total = basePrice + seatPrice + addOnPrice;
+
+			// Update ticket price display
+			let ticketPriceDisplay = ticketCard.querySelector(".ticket-price-value");
+			if (ticketPriceDisplay) {
+				ticketPriceDisplay.textContent = `$${total.toFixed(2)}`;
+			}
+
+			// Update hidden input
+			let hiddenInput = ticketCard.querySelector(".ticket-price-hidden");
+			if (hiddenInput) {
+				hiddenInput.value = total;
+			}
+
+			return total;
+		}
+
+		// Update All Tickets Summary
+		function updateSummary() {
+			let summaryList = document.getElementById("ticket-summary-list");
+			let grandTotal = 0;
+
+			summaryList.innerHTML = '<h5 class="text-primary mb-3"><i class="fas fa-list-ol me-2"></i>Ticket Breakdown</h5>';
+
+			document.querySelectorAll(".card.border.mb-4").forEach((ticket, index) => {
+				let price = calculateTicketPrice(ticket);
+				grandTotal += price;
+
+				let seatSelect = ticket.querySelector(".seat-dropdown");
+				let seatPrice = 0;
+				let seatName = "Standard";
+
+				if (seatSelect && seatSelect.selectedOptions.length > 0 && seatSelect.value) {
+					let text = seatSelect.selectedOptions[0].textContent;
+					let priceMatch = text.match(/(\d+(\.\d+)?)\$/);
+					if (priceMatch) seatPrice = parseFloat(priceMatch[1]);
+					seatName = seatSelect.selectedOptions[0].textContent.split('$')[0].trim();
+				}
+
+				let addOnPrice = 0;
+				let addOnsList = [];
+				ticket.querySelectorAll("input[type=checkbox]:checked").forEach(ch => {
+					let addonPrice = parseFloat(ch.getAttribute("data-price")) || 0;
+					addOnPrice += addonPrice;
+					let label = ch.closest('.form-check').querySelector('label');
+					let addonName = label.querySelector('.fw-bold').textContent;
+					addOnsList.push(addonName);
+				});
+
+				let summaryItem = `
+					<div class="card mb-2 border-light">
+						<div class="card-body py-2">
+							<div class="row align-items-center">
+								<div class="col-md-2">
+									<span class="badge bg-primary">Ticket ${index + 1}</span>
+								</div>
+								<div class="col-md-3">
+									<small class="text-muted">Base:</small>
+									<span class="fw-bold">$${basePrice.toFixed(2)}</span>
+								</div>
+								<div class="col-md-3">
+									<small class="text-muted">Seat:</small>
+									<span class="fw-bold text-info">${seatPrice > 0 ? '+ $' + seatPrice.toFixed(2) : 'Standard'}</span>
+								</div>
+								<div class="col-md-2">
+									<small class="text-muted">Add-ons:</small>
+									<span class="fw-bold text-warning">${addOnPrice > 0 ? '+ $' + addOnPrice.toFixed(2) : 'None'}</span>
+								</div>
+								<div class="col-md-2 text-end">
+									<span class="fw-bold fs-5 text-success">$${price.toFixed(2)}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				`;
+
+				summaryList.innerHTML += summaryItem;
+			});
+
+			// Update grand total
+			document.getElementById("grand-total").textContent = `$${grandTotal.toFixed(2)}`;
+		}
+
+		function syncSeats() {
+			let selectedSeats = [];
+
+			document.querySelectorAll(".seat-dropdown").forEach(dd => {
+				if (dd.value) {
+					selectedSeats.push(dd.value);
+				}
+			});
+
+			document.querySelectorAll(".seat-dropdown").forEach(dd => {
+				let currentValue = dd.value;
+				Array.from(dd.options).forEach(option => {
+					if (option.value && selectedSeats.includes(option.value) && option.value !== currentValue) {
+						option.disabled = true;
+						option.classList.add('text-muted');
+					} else {
+						option.disabled = false;
+						option.classList.remove('text-muted');
+					}
+				});
+			});
+		}
+
+		// Event Listeners
+		document.addEventListener('change', function(e) {
+			if (e.target.matches('.seat-dropdown') || e.target.matches('input[type="checkbox"]')) {
+				syncSeats();
+				updateSummary();
+			}
+		});
+
+		// Initial calculation
+		document.addEventListener('DOMContentLoaded', function() {
+			syncSeats();
+			updateSummary();
+
+			// Add input validation styling
+			document.querySelectorAll('input.form-control').forEach(input => {
+				input.addEventListener('blur', function() {
+					if (this.value.trim() === '') {
+						this.classList.add('is-invalid');
+					} else {
+						this.classList.remove('is-invalid');
+					}
+				});
+			});
+		});
+	</script>
+
+	<style>
+		.container {
+			max-width: 1200px;
+			padding: 20px;
+		}
+
+		.card {
+			border-radius: 10px;
+			overflow: hidden;
+		}
+
+		.card-header {
+			border-bottom: none;
+			padding: 15px 20px;
+		}
+
+		.card-body {
+			padding: 20px;
+		}
+
+		.form-control:focus, .form-select:focus {
+			border-color: #0d6efd;
+			box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+		}
+
+		.btn-success {
+			background: linear-gradient(135deg, #28a745, #20c997);
+			border: none;
+			padding: 10px 30px;
+			font-weight: 600;
+			transition: all 0.3s ease;
+		}
+
+			.btn-success:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+			}
+
+		.btn-outline-secondary:hover {
+			background-color: #6c757d;
+			color: white;
+		}
+
+		.ticket-price-value {
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+
+		#grand-total {
+			font-weight: bold;
+			color: #28a745;
+		}
+
+		.seat-price-display, .addons-price-display {
+			font-size: 0.9rem;
+		}
+
+		.form-check-input:checked {
+			background-color: #0d6efd;
+			border-color: #0d6efd;
+		}
+
+		.alert {
+			border-radius: 8px;
+			border: none;
+		}
+
+		option:disabled {
+			color: #ccc;
+			background-color: #f8f9fa;
+		}
+
+		@@media (max-width: 768px) {
+			.display-4 {
+				font-size: 2.5rem;
+			}
+
+			.btn-lg {
+				padding: 12px 24px;
+				font-size: 1rem;
+			}
+		}
+	</style>
+}

@@ -1,0 +1,29 @@
+﻿@model FlightFilterViewModel
+<th>
+    <a asp-action="Index"
+       asp-route-sortBy="@ViewBag.SortField"
+       asp-route-sortOrder="@(Model.SortBy == ViewBag.SortField && Model.SortOrder.ToString() == "ASC" ? "DESC" : "ASC")"
+       asp-route-searchBy="@Model.SearchBy"
+       asp-route-searchString="@Model.SearchString"
+       asp-route-fromDate="@Model.FromDate?.ToString("yyyy-MM-dd")"
+       asp-route-toDate="@Model.ToDate?.ToString("yyyy-MM-dd")"
+       asp-route-pageSize="@Model.PageSize"
+       asp-route-page="1">
+        @ViewBag.DisplayName
+        @if (Model.SortBy == ViewBag.SortField)
+        {
+            @if (Model.SortOrder.ToString() == "ASC")
+            {
+                <i class="fas fa-sort-up"></i>
+            }
+            else
+            {
+                <i class="fas fa-sort-down"></i>
+            }
+        }
+        else
+        {
+            <i class="fas fa-sort"></i>
+        }
+    </a>
+</th>

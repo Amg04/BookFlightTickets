@@ -1,0 +1,145 @@
+﻿@model FlightViewModel
+
+@{
+	ViewData["Title"] = "Create Flight";
+}
+
+<div class="card shadow border-0 my-4">
+	<div class="card-header bg-secondary bg-black ml-0 py-3 ">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h2 class="text-white py-2">Create Flight</h2>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-4">
+		<form asp-action="Create" method="post">
+			@Html.AntiForgeryToken()
+			<div class="row">
+				<div class="col-12">
+					<div class="border p-3">
+
+						<div class="form-floating py-2 col-12">
+							<label asp-for="AirlineId" class="control-label"></label>
+							<select asp-for="AirlineId" id="DrpAirline" asp-items="@ViewBag.Airlines" class="form-select">
+								<option value="">-- Select Airline --</option>
+							</select>
+							<span asp-validation-for="AirlineId" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<label asp-for="AirplaneId" class="control-label"></label>
+							<select asp-for="AirplaneId" id="DrpAirplane" asp-items="@ViewBag.Airplanes" class="form-select"
+									data-airplane-id="@Model?.AirplaneId">
+							</select>
+							<span asp-validation-for="AirplaneId" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<label asp-for="DepartureAirportID" class="form-label"></label>
+							<select asp-for="DepartureAirportID" asp-items="@ViewBag.Airports" class="form-select">
+								<option value="">-- Select Airport --</option>
+							</select>
+							<span asp-validation-for="DepartureAirportID" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<label asp-for="ArrivalAirportID" class="form-label"></label>
+							<select asp-for="ArrivalAirportID" asp-items="@ViewBag.Airports" class="form-select">
+								<option value="">-- Select Airport --</option>
+							</select>
+							<span asp-validation-for="ArrivalAirportID" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<input asp-for="DepartureTime" class="form-control border-0 shadow" />
+							<label asp-for="DepartureTime" class="ms-2"></label>
+							<span asp-validation-for="DepartureTime" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<input asp-for="ArrivalTime" class="form-control border-0 shadow" />
+							<label asp-for="ArrivalTime" class="ms-2"></label>
+							<span asp-validation-for="ArrivalTime" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<input asp-for="BasePrice" class="form-control border-0 shadow" />
+							<label asp-for="BasePrice" class="ms-2"></label>
+							<span asp-validation-for="BasePrice" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<label asp-for="Status" class="form-label">Flight Status</label>
+							<select asp-for="Status" class="form-select">
+								<option value="1">Scheduled</option>
+								<option value="2">Cancelled</option>
+								<option value="3">Delayed</option>
+								<option value="4">Departed</option>
+								<option value="5">Landed</option>
+							</select>
+						</div>
+
+						<div asp-validation-summary="All" class="text-danger"></div>
+						<div class="mt-3">
+							<button type="submit" class="btn btn-success"><i class="bi bi-check-circle me-1"></i>Create</button>
+							<a asp-action="Index" class="btn btn-secondary"><i class="bi bi-arrow-left me-1"></i>Back</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	<script>
+		$(document).ready(function() {
+			var selectedAirlineId = $("#DrpAirline").val();
+			if (selectedAirlineId) {
+				loadAirplanesForAirline(selectedAirlineId);
+			}
+
+			$("#DrpAirline").change(function () {
+				var airlineId = $(this).val();
+				loadAirplanesForAirline(airlineId);
+			});
+
+			function loadAirplanesForAirline(airlineId) {
+				var airplaneSelect = $("#DrpAirplane");
+				airplaneSelect.empty().append("<option value=''>Loading...</option>");
+
+				$.ajax({
+					url: '@Url.Action("GetAirplanesByAirlineId", "Flight")',
+					type: "GET",
+					data: { airlineId: airlineId },
+					success: function (data) {
+						airplaneSelect.empty().append("<option value=''>-- Select Airplane --</option>");
+						if (Array.isArray(data) && data.length > 0) {
+							data.forEach(function(airplane) {
+								airplaneSelect.append(
+									`<option value="${airplane.id}">${airplane.model}</option>`
+								);
+							});
+
+						var selectedAirplaneId = airplaneSelect.data('airplane-id');
+							   if (selectedAirplaneId) {
+								   airplaneSelect.val(selectedAirplaneId);
+							   }
+
+						} else {
+							airplaneSelect.append('<option value="">No airplanes available</option>');
+						}
+					},
+					error: function () {
+						airplaneSelect.html('<option value="">Error loading airplanes</option>');
+					}
+				});
+			}
+		});
+	</script>
+}
+

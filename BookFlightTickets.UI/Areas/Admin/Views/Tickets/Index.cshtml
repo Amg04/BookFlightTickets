@@ -1,0 +1,60 @@
+﻿@model IEnumerable<TicketViewModel>
+
+@{
+    ViewData["Title"] = "Tickets";
+}
+
+<partial name="_notification" />
+@if (Model.Any())
+{
+	<div class="card shadow border-0 mt-4">
+		<div class="card-header bg-secondary bg-black ml-0 py-3">
+			<div class="row">
+				<div class="col-12 text-center">
+					<h2 class="text-white py-2">Tickets List</h2>
+				</div>
+			</div>
+		</div>
+		<div class="card-body p-4">
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped" style="width:100%">
+					<thead>
+						<tr>
+                            <th>Ticket Number</th>
+                            <th>Booking Id</th>
+                            <th>Flight Seat</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Passport Number</th>
+                            <th>Price</th>
+						</tr>
+					</thead>
+					<tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.TicketNumber</td>
+                                <td>@item.BookingID</td>
+                                <td>@($"{item.FlightSeat?.Seat?.Row} {item.FlightSeat?.Seat?.Number}" ?? "N/A")</td>
+                                <td>@item.FirstName</td>
+                                <td>@item.LastName</td>
+                                <td>@item.PassportNumber</td>
+                                <td>@item.TicketPrice</td>
+                            </tr>
+                        }
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+}
+else
+{
+    <div class="alert alert-info text-center" role="alert">
+        <div class="d-flex flex-column align-items-center">
+            <i class="fas fa-inbox fa-3x mb-3 text-muted"></i>
+            <h4 class="alert-heading">No Tickets Found!</h4>
+            <p>There are currently no Tickets available.</p>
+        </div>
+    </div>
+}

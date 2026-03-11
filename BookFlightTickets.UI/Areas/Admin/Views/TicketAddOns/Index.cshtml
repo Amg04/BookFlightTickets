@@ -1,0 +1,50 @@
+﻿@model IEnumerable<TicketAddOnViewModel>
+
+@{
+    ViewData["Title"] = "TicketAddOns";
+}
+
+<partial name="_notification" />
+@if (Model.Any())
+{
+	<div class="card shadow border-0 mt-4">
+		<div class="card-header bg-secondary bg-black ml-0 py-3">
+			<div class="row">
+				<div class="col-12 text-center">
+					<h2 class="text-white py-2">@ViewData["Title"] List</h2>
+				</div>
+			</div>
+		</div>
+		<div class="card-body p-4">
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped" style="width:100%">
+					<thead>
+						<tr>
+							<th>Ticket Id</th>
+							<th>AddOn Id</th>
+						</tr>
+					</thead>
+					<tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.TicketId</td>
+                                <td>@item.AddOnID</td>
+                            </tr>
+                        }
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+}
+else
+{
+    <div class="alert alert-info text-center" role="alert">
+        <div class="d-flex flex-column align-items-center">
+            <i class="fas fa-inbox fa-3x mb-3 text-muted"></i>
+            <h4 class="alert-heading">No TicketAddOns Found!</h4>
+            <p>There are currently no TicketAddOns available.</p>
+        </div>
+    </div>
+}

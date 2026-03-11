@@ -1,0 +1,283 @@
+﻿ @model DashboardViewModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<partial name="_notification" />
+
+<div class="container-fluid mt-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">Admin Dashboard</h1>
+        <div>
+            <a asp-area="Admin" asp-controller="Flight" asp-action="Create" class="btn btn-primary me-2"><i class="bi bi-plus-lg"></i> Add Flight</a>
+            <a asp-area="Admin" asp-controller="Airline" asp-action="Create" class="btn btn-outline-secondary me-2"><i class="bi bi-building"></i> Add Airline</a>
+            <a asp-area="Admin" asp-controller="Airplane" asp-action="Create" class="btn btn-outline-secondary"><i class="bi bi-airplane"></i> Add Airplane</a>
+        </div>
+    </div>
+
+    <!-- Summary Cards - 5 cards in one row -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-2-4 col-sm-6">
+            <div class="card shadow-sm border-primary border-2 h-100">
+                <div class="card-body text-center">
+                    <div class="display-4 text-primary mb-2"><i class="bi bi-airplane-fill"></i></div>
+                    <div class="small text-muted">Total Flights</div>
+                    <div class="h3 fw-bold mb-0" data-card="totalFlights" >@Model.TotalFlights</div>
+                    <div class="mt-2 small">
+                        <i class="bi bi-arrow-up-circle-fill text-success"></i>
+                        <span class="text-muted">Live data</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2-4 col-sm-6">
+            <div class="card shadow-sm border-success border-2 h-100">
+                <div class="card-body text-center">
+                    <div class="display-4 text-success mb-2"><i class="bi bi-building-fill"></i></div>
+                    <div class="small text-muted">Total Airlines</div>
+                    <div class="h3 fw-bold mb-0" data-card="totalAirlines" >@Model.TotalAirlines</div>
+                    <div class="mt-2 small">
+                        <i class="bi bi-building text-muted"></i>
+                        <span class="text-muted">Active</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2-4 col-sm-6">
+            <div class="card shadow-sm border-warning border-2 h-100">
+                <div class="card-body text-center">
+                    <div class="display-4 text-warning mb-2"><i class="bi bi-airplane-engines-fill"></i></div>
+                    <div class="small text-muted">Total Airplanes</div>
+                    <div class="h3 fw-bold mb-0" data-card="totalAirplanes" >@Model.TotalAirplanes</div>
+                    <div class="mt-2 small">
+                        <i class="bi bi-tools text-muted"></i>
+                        <span class="text-muted">In fleet</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2-4 col-sm-6">
+            <div class="card shadow-sm border-info border-2 h-100">
+                <div class="card-body text-center">
+                    <div class="display-4 text-info mb-2"><i class="bi bi-ticket-perforated-fill"></i></div>
+                    <div class="small text-muted">Total Bookings</div>
+                    <div class="h3 fw-bold mb-0" data-card="totalBookings" >@Model.TotalBookings</div>
+                    <div class="mt-2 small">
+                        <i class="bi bi-calendar-check text-muted"></i>
+                        <span class="text-muted">All time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2-4 col-sm-6">
+            <div class="card shadow-sm border-danger border-2 h-100">
+                <div class="card-body text-center">
+                    <div class="display-4 text-danger mb-2"><i class="bi bi-people-fill"></i></div>
+                    <div class="small text-muted">Total Users</div>
+                    <div class="h3 fw-bold mb-0" data-card="totalUsers" >@Model.TotalUsers</div>
+                    <div class="mt-2 small">
+                        <i class="bi bi-person-check text-muted"></i>
+                        <span class="text-muted">Registered</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts + Recent -->
+    <div class="row">
+        <div class="col-lg-8 mb-4">
+            <div class="card p-3 shadow-sm">
+                <h5 class="card-title">Flights by Airline</h5>
+                <canvas id="flightsByAirlineChart" height="140"></canvas>
+            </div>
+
+            <div class="card mt-3 p-3 shadow-sm">
+                <h5 class="card-title">Monthly Flights (Last 6 months)</h5>
+                <canvas id="monthlyFlightsChart" height="140"></canvas>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card p-3 shadow-sm mb-3">
+                <h5 class="card-title">Quick Actions</h5>
+                <div class="d-grid gap-2">
+                    <a asp-area="Admin" asp-controller="Flight" asp-action="Create" class="btn btn-primary">Add Flight</a>
+                    <a asp-area="Admin" asp-controller="Flight" asp-action="Search" class="btn btn-outline-secondary">Search Flights</a>
+                    <a asp-area="Admin" asp-controller="Airline" asp-action="Index" class="btn btn-outline-secondary">Manage Airlines</a>
+                    <a asp-area="Admin" asp-controller="Airplane" asp-action="Index" class="btn btn-outline-secondary">Manage Airplanes</a>
+                </div>
+            </div>
+
+            <div class="card p-3 shadow-sm">
+                <h5 class="card-title">Recent Flights</h5>
+                <ul class="list-group list-group-flush" id="recentFlightsList">
+                    @if (Model.RecentFlights != null && Model.RecentFlights.Any())
+                    {
+                        foreach (var f in Model.RecentFlights.Take(6))
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="fw-bold">@f.Airline?.Name - @f.Airplane?.Model</div>
+                                    <div class="small text-muted">@f.DepartureAirport?.Name → @f.ArrivalAirport?.Name</div>
+                                </div>
+                                <div class="text-end small">@f.DepartureTime.ToString("g")</div>
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        <li class="list-group-item text-center text-muted">No recent flights</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer small summary table -->
+    <div class="card p-3 shadow-sm mt-3">
+        <h5 class="card-title">Top Airlines by Flights</h5>
+        <div class="table-responsive">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Airline</th>
+                        <th>Flights</th>
+                        <th>Share</th>
+                    </tr>
+                </thead>
+                <tbody id="airlineTableBody">
+                    @if (Model.FlightsByAirline != null)
+                    {
+                        foreach (var kv in Model.FlightsByAirline)
+                        {
+                            <tr>
+                                <td>@kv.Key</td>
+                                <td>@kv.Value</td>
+                                <td>@(Model.TotalFlights == 0 ? "0%" : String.Format("{0:P1}", kv.Value / (double)Model.TotalFlights))</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+    <script>
+        let flightsByAirlineChart;
+        let monthlyFlightsChart;
+
+        function initCharts(data) {
+            const ctx1 = document.getElementById('flightsByAirlineChart').getContext('2d');
+            if (flightsByAirlineChart) flightsByAirlineChart.destroy();
+            flightsByAirlineChart = new Chart(ctx1, {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(data.flightsByAirline),
+                    datasets: [{ data: Object.values(data.flightsByAirline), hoverOffset: 6 }]
+                },
+                options: { responsive: true }
+            });
+
+            const ctx2 = document.getElementById('monthlyFlightsChart').getContext('2d');
+            if (monthlyFlightsChart) monthlyFlightsChart.destroy();
+            monthlyFlightsChart = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: data.monthlyLabels,
+                    datasets: [{ label: 'Flights', data: data.monthlyFlights }]
+                },
+                options: { responsive: true }
+            });
+        }
+
+        function updateCards(data) {
+            document.querySelectorAll('[data-card]').forEach(el => {
+                const card = el.getAttribute('data-card');
+                if (data[card] !== undefined) {
+                    el.innerText = data[card];
+                }
+            });
+        }
+
+        function updateRecentFlights(flights) {
+            const list = document.getElementById('recentFlightsList');
+            list.innerHTML = '';
+            if (flights && flights.length) {
+                flights.slice(0,6).forEach(f => {
+                    const li = document.createElement('li');
+                    li.className = 'list-group-item d-flex justify-content-between align-items-start';
+                    li.innerHTML = `
+                        <div>
+                            <div class="fw-bold">${f.airline?.name || ''} - ${f.airplane?.model || ''}</div>
+                            <div class="small text-muted">${f.departureAirport?.name || ''} → ${f.arrivalAirport?.name || ''}</div>
+                        </div>
+                        <div class="text-end small">${new Date(f.departureTime).toLocaleString()}</div>
+                    `;
+                    list.appendChild(li);
+                });
+            } else {
+                list.innerHTML = '<li class="list-group-item text-center text-muted">No recent flights</li>';
+            }
+        }
+
+        function updateAirlineTable(flightsByAirline, totalFlights) {
+            const tbody = document.getElementById('airlineTableBody');
+            tbody.innerHTML = '';
+            if (flightsByAirline) {
+                for (const [airline, count] of Object.entries(flightsByAirline)) {
+                    const tr = document.createElement('tr');
+                    const share = totalFlights === 0 ? '0%' : ((count / totalFlights) * 100).toFixed(1) + '%';
+                    tr.innerHTML = `<td>${airline}</td><td>${count}</td><td>${share}</td>`;
+                    tbody.appendChild(tr);
+                }
+            }
+        }
+
+        async function refreshDashboard() {
+            try {
+                const response = await fetch('/Admin/Dashboard/GetDashboardData');
+                const data = await response.json();
+                if (data.error) return;
+                updateCards(data);
+                initCharts(data);
+                updateRecentFlights(data.recentFlights);
+                updateAirlineTable(data.flightsByAirline, data.totalFlights);
+            } catch (err) {
+                console.error('Refresh failed', err);
+            }
+        }
+
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/dashboardHub")
+            .withAutomaticReconnect()
+            .build();
+
+        connection.on("ReceiveUpdate", () => {
+            console.log("Update received, refreshing...");
+            refreshDashboard();
+        });
+
+        connection.start().catch(err => console.error("SignalR connection error", err));
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialData = {
+                flightsByAirline: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.FlightsByAirline ?? new Dictionary<string, int>())),
+                monthlyLabels: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.MonthlyLabels ?? new List<string>())),
+                monthlyFlights: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.MonthlyFlights ?? new List<int>())),
+                recentFlights: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.RecentFlights ?? new List<FlightViewModel>()))
+            };
+            initCharts(initialData);
+        });
+    </script>
+}

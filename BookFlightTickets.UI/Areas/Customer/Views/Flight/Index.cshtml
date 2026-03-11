@@ -1,0 +1,673 @@
+﻿@model IPagedList<FlightViewModel>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Web.Common
+
+@{
+	ViewData["Title"] = "Flights";
+	var sortableHeaders = ViewBag.SortableHeaders as List<SortableHeader> ?? new List<SortableHeader>();
+	var filterModel = ViewBag.FilterModel as FlightFilterViewModel ?? new FlightFilterViewModel();
+	var searchFields = ViewBag.SearchFields as Dictionary<string, string> ?? new Dictionary<string, string>();
+	var currentSearchBy = ViewBag.CurrentSearchBy as string;
+	var currentSearchString = ViewBag.CurrentSearchString as string;
+	var currentSortBy = ViewBag.CurrentSortBy as string;
+	var currentSortOrder = ViewBag.CurrentSortOrder as string;
+	var currentPage = ViewBag.CurrentPage as int? ?? 1;
+	var totalPages = ViewBag.TotalPages as int? ?? 1;
+	var pageSize = ViewBag.PageSize as int? ?? 10;
+	var totalItems = ViewBag.TotalItems as int? ?? 0;
+}
+
+<partial name="_notification" />
+<h2 class="mb-4 text-primary">
+	<i class="fas fa-plane me-2"></i>Available Flights
+</h2>
+
+<div class="card shadow-sm mb-4">
+	<div class="card-header bg-primary text-white">
+		<h5 class="mb-0">
+			<i class="fas fa-search me-2"></i>Search & Filter Flights
+		</h5>
+	</div>
+	<div class="card-body">
+		<form method="get" asp-area="Customer" asp-controller="Flight" asp-action="Index" class="mb-0">
+			<div class="row g-3">
+
+				<!-- From Date -->
+				<div class="col-md-3">
+					<label class="form-label fw-bold text-primary">
+						<i class="fas fa-calendar-alt me-1"></i>From Date
+					</label>
+					<div class="input-group">
+						<span class="input-group-text">
+							<i class="fas fa-calendar-plus"></i>
+						</span>
+						<input type="date"
+							   name="FromDate"
+							   value="@(filterModel.FromDate?.ToString("yyyy-MM-dd"))"
+							   class="form-control"
+							   title="Select departure date range start">
+					</div>
+					<small class="form-text text-muted">Departure date start</small>
+				</div>
+
+				<!-- To Date -->
+				<div class="col-md-3">
+					<label class="form-label fw-bold text-primary">
+						<i class="fas fa-calendar-alt me-1"></i>To Date
+					</label>
+					<div class="input-group">
+						<span class="input-group-text">
+							<i class="fas fa-calendar-minus"></i>
+						</span>
+						<input type="date"
+							   name="ToDate"
+							   value="@(filterModel.ToDate?.ToString("yyyy-MM-dd"))"
+							   class="form-control"
+							   title="Select departure date range end">
+					</div>
+					<small class="form-text text-muted">Departure date end</small>
+				</div>
+
+				<!-- Search By -->
+				<div class="col-md-3">
+					<label class="form-label fw-bold text-primary">
+						<i class="fas fa-filter me-1"></i>Search By
+					</label>
+					<div class="input-group">
+						<span class="input-group-text">
+							<i class="fas fa-list"></i>
+						</span>
+						<select name="SearchBy" class="form-select" id="searchBySelect">
+							<option value="">-- Select Field --</option>
+							@foreach (var field in searchFields)
+							{
+								<option value="@field.Key" selected="@(currentSearchBy == field.Key)">
+									@field.Value
+								</option>
+							}
+						</select>
+					</div>
+				</div>
+
+				<!-- Search String -->
+				<div class="col-md-3">
+					<label class="form-label fw-bold text-primary">
+						<i class="fas fa-search me-1"></i>Search Text
+					</label>
+					<div class="input-group">
+						<span class="input-group-text">
+							<i class="fas fa-keyboard"></i>
+						</span>
+						<input type="text"
+							   name="SearchString"
+							   value="@currentSearchString"
+							   class="form-control"
+							   id="searchInput"
+							   placeholder="Enter search text..."
+							   title="Enter text to search in selected field">
+						<button class="btn btn-outline-secondary" type="button" id="clearSearch">
+							<i class="fas fa-times"></i>
+						</button>
+					</div>
+					<small class="form-text text-muted" id="searchHint"></small>
+				</div>
+
+				<!-- Page Size -->
+				<div class="col-md-2">
+					<label class="form-label fw-bold text-primary">
+						<i class="fas fa-file-alt me-1"></i>Items Per Page
+					</label>
+					<div class="input-group">
+						<span class="input-group-text">
+							<i class="fas fa-bars"></i>
+						</span>
+						<select name="PageSize" class="form-select" onchange="this.form.submit()">
+							<option value="5" selected="@(pageSize == 5)">5</option>
+							<option value="10" selected="@(pageSize == 10)">10</option>
+							<option value="15" selected="@(pageSize == 15)">15</option>
+							<option value="20" selected="@(pageSize == 20)">20</option>
+							<option value="50" selected="@(pageSize == 50)">50</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-md-3"> </div>
+				<div class="col-md-3"> </div>
+
+				<!-- Buttons -->
+				<div class="col-md-4 d-flex align-items-end">
+					<div class="btn-group w-100" role="group">
+						<button type="submit" class="btn btn-primary flex-fill">
+							<i class="fas fa-search me-2"></i>Search
+						</button>
+						<a asp-action="Index" class="btn btn-outline-secondary flex-fill">
+							<i class="fas fa-redo me-2"></i>Reset
+						</a>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+@if (Model != null && Model.Any())
+{
+	<!-- Results Summary -->
+	<div class="alert alert-info d-flex justify-content-between align-items-center mb-4">
+		<div>
+			<i class="fas fa-info-circle me-2"></i>
+			<strong>@totalItems flights found</strong>
+			<span class="ms-2 text-muted">
+				(Showing @((currentPage - 1) * pageSize + 1) to
+				@Math.Min(currentPage * pageSize, totalItems))
+			</span>
+		</div>
+		<div>
+			<span class="badge bg-primary me-2">
+				<i class="fas fa-sort me-1"></i>Sorted by: @ViewBag.CurrentSortBy
+			</span>
+			<span class="badge bg-secondary">
+				<i class="fas @(currentSortOrder == "ASC" ? "fa-sort-up" : "fa-sort-down") me-1"></i>
+				@currentSortOrder
+			</span>
+		</div>
+	</div>
+
+	<!-- Flights Table -->
+	<div class="table-responsive">
+		<table class="table table-hover table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					@foreach (var header in sortableHeaders)
+					{
+						<partial name="_SortableHeader"
+								 model="@filterModel"
+								 view-data="@(new ViewDataDictionary(ViewData) {
+                                         { "SortField", header.SortField },
+                                         { "DisplayName", header.DisplayName }
+                                     })" />
+					}
+					<th class="text-center">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var flight in Model)
+				{
+					<tr class="align-middle">
+						<td>
+							<div class="d-flex align-items-center">
+								<div class="bg-info rounded-circle p-2 me-2">
+									<i class="fas fa-plane text-white"></i>
+								</div>
+								<div>
+									<strong>@flight.Airline?.Name</strong>
+									@if (!string.IsNullOrEmpty(flight.Airline?.Code))
+									{
+										<small class="text-muted d-block">@flight.Airline.Code</small>
+									}
+								</div>
+							</div>
+						</td>
+
+						<td>
+							<div>
+								<strong>@flight.DepartureAirport?.Name</strong>
+								@if (!string.IsNullOrEmpty(flight.DepartureAirport?.Code))
+								{
+									<small class="text-muted d-block">(@flight.DepartureAirport.Code)</small>
+								}
+							</div>
+						</td>
+
+						<td>
+							<div>
+								<strong>@flight.ArrivalAirport?.Name</strong>
+								@if (!string.IsNullOrEmpty(flight.ArrivalAirport?.Code))
+								{
+									<small class="text-muted d-block">(@flight.ArrivalAirport.Code)</small>
+								}
+							</div>
+						</td>
+
+						<td>
+							<div class="text-center">
+								<div class="fw-bold">@flight.DepartureTime.ToString("ddd, dd MMM")</div>
+								<div class="text-success">
+									<i class="fas fa-clock me-1"></i>
+									@flight.DepartureTime.ToString("HH:mm")
+								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="text-center">
+								<div class="fw-bold">@flight.ArrivalTime.ToString("ddd, dd MMM")</div>
+								<div class="text-info">
+									<i class="fas fa-clock me-1"></i>
+									@flight.ArrivalTime.ToString("HH:mm")
+								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="text-center">
+								<span class="badge bg-success fs-6">
+									@flight.BasePrice.ToString("C")
+								</span>
+								<small class="text-muted d-block">per seat</small>
+							</div>
+						</td>
+
+						<td>
+							<div class="text-center">
+								@if (flight.AvailableSeatsCount > 5)
+								{
+									<span class="badge bg-success fs-6">
+										<i class="fas fa-chair me-1"></i>
+										@flight.AvailableSeatsCount
+									</span>
+								}
+								else if (flight.AvailableSeatsCount > 0)
+								{
+									<span class="badge bg-warning text-dark fs-6">
+										<i class="fas fa-chair me-1"></i>
+										@flight.AvailableSeatsCount
+									</span>
+									<small class="text-danger d-block">Few seats left!</small>
+								}
+								else
+								{
+									<span class="badge bg-danger fs-6">
+										<i class="fas fa-times me-1"></i>
+										Sold Out
+									</span>
+								}
+							</div>
+						</td>
+
+						<td>
+							<div class="d-flex gap-2 justify-content-center">
+								<a class="btn btn-outline-primary btn-sm"
+								   asp-area="Customer"
+								   asp-controller="Flight"
+								   asp-action="Details"
+								   asp-route-id="@flight.Id"
+								   title="View flight details">
+									<i class="fas fa-info-circle me-1"></i>Details
+								</a>
+
+								<button type="button"
+										class="btn btn-success btn-sm book-btn"
+										data-bs-toggle="modal"
+										data-bs-target="#ticketModal"
+										data-flightid="@flight.Id"
+								@(flight.AvailableSeatsCount == 0 ? "disabled" : "")
+										title="Book this flight">
+									<i class="fas fa-ticket-alt me-1"></i>Book
+								</button>
+							</div>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+
+
+	<!-- Pagination -->
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-auto">
+				@Html.PagedListPager(
+								Model,
+								page =>
+								{
+									var queryParams = new Dictionary<string, string>
+			{
+			{ "Page", page.ToString() },
+			{ "SearchBy", currentSearchBy },
+			{ "SearchString", currentSearchString },
+			{ "SortBy", currentSortBy },
+			{ "SortOrder", currentSortOrder },
+			{ "PageSize", pageSize.ToString() }
+			};
+
+									if (!string.IsNullOrEmpty(ViewBag.FromDate))
+									{
+										queryParams["FromDate"] = ViewBag.FromDate;
+									}
+									if (!string.IsNullOrEmpty(ViewBag.ToDate))
+									{
+										queryParams["ToDate"] = ViewBag.ToDate;
+									}
+
+									var queryString = string.Join("&", queryParams
+									.Where(x => !string.IsNullOrEmpty(x.Value))
+									.Select(x => $"{x.Key}={Uri.EscapeDataString(x.Value)}"));
+
+									return $"{Url.Action("Index")}?{queryString}";
+								},
+								new PagedListRenderOptions
+			{
+				LiElementClasses = new[] { "page-item" },
+				PageClasses = new[] { "page-link" },
+				DisplayLinkToFirstPage = PagedListDisplayMode.IfNeeded,
+				DisplayLinkToLastPage = PagedListDisplayMode.IfNeeded,
+				DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+				DisplayLinkToNextPage = PagedListDisplayMode.Always,
+				MaximumPageNumbersToDisplay = 5,
+				DisplayEllipsesWhenNotShowingAllPageNumbers = true,
+				ContainerDivClasses = new[] { "pagination", "pagination-sm" }
+			})
+			</div>
+		</div>
+		<div class="row justify-content-center mb-3">
+			<div class="col-auto">
+				<div class="input-group">
+					<span class="input-group-text">Go to page</span>
+					<input type="number"
+						   class="form-control"
+						   id="gotoPage"
+						   min="1"
+						   max="@totalPages"
+						   style="width: 80px;">
+					<button class="btn btn-outline-primary" type="button" id="gotoButton">
+						<i class="fas fa-arrow-right"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row justify-content-center mt-1">
+			<div class="col-auto">
+				<div class="card bg-light">
+					<div class="card-body py-2">
+						<span class="text-muted">
+							<i class="fas fa-chart-bar me-2"></i>
+							Page @currentPage of @totalPages
+							<span class="mx-2">•</span>
+							@totalItems total flights
+							<span class="mx-2">•</span>
+							@pageSize per page
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+}
+else
+{
+	<!-- No Results Message -->
+	<div class="text-center py-5">
+		<div class="mb-4">
+			<i class="fas fa-plane-slash text-muted" style="font-size: 4rem;"></i>
+		</div>
+		<h3 class="text-muted mb-3">No Flights Found</h3>
+		<p class="text-muted mb-4">
+			No flights match your search criteria. Try adjusting your filters or search terms.
+		</p>
+		<div class="d-flex justify-content-center gap-3">
+			<a asp-action="Index" class="btn btn-primary">
+				<i class="fas fa-redo me-2"></i>Reset Filters
+			</a>
+			<button type="button" class="btn btn-outline-secondary" id="suggestFlights">
+				<i class="fas fa-lightbulb me-2"></i>Get Suggestions
+			</button>
+		</div>
+	</div>
+}
+
+<!-- Booking Modal -->
+<div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content border-0 shadow-lg">
+			<div class="modal-header bg-success text-white">
+				<h5 class="modal-title" id="ticketModalLabel">
+					<i class="fas fa-ticket-alt me-2"></i>Book Flight Tickets
+				</h5>
+				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form method="get" asp-area="Customer" asp-controller="Book" asp-action="Book" id="ticketForm">
+				<div class="modal-body">
+					<input type="hidden" name="flightId" id="modalFlightId" value="" />
+
+					<div class="alert alert-info mb-3">
+						<i class="fas fa-info-circle me-2"></i>
+						Please select the number of tickets you wish to book.
+					</div>
+
+					<div class="mb-4">
+						<label for="ticketCount" class="form-label fw-bold">
+							<i class="fas fa-users me-1"></i>Number of Tickets
+						</label>
+						<div class="input-group">
+							<button class="btn btn-outline-secondary" type="button" id="decrementTickets">
+								<i class="fas fa-minus"></i>
+							</button>
+							<input type="number"
+								   name="ticketCount"
+								   id="ticketCount"
+								   min="1"
+								   max="10"
+								   value="1"
+								   class="form-control text-center"
+								   required
+								   title="Select number of tickets (1-10)">
+							<button class="btn btn-outline-secondary" type="button" id="incrementTickets">
+								<i class="fas fa-plus"></i>
+							</button>
+						</div>
+						<small class="text-muted">
+							<i class="fas fa-exclamation-circle me-1"></i>
+							Maximum 10 tickets per booking
+						</small>
+					</div>
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+						<i class="fas fa-times me-2"></i>Cancel
+					</button>
+					<button type="submit" class="btn btn-success">
+						<i class="fas fa-check me-2"></i>Continue to Booking
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var ticketModal = document.getElementById('ticketModal');
+			if (ticketModal) {
+				ticketModal.addEventListener('show.bs.modal', function (event) {
+					var button = event.relatedTarget;
+					var flightId = button.getAttribute('data-flightid');
+					var inputFlightId = ticketModal.querySelector('#modalFlightId');
+					inputFlightId.value = flightId;
+				});
+			}
+
+			var searchBySelect = document.getElementById('searchBySelect');
+			var searchInput = document.getElementById('searchInput');
+			var searchHint = document.getElementById('searchHint');
+			var clearSearch = document.getElementById('clearSearch');
+
+			if (searchBySelect && searchInput) {
+				updateSearchHint();
+
+				searchBySelect.addEventListener('change', function() {
+					updateSearchHint();
+				});
+
+				clearSearch.addEventListener('click', function() {
+					searchInput.value = '';
+					searchInput.focus();
+				});
+			}
+
+			var gotoPage = document.getElementById('gotoPage');
+			var gotoButton = document.getElementById('gotoButton');
+			if (gotoPage && gotoButton) {
+				gotoButton.addEventListener('click', function() {
+					var page = parseInt(gotoPage.value);
+					if (page >= 1 && page <= @totalPages) {
+						var currentUrl = window.location.href;
+						var newUrl = currentUrl.replace(/([?&])Page=\d+/, '$1Page=' + page);
+						if (!newUrl.includes('Page=')) {
+							newUrl += (currentUrl.includes('?') ? '&' : '?') + 'Page=' + page;
+						}
+						window.location.href = newUrl;
+					} else {
+						alert('Please enter a valid page number between 1 and @totalPages');
+					}
+				});
+
+				gotoPage.addEventListener('keypress', function(e) {
+					if (e.key === 'Enter') {
+						gotoButton.click();
+					}
+				});
+			}
+
+			var ticketCount = document.getElementById('ticketCount');
+			var decrementBtn = document.getElementById('decrementTickets');
+			var incrementBtn = document.getElementById('incrementTickets');
+
+			if (ticketCount && decrementBtn && incrementBtn) {
+				decrementBtn.addEventListener('click', function() {
+					if (ticketCount.value > 1) {
+						ticketCount.value = parseInt(ticketCount.value) - 1;
+					}
+				});
+
+				incrementBtn.addEventListener('click', function() {
+					if (ticketCount.value < 10) {
+						ticketCount.value = parseInt(ticketCount.value) + 1;
+					}
+				});
+			}
+
+			function updateSearchHint() {
+				if (!searchHint || !searchBySelect) return;
+
+				var selectedOption = searchBySelect.options[searchBySelect.selectedIndex];
+				var hint = '';
+
+				switch(selectedOption.value) {
+					case 'FromAirport':
+						hint = 'Enter departure airport name (e.g., Cairo, Jeddah)';
+						break;
+					case 'ToAirport':
+						hint = 'Enter arrival airport name (e.g., Dubai, Riyadh)';
+						break;
+					case 'Airline.Name':
+						hint = 'Enter airline name (e.g., EgyptAir, Emirates)';
+						break;
+					case 'BasePrice':
+						hint = 'Enter maximum price (e.g., 500, 1000)';
+						break;
+					case 'AvailableSeatsCount':
+						hint = 'Enter minimum number of seats (e.g., 1, 5)';
+						break;
+					default:
+						hint = 'Search across all flight details';
+				}
+
+				searchHint.textContent = hint;
+			}
+
+			updateSearchHint();
+
+			var tableRows = document.querySelectorAll('tbody tr');
+			tableRows.forEach(function(row) {
+				row.addEventListener('mouseenter', function() {
+					this.style.transform = 'translateY(-2px)';
+					this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+					this.style.transition = 'all 0.3s ease';
+				});
+
+				row.addEventListener('mouseleave', function() {
+					this.style.transform = 'translateY(0)';
+					this.style.boxShadow = 'none';
+				});
+			});
+
+			if (searchInput && !searchInput.value) {
+				searchInput.focus();
+			}
+		});
+	</script>
+	<style>
+		.table-hover tbody tr:hover {
+			background-color: rgba(13, 110, 253, 0.05);
+		}
+
+		.badge {
+			font-size: 0.85em;
+			padding: 0.35em 0.65em;
+		}
+
+		.form-control:focus, .form-select:focus {
+			border-color: #86b7fe;
+			box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+		}
+
+		.btn {
+			transition: all 0.2s ease-in-out;
+		}
+
+			.btn:hover {
+				transform: translateY(-1px);
+			}
+
+		.card {
+			transition: transform 0.2s ease-in-out;
+		}
+
+			.card:hover {
+				transform: translateY(-2px);
+			}
+
+		.modal-content {
+			border-radius: 15px;
+			overflow: hidden;
+		}
+
+		.page-item.active .page-link {
+			background-color: #0d6efd;
+			border-color: #0d6efd;
+		}
+
+		.page-link {
+			color: #0d6efd;
+		}
+
+			.page-link:hover {
+				color: #0a58ca;
+				background-color: #e9ecef;
+			}
+
+		@@media (max-width: 768px) {
+			.table-responsive {
+				font-size: 0.9rem;
+			}
+
+			.btn-group {
+				flex-wrap: wrap;
+			}
+
+				.btn-group .btn {
+					flex: 1 0 45%;
+					margin-bottom: 5px;
+				}
+		}
+	</style>
+}

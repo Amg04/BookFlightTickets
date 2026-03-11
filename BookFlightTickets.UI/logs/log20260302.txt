@@ -1,0 +1,447 @@
+2026-03-02 17:24:18.472 +02:00 [INF] Executed DbCommand (217ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [BookFilghts];
+2026-03-02 17:24:18.581 +02:00 [INF] Executed DbCommand (76ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [BookFilghts] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2026-03-02 17:24:18.599 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 17:24:18.648 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2026-03-02 17:24:18.650 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 17:24:18.661 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 17:24:18.670 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-02 17:24:18.681 +02:00 [INF] Applying migration '20260302151438_InitialCreate'.
+2026-03-02 17:24:18.788 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF SCHEMA_ID(N'Security') IS NULL EXEC(N'CREATE SCHEMA [Security];');
+2026-03-02 17:24:18.790 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AddOns] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Price] smallint NOT NULL,
+    CONSTRAINT [PK_AddOns] PRIMARY KEY ([Id])
+);
+2026-03-02 17:24:18.791 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airlines] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Code] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Airlines] PRIMARY KEY ([Id])
+);
+2026-03-02 17:24:18.792 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airports] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Code] nvarchar(50) NOT NULL,
+    [City] nvarchar(100) NULL,
+    [Country] nvarchar(100) NULL,
+    CONSTRAINT [PK_Airports] PRIMARY KEY ([Id])
+);
+2026-03-02 17:24:18.794 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[Roles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+2026-03-02 17:24:18.797 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[Users] (
+    [Id] nvarchar(450) NOT NULL,
+    [FirstName] nvarchar(100) NOT NULL,
+    [LastName] nvarchar(100) NULL,
+    [PassportNumber] nvarchar(100) NULL,
+    [Role] nvarchar(500) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2026-03-02 17:24:18.800 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airplanes] (
+    [Id] int NOT NULL IDENTITY,
+    [AirlineId] int NOT NULL,
+    [Model] nvarchar(100) NOT NULL,
+    [SeatCapacity] smallint NOT NULL,
+    CONSTRAINT [PK_Airplanes] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Airplanes_Airlines_AirlineId] FOREIGN KEY ([AirlineId]) REFERENCES [Airlines] ([Id]) ON DELETE NO ACTION
+);
+2026-03-02 17:24:18.802 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[RoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_RoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RoleClaims_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Security].[Roles] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 17:24:18.805 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_UserClaims_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 17:24:18.808 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_UserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_UserLogins_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 17:24:18.812 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Security].[Roles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserRoles_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 17:24:18.815 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_UserTokens_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 17:24:18.819 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Flights] (
+    [Id] int NOT NULL IDENTITY,
+    [AirlineId] int NOT NULL,
+    [AirplaneId] int NOT NULL,
+    [DepartureAirportID] int NOT NULL,
+    [ArrivalAirportID] int NOT NULL,
+    [DepartureTime] datetime2 NOT NULL,
+    [ArrivalTime] datetime2 NOT NULL,
+    [BasePrice] decimal(9,2) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Flights] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Flights_Airlines_AirlineId] FOREIGN KEY ([AirlineId]) REFERENCES [Airlines] ([Id]),
+    CONSTRAINT [FK_Flights_Airplanes_AirplaneId] FOREIGN KEY ([AirplaneId]) REFERENCES [Airplanes] ([Id]),
+    CONSTRAINT [FK_Flights_Airports_ArrivalAirportID] FOREIGN KEY ([ArrivalAirportID]) REFERENCES [Airports] ([Id]),
+    CONSTRAINT [FK_Flights_Airports_DepartureAirportID] FOREIGN KEY ([DepartureAirportID]) REFERENCES [Airports] ([Id])
+);
+2026-03-02 17:24:18.821 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Seats] (
+    [Id] int NOT NULL IDENTITY,
+    [AirplaneId] int NOT NULL,
+    [Row] nvarchar(100) NOT NULL,
+    [Number] smallint NOT NULL,
+    [Class] int NOT NULL,
+    [Price] int NOT NULL,
+    CONSTRAINT [PK_Seats] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Seats_Airplanes_AirplaneId] FOREIGN KEY ([AirplaneId]) REFERENCES [Airplanes] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 17:24:18.824 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [FlightId] int NOT NULL,
+    [BookingDate] datetime2 NOT NULL,
+    [PNR] nvarchar(50) NOT NULL,
+    [TotalPrice] decimal(9,2) NOT NULL,
+    [Status] int NOT NULL,
+    [LastUpdated] datetime2 NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Bookings_Flights_FlightId] FOREIGN KEY ([FlightId]) REFERENCES [Flights] ([Id]),
+    CONSTRAINT [FK_Bookings_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id])
+);
+2026-03-02 17:24:18.827 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [FlightSeats] (
+    [Id] int NOT NULL IDENTITY,
+    [FlightId] int NOT NULL,
+    [SeatId] int NOT NULL,
+    [TicketId] int NULL,
+    [IsAvailable] bit NOT NULL,
+    CONSTRAINT [PK_FlightSeats] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_FlightSeats_Flights_FlightId] FOREIGN KEY ([FlightId]) REFERENCES [Flights] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_FlightSeats_Seats_SeatId] FOREIGN KEY ([SeatId]) REFERENCES [Seats] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 17:24:18.829 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Payments] (
+    [Id] int NOT NULL IDENTITY,
+    [BookingID] int NOT NULL,
+    [SessionId] nvarchar(200) NULL,
+    [PaymentIntentId] nvarchar(200) NULL,
+    [Amount] decimal(9,2) NOT NULL,
+    [PaymentDate] datetime2 NOT NULL,
+    [PaymentStatus] int NOT NULL,
+    CONSTRAINT [PK_Payments] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Payments_Bookings_BookingID] FOREIGN KEY ([BookingID]) REFERENCES [Bookings] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 17:24:18.833 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Tickets] (
+    [Id] int NOT NULL IDENTITY,
+    [BookingID] int NOT NULL,
+    [TicketNumber] nvarchar(50) NOT NULL,
+    [FlightSeatId] int NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NULL,
+    [PassportNumber] nvarchar(max) NOT NULL,
+    [TicketPrice] decimal(9,2) NOT NULL,
+    [SeatId] int NULL,
+    CONSTRAINT [PK_Tickets] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Tickets_Bookings_BookingID] FOREIGN KEY ([BookingID]) REFERENCES [Bookings] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Tickets_FlightSeats_FlightSeatId] FOREIGN KEY ([FlightSeatId]) REFERENCES [FlightSeats] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Tickets_Seats_SeatId] FOREIGN KEY ([SeatId]) REFERENCES [Seats] ([Id])
+);
+2026-03-02 17:24:18.836 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TicketAddOns] (
+    [Id] int NOT NULL IDENTITY,
+    [TicketId] int NOT NULL,
+    [AddOnID] int NOT NULL,
+    CONSTRAINT [PK_TicketAddOns] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_TicketAddOns_AddOns_AddOnID] FOREIGN KEY ([AddOnID]) REFERENCES [AddOns] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_TicketAddOns_Tickets_TicketId] FOREIGN KEY ([TicketId]) REFERENCES [Tickets] ([Id]) ON DELETE CASCADE
+);
+2026-03-02 17:24:18.866 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'Price') AND [object_id] = OBJECT_ID(N'[AddOns]'))
+    SET IDENTITY_INSERT [AddOns] ON;
+INSERT INTO [AddOns] ([Id], [Name], [Price])
+VALUES (1, N'Extra Baggage', CAST(150 AS smallint)),
+(3, N'Premium Meal', CAST(100 AS smallint)),
+(4, N'Priority Boarding', CAST(50 AS smallint));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'Price') AND [object_id] = OBJECT_ID(N'[AddOns]'))
+    SET IDENTITY_INSERT [AddOns] OFF;
+2026-03-02 17:24:18.882 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Code', N'Name') AND [object_id] = OBJECT_ID(N'[Airlines]'))
+    SET IDENTITY_INSERT [Airlines] ON;
+INSERT INTO [Airlines] ([Id], [Code], [Name])
+VALUES (1, N'EGY', N'EgyptAir'),
+(2, N'EMR', N'Emirates'),
+(3, N'QTR', N'Qatar Airways'),
+(4, N'KSA', N'KSA');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Code', N'Name') AND [object_id] = OBJECT_ID(N'[Airlines]'))
+    SET IDENTITY_INSERT [Airlines] OFF;
+2026-03-02 17:24:18.896 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'City', N'Code', N'Country', N'Name') AND [object_id] = OBJECT_ID(N'[Airports]'))
+    SET IDENTITY_INSERT [Airports] ON;
+INSERT INTO [Airports] ([Id], [City], [Code], [Country], [Name])
+VALUES (1, NULL, N'CAI', NULL, N'Cairo International Airport'),
+(2, NULL, N'DXB', NULL, N'Dubai International Airport'),
+(3, NULL, N'DOH', NULL, N'Doha International Airport'),
+(4, NULL, N'IST', NULL, N'Istanbul Airport');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'City', N'Code', N'Country', N'Name') AND [object_id] = OBJECT_ID(N'[Airports]'))
+    SET IDENTITY_INSERT [Airports] OFF;
+2026-03-02 17:24:18.911 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'Model', N'SeatCapacity') AND [object_id] = OBJECT_ID(N'[Airplanes]'))
+    SET IDENTITY_INSERT [Airplanes] ON;
+INSERT INTO [Airplanes] ([Id], [AirlineId], [Model], [SeatCapacity])
+VALUES (1, 1, N'Boeing 999', CAST(8 AS smallint)),
+(2, 1, N'Airbus A320', CAST(7 AS smallint)),
+(3, 2, N'Boeing 555', CAST(5 AS smallint)),
+(4, 2, N'Boeing 777', CAST(4 AS smallint));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'Model', N'SeatCapacity') AND [object_id] = OBJECT_ID(N'[Airplanes]'))
+    SET IDENTITY_INSERT [Airplanes] OFF;
+2026-03-02 17:24:18.931 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'AirplaneId', N'ArrivalAirportID', N'ArrivalTime', N'BasePrice', N'DepartureAirportID', N'DepartureTime', N'Status') AND [object_id] = OBJECT_ID(N'[Flights]'))
+    SET IDENTITY_INSERT [Flights] ON;
+INSERT INTO [Flights] ([Id], [AirlineId], [AirplaneId], [ArrivalAirportID], [ArrivalTime], [BasePrice], [DepartureAirportID], [DepartureTime], [Status])
+VALUES (1, 1, 1, 2, '2025-01-01T15:00:00.0000000', 2500.0, 1, '2025-01-01T10:30:00.0000000', 1),
+(2, 2, 2, 3, '2025-01-12T12:00:00.0000000', 3200.0, 2, '2025-01-12T08:00:00.0000000', 1),
+(3, 4, 3, 1, '2025-01-12T06:00:00.0000000', 3200.0, 3, '2025-01-12T12:00:00.0000000', 1),
+(4, 3, 4, 2, '2025-01-03T06:00:00.0000000', 3200.0, 4, '2025-01-03T12:00:00.0000000', 1),
+(5, 2, 1, 3, '2025-01-10T06:00:00.0000000', 4900.0, 1, '2025-01-10T12:00:00.0000000', 1),
+(6, 4, 2, 3, '2025-01-04T06:00:00.0000000', 8200.0, 2, '2025-01-04T12:00:00.0000000', 1),
+(7, 2, 2, 1, '2025-02-12T06:00:00.0000000', 1200.0, 3, '2025-02-12T12:00:00.0000000', 1),
+(8, 1, 2, 4, '2025-04-11T06:00:00.0000000', 6200.0, 3, '2025-04-11T12:00:00.0000000', 1),
+(9, 2, 1, 1, '2025-05-22T06:00:00.0000000', 5300.0, 2, '2025-05-22T12:00:00.0000000', 1),
+(10, 3, 4, 2, '2025-07-23T06:00:00.0000000', 3500.0, 4, '2025-07-23T12:00:00.0000000', 1),
+(11, 3, 2, 2, '2025-01-23T06:00:00.0000000', 7600.0, 3, '2025-01-23T12:00:00.0000000', 1),
+(12, 4, 1, 1, '2025-09-24T06:00:00.0000000', 1500.0, 2, '2025-09-24T12:00:00.0000000', 1);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'AirplaneId', N'ArrivalAirportID', N'ArrivalTime', N'BasePrice', N'DepartureAirportID', N'DepartureTime', N'Status') AND [object_id] = OBJECT_ID(N'[Flights]'))
+    SET IDENTITY_INSERT [Flights] OFF;
+2026-03-02 17:24:18.945 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirplaneId', N'Class', N'Number', N'Price', N'Row') AND [object_id] = OBJECT_ID(N'[Seats]'))
+    SET IDENTITY_INSERT [Seats] ON;
+INSERT INTO [Seats] ([Id], [AirplaneId], [Class], [Number], [Price], [Row])
+VALUES (1, 1, 1, CAST(1 AS smallint), 100, N'A'),
+(2, 1, 1, CAST(2 AS smallint), 100, N'A'),
+(3, 1, 2, CAST(1 AS smallint), 200, N'B'),
+(4, 1, 2, CAST(2 AS smallint), 200, N'B'),
+(5, 1, 3, CAST(1 AS smallint), 300, N'C'),
+(6, 1, 3, CAST(2 AS smallint), 300, N'C'),
+(7, 1, 1, CAST(1 AS smallint), 100, N'D'),
+(8, 1, 1, CAST(2 AS smallint), 100, N'D');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirplaneId', N'Class', N'Number', N'Price', N'Row') AND [object_id] = OBJECT_ID(N'[Seats]'))
+    SET IDENTITY_INSERT [Seats] OFF;
+2026-03-02 17:24:18.983 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'FlightId', N'IsAvailable', N'SeatId', N'TicketId') AND [object_id] = OBJECT_ID(N'[FlightSeats]'))
+    SET IDENTITY_INSERT [FlightSeats] ON;
+INSERT INTO [FlightSeats] ([Id], [FlightId], [IsAvailable], [SeatId], [TicketId])
+VALUES (1, 1, CAST(1 AS bit), 1, NULL),
+(2, 1, CAST(1 AS bit), 2, NULL),
+(3, 1, CAST(1 AS bit), 3, NULL),
+(4, 1, CAST(1 AS bit), 4, NULL),
+(5, 1, CAST(1 AS bit), 5, NULL),
+(6, 1, CAST(1 AS bit), 6, NULL),
+(7, 1, CAST(1 AS bit), 7, NULL),
+(8, 1, CAST(1 AS bit), 8, NULL),
+(9, 2, CAST(1 AS bit), 1, NULL),
+(10, 2, CAST(1 AS bit), 2, NULL),
+(11, 2, CAST(1 AS bit), 3, NULL),
+(12, 2, CAST(1 AS bit), 4, NULL),
+(13, 2, CAST(1 AS bit), 5, NULL),
+(14, 2, CAST(1 AS bit), 6, NULL),
+(15, 2, CAST(1 AS bit), 7, NULL),
+(16, 3, CAST(1 AS bit), 1, NULL),
+(17, 3, CAST(1 AS bit), 2, NULL),
+(18, 3, CAST(1 AS bit), 3, NULL),
+(19, 3, CAST(1 AS bit), 4, NULL),
+(20, 3, CAST(1 AS bit), 5, NULL),
+(23, 4, CAST(1 AS bit), 1, NULL),
+(24, 4, CAST(1 AS bit), 2, NULL),
+(25, 4, CAST(1 AS bit), 3, NULL),
+(26, 4, CAST(1 AS bit), 4, NULL),
+(27, 5, CAST(1 AS bit), 1, NULL),
+(28, 5, CAST(1 AS bit), 2, NULL),
+(29, 5, CAST(1 AS bit), 3, NULL),
+(30, 5, CAST(1 AS bit), 4, NULL),
+(31, 5, CAST(1 AS bit), 5, NULL),
+(32, 5, CAST(1 AS bit), 6, NULL),
+(33, 5, CAST(1 AS bit), 7, NULL),
+(34, 5, CAST(1 AS bit), 8, NULL),
+(35, 6, CAST(1 AS bit), 1, NULL),
+(36, 6, CAST(1 AS bit), 2, NULL),
+(37, 6, CAST(1 AS bit), 3, NULL),
+(38, 6, CAST(1 AS bit), 4, NULL),
+(39, 6, CAST(1 AS bit), 5, NULL),
+(40, 6, CAST(1 AS bit), 6, NULL),
+(41, 6, CAST(1 AS bit), 7, NULL),
+(42, 7, CAST(1 AS bit), 2, NULL),
+(43, 7, CAST(1 AS bit), 3, NULL),
+(44, 7, CAST(1 AS bit), 4, NULL);
+INSERT INTO [FlightSeats] ([Id], [FlightId], [IsAvailable], [SeatId], [TicketId])
+VALUES (45, 7, CAST(1 AS bit), 5, NULL),
+(46, 7, CAST(1 AS bit), 6, NULL),
+(47, 7, CAST(1 AS bit), 7, NULL),
+(48, 8, CAST(1 AS bit), 1, NULL),
+(49, 8, CAST(1 AS bit), 2, NULL),
+(50, 8, CAST(1 AS bit), 3, NULL),
+(51, 8, CAST(1 AS bit), 4, NULL),
+(52, 8, CAST(1 AS bit), 5, NULL),
+(53, 8, CAST(1 AS bit), 6, NULL),
+(54, 8, CAST(1 AS bit), 7, NULL),
+(55, 9, CAST(1 AS bit), 1, NULL),
+(56, 9, CAST(1 AS bit), 2, NULL),
+(57, 9, CAST(1 AS bit), 3, NULL),
+(58, 9, CAST(1 AS bit), 4, NULL),
+(59, 9, CAST(1 AS bit), 5, NULL),
+(60, 9, CAST(1 AS bit), 6, NULL),
+(61, 9, CAST(1 AS bit), 8, NULL),
+(62, 9, CAST(1 AS bit), 7, NULL),
+(63, 10, CAST(1 AS bit), 1, NULL),
+(64, 10, CAST(1 AS bit), 2, NULL),
+(65, 10, CAST(1 AS bit), 3, NULL),
+(66, 10, CAST(1 AS bit), 4, NULL),
+(67, 11, CAST(1 AS bit), 1, NULL),
+(68, 11, CAST(1 AS bit), 2, NULL),
+(69, 11, CAST(1 AS bit), 3, NULL),
+(70, 11, CAST(1 AS bit), 4, NULL),
+(71, 11, CAST(1 AS bit), 5, NULL),
+(72, 11, CAST(1 AS bit), 6, NULL),
+(73, 11, CAST(1 AS bit), 7, NULL),
+(74, 12, CAST(1 AS bit), 1, NULL),
+(75, 12, CAST(1 AS bit), 2, NULL),
+(76, 12, CAST(1 AS bit), 3, NULL),
+(77, 12, CAST(1 AS bit), 4, NULL),
+(78, 12, CAST(1 AS bit), 5, NULL),
+(79, 12, CAST(1 AS bit), 6, NULL),
+(80, 12, CAST(1 AS bit), 8, NULL),
+(81, 12, CAST(1 AS bit), 7, NULL),
+(82, 7, CAST(1 AS bit), 1, NULL);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'FlightId', N'IsAvailable', N'SeatId', N'TicketId') AND [object_id] = OBJECT_ID(N'[FlightSeats]'))
+    SET IDENTITY_INSERT [FlightSeats] OFF;
+2026-03-02 17:24:18.988 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Airplanes_AirlineId] ON [Airplanes] ([AirlineId]);
+2026-03-02 17:24:18.989 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_FlightId] ON [Bookings] ([FlightId]);
+2026-03-02 17:24:18.990 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Bookings_PNR] ON [Bookings] ([PNR]);
+2026-03-02 17:24:18.991 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_UserId] ON [Bookings] ([UserId]);
+2026-03-02 17:24:18.995 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_AirlineId] ON [Flights] ([AirlineId]);
+2026-03-02 17:24:18.998 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_AirplaneId] ON [Flights] ([AirplaneId]);
+2026-03-02 17:24:19.001 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_ArrivalAirportID] ON [Flights] ([ArrivalAirportID]);
+2026-03-02 17:24:19.004 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_DepartureAirportID] ON [Flights] ([DepartureAirportID]);
+2026-03-02 17:24:19.008 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_FlightSeats_FlightId_SeatId] ON [FlightSeats] ([FlightId], [SeatId]);
+2026-03-02 17:24:19.011 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_FlightSeats_SeatId] ON [FlightSeats] ([SeatId]);
+2026-03-02 17:24:19.012 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Payments_BookingID] ON [Payments] ([BookingID]);
+2026-03-02 17:24:19.014 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_RoleClaims_RoleId] ON [Security].[RoleClaims] ([RoleId]);
+2026-03-02 17:24:19.015 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [Security].[Roles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2026-03-02 17:24:19.017 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Seats_AirplaneId] ON [Seats] ([AirplaneId]);
+2026-03-02 17:24:19.019 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_TicketAddOns_AddOnID] ON [TicketAddOns] ([AddOnID]);
+2026-03-02 17:24:19.020 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_TicketAddOns_TicketId_AddOnID] ON [TicketAddOns] ([TicketId], [AddOnID]);
+2026-03-02 17:24:19.037 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tickets_BookingID] ON [Tickets] ([BookingID]);
+2026-03-02 17:24:19.038 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Tickets_FlightSeatId] ON [Tickets] ([FlightSeatId]);
+2026-03-02 17:24:19.039 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tickets_SeatId] ON [Tickets] ([SeatId]);
+2026-03-02 17:24:19.040 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Tickets_TicketNumber] ON [Tickets] ([TicketNumber]);
+2026-03-02 17:24:19.041 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserClaims_UserId] ON [Security].[UserClaims] ([UserId]);
+2026-03-02 17:24:19.043 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserLogins_UserId] ON [Security].[UserLogins] ([UserId]);
+2026-03-02 17:24:19.044 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserRoles_RoleId] ON [Security].[UserRoles] ([RoleId]);
+2026-03-02 17:24:19.045 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [Security].[Users] ([NormalizedEmail]);
+2026-03-02 17:24:19.046 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [Security].[Users] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2026-03-02 17:24:19.049 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260302151438_InitialCreate', N'8.0.22');
+2026-03-02 17:35:20.519 +02:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 17:35:20.634 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 17:35:20.639 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-02 17:35:20.640 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-02 17:35:20.664 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-02 17:35:20.693 +02:00 [INF] No migrations were applied. The database is already up to date.

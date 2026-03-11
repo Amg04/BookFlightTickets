@@ -1,0 +1,57 @@
+2026-02-22 21:24:11.222 +02:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-22 21:24:13.020 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-22 21:24:13.053 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-02-22 21:24:13.084 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-02-22 21:24:13.490 +02:00 [INF] Executed DbCommand (42ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-02-22 21:24:13.985 +02:00 [INF] Now listening on: https://localhost:7008
+2026-02-22 21:24:13.985 +02:00 [INF] Now listening on: http://localhost:5175
+2026-02-22 21:24:14.021 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-22 21:24:14.021 +02:00 [INF] Hosting environment: Development
+2026-02-22 21:24:14.021 +02:00 [INF] Content root path: E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI
+2026-02-22 21:24:16.159 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-02-22 21:24:16.320 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-02-22 21:24:16.333 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-02-22 21:24:16.344 +02:00 [INF] Executing ViewResult, running view Index.
+2026-02-22 21:24:16.660 +02:00 [INF] Executed ViewResult - view Index executed in 312.5396ms.
+2026-02-22 21:24:16.664 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 330.3974ms
+2026-02-22 21:24:16.665 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-02-22 21:24:16.669 +02:00 [INF] HTTP GET / responded 200 in 413.3715 ms
+2026-02-22 21:24:16.678 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 521.5269ms
+2026-02-22 21:24:17.019 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Images/Home.jpg - null null
+2026-02-22 21:24:17.019 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/css/site.css?v=kmnMNuNWnGzbSTBdBewP-a23Ve5Y1WWWWzHAPgIkNpM - null null
+2026-02-22 21:24:17.022 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-22 21:24:17.025 +02:00 [INF] The file /Images/Home.jpg was not modified
+2026-02-22 21:24:17.025 +02:00 [INF] The file /css/site.css was not modified
+2026-02-22 21:24:17.025 +02:00 [INF] HTTP GET /css/site.css responded 304 in 5.5620 ms
+2026-02-22 21:24:17.025 +02:00 [INF] HTTP GET /Images/Home.jpg responded 304 in 5.8126 ms
+2026-02-22 21:24:17.026 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Images/Home.jpg - 304 null image/jpeg 6.9464ms
+2026-02-22 21:24:17.026 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/css/site.css?v=kmnMNuNWnGzbSTBdBewP-a23Ve5Y1WWWWzHAPgIkNpM - 304 null text/css 6.9347ms
+2026-02-22 21:24:17.037 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 14.8573ms
+2026-02-22 21:24:17.645 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-02-22 21:24:18.002 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 357.9141ms
+2026-02-22 21:24:30.456 +02:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-22 21:24:32.212 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-22 21:24:32.237 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-02-22 21:24:32.251 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-02-22 21:24:32.662 +02:00 [INF] Executed DbCommand (44ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-02-22 21:24:33.242 +02:00 [INF] Now listening on: https://localhost:7008
+2026-02-22 21:24:33.242 +02:00 [INF] Now listening on: http://localhost:5175
+2026-02-22 21:24:33.287 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-22 21:24:33.288 +02:00 [INF] Hosting environment: Development
+2026-02-22 21:24:33.288 +02:00 [INF] Content root path: E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI

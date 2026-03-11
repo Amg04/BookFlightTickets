@@ -1,0 +1,1917 @@
+2026-03-03 13:37:06.304 +02:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-03 13:37:08.644 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 13:37:08.682 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 13:37:08.710 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 13:37:09.096 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 13:37:09.119 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 13:37:09.276 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Security].[Roles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2026-03-03 13:37:09.299 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 13:37:09.303 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Security].[Roles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2026-03-03 13:37:09.497 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-03 13:37:09.647 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 100), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 100), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 500), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Security].[Users] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PassportNumber], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [Role], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2026-03-03 13:37:09.669 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2026-03-03 13:37:09.733 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[RoleId]
+FROM [Security].[UserRoles] AS [u]
+WHERE [u].[UserId] = @__p_0 AND [u].[RoleId] = @__p_1
+2026-03-03 13:37:09.741 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2026-03-03 13:37:09.777 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-03 13:37:09.847 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p20='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p21='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 100), @p7='?' (Size = 100), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 100), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 500), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Security].[UserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [Security].[Users] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PassportNumber] = @p12, [PasswordHash] = @p13, [PhoneNumber] = @p14, [PhoneNumberConfirmed] = @p15, [Role] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+OUTPUT 1
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+2026-03-03 13:37:10.514 +02:00 [INF] Now listening on: https://localhost:7008
+2026-03-03 13:37:10.514 +02:00 [INF] Now listening on: http://localhost:5175
+2026-03-03 13:37:10.558 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-03 13:37:10.559 +02:00 [INF] Hosting environment: Development
+2026-03-03 13:37:10.559 +02:00 [INF] Content root path: E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI
+2026-03-03 13:37:11.366 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 13:37:11.529 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2026-03-03 13:37:11.537 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 13:37:11.550 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 13:37:11.563 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 13:37:12.035 +02:00 [INF] Executed ViewResult - view Index executed in 470.4336ms.
+2026-03-03 13:37:12.040 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 488.215ms
+2026-03-03 13:37:12.040 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 13:37:12.045 +02:00 [INF] HTTP GET / responded 200 in 584.7808 ms
+2026-03-03 13:37:12.064 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 699.788ms
+2026-03-03 13:37:12.115 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 13:37:12.115 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/css/site.css?v=kmnMNuNWnGzbSTBdBewP-a23Ve5Y1WWWWzHAPgIkNpM - null null
+2026-03-03 13:37:12.115 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-03-03 13:37:12.115 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-03-03 13:37:12.116 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/lib/jquery/dist/jquery.min.js - null null
+2026-03-03 13:37:12.119 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2026-03-03 13:37:12.127 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2026-03-03 13:37:12.127 +02:00 [INF] The file /js/site.js was not modified
+2026-03-03 13:37:12.127 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2026-03-03 13:37:12.127 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2026-03-03 13:37:12.127 +02:00 [INF] The file /css/site.css was not modified
+2026-03-03 13:37:12.128 +02:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 304 in 12.2674 ms
+2026-03-03 13:37:12.128 +02:00 [INF] HTTP GET /css/site.css responded 304 in 12.3655 ms
+2026-03-03 13:37:12.128 +02:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 304 in 10.3457 ms
+2026-03-03 13:37:12.129 +02:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 304 in 12.3410 ms
+2026-03-03 13:37:12.129 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/css/site.css?v=kmnMNuNWnGzbSTBdBewP-a23Ve5Y1WWWWzHAPgIkNpM - 304 null text/css 13.913ms
+2026-03-03 13:37:12.129 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 13.7571ms
+2026-03-03 13:37:12.130 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 14.2541ms
+2026-03-03 13:37:12.128 +02:00 [INF] HTTP GET /js/site.js responded 304 in 8.4823 ms
+2026-03-03 13:37:12.130 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 304 null text/javascript 10.8848ms
+2026-03-03 13:37:12.129 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/lib/jquery/dist/jquery.min.js - 304 null text/javascript 13.0075ms
+2026-03-03 13:37:12.147 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 31.4665ms
+2026-03-03 13:37:13.030 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 13:37:13.208 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 178.2322ms
+2026-03-03 13:37:14.322 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/favicon.ico - null null
+2026-03-03 13:37:14.325 +02:00 [INF] The file /favicon.ico was not modified
+2026-03-03 13:37:14.325 +02:00 [INF] HTTP GET /favicon.ico responded 304 in 2.9488 ms
+2026-03-03 13:37:14.325 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/favicon.ico - 304 null image/x-icon 3.629ms
+2026-03-03 17:18:35.894 +02:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-03 17:18:38.103 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 17:18:38.146 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 17:18:38.172 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 17:18:38.615 +02:00 [INF] Executed DbCommand (44ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 17:18:39.404 +02:00 [INF] Now listening on: https://localhost:7008
+2026-03-03 17:18:39.404 +02:00 [INF] Now listening on: http://localhost:5175
+2026-03-03 17:18:39.439 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-03 17:18:39.439 +02:00 [INF] Hosting environment: Development
+2026-03-03 17:18:39.439 +02:00 [INF] Content root path: E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI
+2026-03-03 17:18:40.832 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 17:18:41.176 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2026-03-03 17:18:41.184 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 17:18:41.207 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 17:18:41.224 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:18:41.486 +02:00 [INF] Executed ViewResult - view Index executed in 265.4246ms.
+2026-03-03 17:18:41.490 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 281.477ms
+2026-03-03 17:18:41.490 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 17:18:41.494 +02:00 [INF] HTTP GET / responded 200 in 456.3204 ms
+2026-03-03 17:18:41.507 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 677.5754ms
+2026-03-03 17:18:41.627 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:18:41.627 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - null null
+2026-03-03 17:18:41.634 +02:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI\wwwroot\css\site.css'
+2026-03-03 17:18:41.635 +02:00 [INF] HTTP GET /css/site.css responded 200 in 7.2834 ms
+2026-03-03 17:18:41.635 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - 200 2798 text/css 8.1298ms
+2026-03-03 17:18:41.638 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 11.1678ms
+2026-03-03 17:18:42.472 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:18:42.601 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 128.6175ms
+2026-03-03 17:18:44.668 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Identity/Account/Login - null null
+2026-03-03 17:18:44.679 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2026-03-03 17:18:44.680 +02:00 [INF] Executing endpoint '/Account/Login'
+2026-03-03 17:18:44.714 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-03-03 17:18:44.753 +02:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-03-03 17:18:44.764 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-03-03 17:18:44.766 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-03-03 17:18:44.773 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-03-03 17:18:44.774 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-03-03 17:18:44.922 +02:00 [INF] Executed page /Account/Login in 206.7909ms
+2026-03-03 17:18:44.922 +02:00 [INF] Executed endpoint '/Account/Login'
+2026-03-03 17:18:44.922 +02:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 249.7224 ms
+2026-03-03 17:18:44.923 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Identity/Account/Login - 200 null text/html; charset=utf-8 254.929ms
+2026-03-03 17:18:44.991 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:18:44.992 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-03-03 17:18:44.992 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-03-03 17:18:44.993 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 1.2332ms
+2026-03-03 17:18:44.994 +02:00 [INF] The file /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js was not modified
+2026-03-03 17:18:44.994 +02:00 [INF] The file /lib/jquery-validation/dist/jquery.validate.min.js was not modified
+2026-03-03 17:18:44.995 +02:00 [INF] HTTP GET /lib/jquery-validation/dist/jquery.validate.min.js responded 304 in 2.7444 ms
+2026-03-03 17:18:44.995 +02:00 [INF] HTTP GET /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js responded 304 in 2.5290 ms
+2026-03-03 17:18:44.995 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 304 null text/javascript 3.1482ms
+2026-03-03 17:18:44.995 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/lib/jquery-validation/dist/jquery.validate.min.js - 304 null text/javascript 3.3097ms
+2026-03-03 17:18:45.161 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:18:45.173 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.4163ms
+2026-03-03 17:18:48.932 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7008/Identity/Account/Login - application/x-www-form-urlencoded 284
+2026-03-03 17:18:48.943 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2026-03-03 17:18:48.944 +02:00 [INF] Executing endpoint '/Account/Login'
+2026-03-03 17:18:48.944 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-03-03 17:18:48.989 +02:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2026-03-03 17:18:49.092 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-03 17:18:49.873 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[ClaimType], [u].[ClaimValue], [u].[UserId]
+FROM [Security].[UserClaims] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+2026-03-03 17:18:49.955 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Security].[UserRoles] AS [u]
+INNER JOIN [Security].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2026-03-03 17:18:49.965 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 17:18:49.980 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ClaimType], [r].[ClaimValue]
+FROM [Security].[RoleClaims] AS [r]
+WHERE [r].[RoleId] = @__role_Id_0
+2026-03-03 17:18:49.992 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-03-03 17:18:49.995 +02:00 [INF] User logged in.
+2026-03-03 17:18:49.998 +02:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2026-03-03 17:18:50.002 +02:00 [INF] Executing LocalRedirectResult, redirecting to /.
+2026-03-03 17:18:50.006 +02:00 [INF] Executed page /Account/Login in 1061.0252ms
+2026-03-03 17:18:50.007 +02:00 [INF] Executed endpoint '/Account/Login'
+2026-03-03 17:18:50.009 +02:00 [INF] HTTP POST /Identity/Account/Login responded 302 in 1075.4646 ms
+2026-03-03 17:18:50.017 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7008/Identity/Account/Login - 302 0 null 1085.7352ms
+2026-03-03 17:18:50.021 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 17:18:50.030 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 17:18:50.031 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 17:18:50.032 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:18:50.285 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:18:50.321 +02:00 [INF] Executed ViewResult - view Index executed in 289.5458ms.
+2026-03-03 17:18:50.324 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 292.7775ms
+2026-03-03 17:18:50.324 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 17:18:50.325 +02:00 [INF] HTTP GET / responded 200 in 300.6443 ms
+2026-03-03 17:18:50.325 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 304.4793ms
+2026-03-03 17:18:50.392 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:18:50.392 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:18:50.393 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.6604ms
+2026-03-03 17:18:50.400 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.3518ms
+2026-03-03 17:18:53.076 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Flight - null null
+2026-03-03 17:18:53.085 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-03-03 17:18:53.106 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Flight", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.FlightController (BookFlightTickets.UI).
+2026-03-03 17:18:53.115 +02:00 [INF] Attempting to get all flights from cache or database
+2026-03-03 17:18:53.122 +02:00 [DBG] Cache miss for key: flights:all
+2026-03-03 17:18:53.127 +02:00 [INF] Cache miss for flights:all. Retrieving from database.
+2026-03-03 17:18:53.278 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status], [a].[Id], [a].[Code], [a].[Name], [a0].[Id], [a0].[AirlineId], [a0].[Model], [a0].[SeatCapacity], [a1].[Id], [a1].[City], [a1].[Code], [a1].[Country], [a1].[Name], [a2].[Id], [a2].[City], [a2].[Code], [a2].[Country], [a2].[Name]
+FROM [Flights] AS [f]
+INNER JOIN [Airlines] AS [a] ON [f].[AirlineId] = [a].[Id]
+INNER JOIN [Airplanes] AS [a0] ON [f].[AirplaneId] = [a0].[Id]
+INNER JOIN [Airports] AS [a1] ON [f].[DepartureAirportID] = [a1].[Id]
+INNER JOIN [Airports] AS [a2] ON [f].[ArrivalAirportID] = [a2].[Id]
+2026-03-03 17:18:53.541 +02:00 [DBG] Cache set for key: flights:all with absolute expiry: "00:15:00"
+2026-03-03 17:18:53.549 +02:00 [INF] Returning 12 flights
+2026-03-03 17:18:53.572 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:18:53.621 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:18:53.633 +02:00 [INF] Executed ViewResult - view Index executed in 74.5483ms.
+2026-03-03 17:18:53.634 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI) in 527.6696ms
+2026-03-03 17:18:53.634 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-03-03 17:18:53.634 +02:00 [INF] HTTP GET /Admin/Flight responded 200 in 555.9040 ms
+2026-03-03 17:18:53.636 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Flight - 200 null text/html; charset=utf-8 560.171ms
+2026-03-03 17:18:53.702 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:18:53.704 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:18:53.704 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.6417ms
+2026-03-03 17:18:53.710 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.9702ms
+2026-03-03 17:19:00.650 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Airport - null null
+2026-03-03 17:19:00.658 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI)'
+2026-03-03 17:19:00.663 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Airport", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.AirportController (BookFlightTickets.UI).
+2026-03-03 17:19:00.666 +02:00 [INF] Attempting to get all airports from cache or database
+2026-03-03 17:19:00.667 +02:00 [DBG] Cache miss for key: airports:all
+2026-03-03 17:19:00.669 +02:00 [INF] Cache miss for airports:all. Retrieving from database.
+2026-03-03 17:19:00.677 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[City], [a].[Code], [a].[Country], [a].[Name]
+FROM [Airports] AS [a]
+2026-03-03 17:19:00.680 +02:00 [DBG] Cache set for key: airports:all with absolute expiry: "00:30:00"
+2026-03-03 17:19:00.680 +02:00 [INF] Returning 4 airports
+2026-03-03 17:19:00.683 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:19:00.702 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:19:00.708 +02:00 [INF] Executed ViewResult - view Index executed in 27.3695ms.
+2026-03-03 17:19:00.709 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI) in 46.088ms
+2026-03-03 17:19:00.709 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI)'
+2026-03-03 17:19:00.709 +02:00 [INF] HTTP GET /Admin/Airport responded 200 in 57.2456 ms
+2026-03-03 17:19:00.710 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Airport - 200 null text/html; charset=utf-8 59.9774ms
+2026-03-03 17:19:00.782 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:19:00.782 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:19:00.783 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.6572ms
+2026-03-03 17:19:00.791 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.6095ms
+2026-03-03 17:19:03.017 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Flight - null null
+2026-03-03 17:19:03.020 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-03-03 17:19:03.020 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Flight", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.FlightController (BookFlightTickets.UI).
+2026-03-03 17:19:03.022 +02:00 [INF] Attempting to get all flights from cache or database
+2026-03-03 17:19:03.022 +02:00 [DBG] Cache hit for key: flights:all
+2026-03-03 17:19:03.028 +02:00 [INF] Returning 12 flights
+2026-03-03 17:19:03.028 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:19:03.032 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:19:03.033 +02:00 [INF] Executed ViewResult - view Index executed in 5.2523ms.
+2026-03-03 17:19:03.033 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI) in 12.9662ms
+2026-03-03 17:19:03.034 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-03-03 17:19:03.034 +02:00 [INF] HTTP GET /Admin/Flight responded 200 in 15.6141 ms
+2026-03-03 17:19:03.034 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Flight - 200 null text/html; charset=utf-8 17.0183ms
+2026-03-03 17:19:03.068 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:19:03.069 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:19:03.069 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.367ms
+2026-03-03 17:19:03.073 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 4.6375ms
+2026-03-03 17:19:05.238 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Tickets - null null
+2026-03-03 17:19:05.240 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.TicketsController.Index (BookFlightTickets.UI)'
+2026-03-03 17:19:05.245 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Tickets", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.TicketsController (BookFlightTickets.UI).
+2026-03-03 17:19:05.262 +02:00 [INF] Attempting to get all tickets from database
+2026-03-03 17:19:05.324 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[BookingID], [t].[FirstName], [t].[FlightSeatId], [t].[LastName], [t].[PassportNumber], [t].[SeatId], [t].[TicketNumber], [t].[TicketPrice], [f].[Id], [f].[FlightId], [f].[IsAvailable], [f].[SeatId], [f].[TicketId], [s].[Id], [s].[AirplaneId], [s].[Class], [s].[Number], [s].[Price], [s].[Row]
+FROM [Tickets] AS [t]
+INNER JOIN [FlightSeats] AS [f] ON [t].[FlightSeatId] = [f].[Id]
+INNER JOIN [Seats] AS [s] ON [f].[SeatId] = [s].[Id]
+2026-03-03 17:19:05.327 +02:00 [INF] No tickets found in database
+2026-03-03 17:19:05.335 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:19:05.364 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:19:05.367 +02:00 [INF] Executed ViewResult - view Index executed in 33.5577ms.
+2026-03-03 17:19:05.368 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.TicketsController.Index (BookFlightTickets.UI) in 122.073ms
+2026-03-03 17:19:05.368 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.TicketsController.Index (BookFlightTickets.UI)'
+2026-03-03 17:19:05.368 +02:00 [INF] HTTP GET /Admin/Tickets responded 200 in 128.6940 ms
+2026-03-03 17:19:05.368 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Tickets - 200 null text/html; charset=utf-8 130.4939ms
+2026-03-03 17:19:05.442 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:19:05.445 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:19:05.445 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.6143ms
+2026-03-03 17:19:05.451 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.2043ms
+2026-03-03 17:19:09.284 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Airport - null null
+2026-03-03 17:19:09.286 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI)'
+2026-03-03 17:19:09.286 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Airport", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.AirportController (BookFlightTickets.UI).
+2026-03-03 17:19:09.287 +02:00 [INF] Attempting to get all airports from cache or database
+2026-03-03 17:19:09.287 +02:00 [DBG] Cache hit for key: airports:all
+2026-03-03 17:19:09.287 +02:00 [INF] Returning 4 airports
+2026-03-03 17:19:09.287 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:19:09.290 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:19:09.291 +02:00 [INF] Executed ViewResult - view Index executed in 4.3746ms.
+2026-03-03 17:19:09.292 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI) in 5.086ms
+2026-03-03 17:19:09.292 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI)'
+2026-03-03 17:19:09.292 +02:00 [INF] HTTP GET /Admin/Airport responded 200 in 6.4127 ms
+2026-03-03 17:19:09.292 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Airport - 200 null text/html; charset=utf-8 8.2389ms
+2026-03-03 17:19:09.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:19:09.325 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:19:09.325 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.2896ms
+2026-03-03 17:19:09.327 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 3.246ms
+2026-03-03 17:25:06.261 +02:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-03 17:25:07.781 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 17:25:07.823 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 17:25:07.845 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 17:25:08.245 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 17:25:08.697 +02:00 [INF] Now listening on: https://localhost:7008
+2026-03-03 17:25:08.697 +02:00 [INF] Now listening on: http://localhost:5175
+2026-03-03 17:25:08.727 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-03 17:25:08.727 +02:00 [INF] Hosting environment: Development
+2026-03-03 17:25:08.727 +02:00 [INF] Content root path: E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI
+2026-03-03 17:25:09.363 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 17:25:09.524 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:09.536 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 17:25:09.548 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:25:09.886 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:25:10.040 +02:00 [INF] Executed ViewResult - view Index executed in 495.5846ms.
+2026-03-03 17:25:10.044 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 506.3575ms
+2026-03-03 17:25:10.044 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:10.048 +02:00 [INF] HTTP GET / responded 200 in 606.0539 ms
+2026-03-03 17:25:10.059 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 697.6637ms
+2026-03-03 17:25:10.086 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:25:10.092 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 5.7345ms
+2026-03-03 17:25:10.654 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:25:10.719 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 65.2226ms
+2026-03-03 17:25:15.449 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Flight - null null
+2026-03-03 17:25:15.469 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:15.480 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Flight", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.FlightController (BookFlightTickets.UI).
+2026-03-03 17:25:15.487 +02:00 [INF] Attempting to get all flights from cache or database
+2026-03-03 17:25:15.496 +02:00 [DBG] Cache miss for key: flights:all
+2026-03-03 17:25:15.500 +02:00 [INF] Cache miss for flights:all. Retrieving from database.
+2026-03-03 17:25:15.842 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status], [a].[Id], [a].[Code], [a].[Name], [a0].[Id], [a0].[AirlineId], [a0].[Model], [a0].[SeatCapacity], [a1].[Id], [a1].[City], [a1].[Code], [a1].[Country], [a1].[Name], [a2].[Id], [a2].[City], [a2].[Code], [a2].[Country], [a2].[Name]
+FROM [Flights] AS [f]
+INNER JOIN [Airlines] AS [a] ON [f].[AirlineId] = [a].[Id]
+INNER JOIN [Airplanes] AS [a0] ON [f].[AirplaneId] = [a0].[Id]
+INNER JOIN [Airports] AS [a1] ON [f].[DepartureAirportID] = [a1].[Id]
+INNER JOIN [Airports] AS [a2] ON [f].[ArrivalAirportID] = [a2].[Id]
+2026-03-03 17:25:16.015 +02:00 [DBG] Cache set for key: flights:all with absolute expiry: "00:15:00"
+2026-03-03 17:25:16.019 +02:00 [INF] Returning 12 flights
+2026-03-03 17:25:16.026 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:25:16.094 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:25:16.108 +02:00 [INF] Executed ViewResult - view Index executed in 83.8021ms.
+2026-03-03 17:25:16.108 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI) in 628.3585ms
+2026-03-03 17:25:16.109 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:16.109 +02:00 [INF] HTTP GET /Admin/Flight responded 200 in 655.5856 ms
+2026-03-03 17:25:16.111 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Flight - 200 null text/html; charset=utf-8 661.348ms
+2026-03-03 17:25:16.165 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:25:16.165 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:25:16.165 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.8703ms
+2026-03-03 17:25:16.170 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 5.6008ms
+2026-03-03 17:25:18.436 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Airline - null null
+2026-03-03 17:25:18.478 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:18.487 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Airline", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController (BookFlightTickets.UI).
+2026-03-03 17:25:18.491 +02:00 [INF] Attempting to get all airlines from cache or database
+2026-03-03 17:25:18.492 +02:00 [DBG] Cache miss for key: airlines:all
+2026-03-03 17:25:18.494 +02:00 [INF] Cache miss for airlines:all. Retrieving from database.
+2026-03-03 17:25:18.512 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Code], [a].[Name]
+FROM [Airlines] AS [a]
+2026-03-03 17:25:18.517 +02:00 [DBG] Cache set for key: airlines:all with absolute expiry: "00:30:00"
+2026-03-03 17:25:18.518 +02:00 [INF] Returning 4 airlines
+2026-03-03 17:25:18.520 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:25:18.544 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:25:18.550 +02:00 [INF] Executed ViewResult - view Index executed in 31.2018ms.
+2026-03-03 17:25:18.551 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI) in 63.913ms
+2026-03-03 17:25:18.551 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:18.551 +02:00 [INF] HTTP GET /Admin/Airline responded 200 in 113.3935 ms
+2026-03-03 17:25:18.552 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Airline - 200 null text/html; charset=utf-8 116.439ms
+2026-03-03 17:25:18.591 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:25:18.591 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:25:18.592 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.9149ms
+2026-03-03 17:25:18.599 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.246ms
+2026-03-03 17:25:20.231 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Airline - null null
+2026-03-03 17:25:20.236 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:20.236 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Airline", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController (BookFlightTickets.UI).
+2026-03-03 17:25:20.239 +02:00 [INF] Attempting to get all airlines from cache or database
+2026-03-03 17:25:20.239 +02:00 [DBG] Cache hit for key: airlines:all
+2026-03-03 17:25:20.241 +02:00 [INF] Returning 4 airlines
+2026-03-03 17:25:20.242 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:25:20.278 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:25:20.281 +02:00 [INF] Executed ViewResult - view Index executed in 39.8154ms.
+2026-03-03 17:25:20.282 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI) in 45.3301ms
+2026-03-03 17:25:20.282 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:20.282 +02:00 [INF] HTTP GET /Admin/Airline responded 200 in 48.8852 ms
+2026-03-03 17:25:20.282 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Airline - 200 null text/html; charset=utf-8 51.1474ms
+2026-03-03 17:25:20.333 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:25:20.334 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:25:20.335 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.663ms
+2026-03-03 17:25:20.339 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 6.3868ms
+2026-03-03 17:25:21.749 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Airport - null null
+2026-03-03 17:25:21.752 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:21.760 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Airport", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.AirportController (BookFlightTickets.UI).
+2026-03-03 17:25:21.764 +02:00 [INF] Attempting to get all airports from cache or database
+2026-03-03 17:25:21.765 +02:00 [DBG] Cache miss for key: airports:all
+2026-03-03 17:25:21.767 +02:00 [INF] Cache miss for airports:all. Retrieving from database.
+2026-03-03 17:25:21.778 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[City], [a].[Code], [a].[Country], [a].[Name]
+FROM [Airports] AS [a]
+2026-03-03 17:25:21.781 +02:00 [DBG] Cache set for key: airports:all with absolute expiry: "00:30:00"
+2026-03-03 17:25:21.782 +02:00 [INF] Returning 4 airports
+2026-03-03 17:25:21.783 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:25:21.797 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:25:21.800 +02:00 [INF] Executed ViewResult - view Index executed in 17.7059ms.
+2026-03-03 17:25:21.800 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI) in 40.5481ms
+2026-03-03 17:25:21.801 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:21.801 +02:00 [INF] HTTP GET /Admin/Airport responded 200 in 49.6024 ms
+2026-03-03 17:25:21.801 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Airport - 200 null text/html; charset=utf-8 51.9037ms
+2026-03-03 17:25:21.849 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:25:21.849 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:25:21.849 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.4922ms
+2026-03-03 17:25:21.855 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 5.8058ms
+2026-03-03 17:25:23.241 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/AddOn - null null
+2026-03-03 17:25:23.244 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:23.248 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "AddOn", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController (BookFlightTickets.UI).
+2026-03-03 17:25:23.250 +02:00 [INF] Attempting to get all addons from cache or database
+2026-03-03 17:25:23.251 +02:00 [DBG] Cache miss for key: addons:all
+2026-03-03 17:25:23.252 +02:00 [INF] Cache miss for addons:all. Retrieving from database.
+2026-03-03 17:25:23.261 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name], [a].[Price]
+FROM [AddOns] AS [a]
+2026-03-03 17:25:23.266 +02:00 [DBG] Cache set for key: addons:all with absolute expiry: "00:30:00"
+2026-03-03 17:25:23.266 +02:00 [INF] Returning 3 addons
+2026-03-03 17:25:23.268 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:25:23.282 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:25:23.284 +02:00 [INF] Executed ViewResult - view Index executed in 17.2981ms.
+2026-03-03 17:25:23.285 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController.Index (BookFlightTickets.UI) in 36.1829ms
+2026-03-03 17:25:23.285 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:23.285 +02:00 [INF] HTTP GET /Admin/AddOn responded 200 in 41.7052 ms
+2026-03-03 17:25:23.285 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/AddOn - 200 null text/html; charset=utf-8 43.9234ms
+2026-03-03 17:25:23.317 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:25:23.318 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:25:23.318 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.3296ms
+2026-03-03 17:25:23.321 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 3.8638ms
+2026-03-03 17:25:24.737 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/AddOn - null null
+2026-03-03 17:25:24.739 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:24.740 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "AddOn", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController (BookFlightTickets.UI).
+2026-03-03 17:25:24.740 +02:00 [INF] Attempting to get all addons from cache or database
+2026-03-03 17:25:24.740 +02:00 [DBG] Cache hit for key: addons:all
+2026-03-03 17:25:24.741 +02:00 [INF] Returning 3 addons
+2026-03-03 17:25:24.741 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:25:24.745 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:25:24.747 +02:00 [INF] Executed ViewResult - view Index executed in 5.8174ms.
+2026-03-03 17:25:24.747 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController.Index (BookFlightTickets.UI) in 7.4971ms
+2026-03-03 17:25:24.747 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:24.747 +02:00 [INF] HTTP GET /Admin/AddOn responded 200 in 8.4129 ms
+2026-03-03 17:25:24.748 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/AddOn - 200 null text/html; charset=utf-8 10.5289ms
+2026-03-03 17:25:24.779 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:25:24.779 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:25:24.779 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.3457ms
+2026-03-03 17:25:24.782 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 3.3465ms
+2026-03-03 17:25:26.189 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Airline - null null
+2026-03-03 17:25:26.191 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:26.192 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Airline", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController (BookFlightTickets.UI).
+2026-03-03 17:25:26.192 +02:00 [INF] Attempting to get all airlines from cache or database
+2026-03-03 17:25:26.192 +02:00 [DBG] Cache hit for key: airlines:all
+2026-03-03 17:25:26.192 +02:00 [INF] Returning 4 airlines
+2026-03-03 17:25:26.192 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:25:26.197 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:25:26.198 +02:00 [INF] Executed ViewResult - view Index executed in 5.4976ms.
+2026-03-03 17:25:26.198 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI) in 6.2358ms
+2026-03-03 17:25:26.198 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI)'
+2026-03-03 17:25:26.198 +02:00 [INF] HTTP GET /Admin/Airline responded 200 in 7.2885 ms
+2026-03-03 17:25:26.199 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Airline - 200 null text/html; charset=utf-8 9.4926ms
+2026-03-03 17:25:26.240 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:25:26.240 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:25:26.240 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.2592ms
+2026-03-03 17:25:26.244 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 4.0009ms
+2026-03-03 17:27:59.954 +02:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-03 17:28:01.862 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 17:28:01.911 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 17:28:01.939 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 17:28:02.383 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 17:28:02.931 +02:00 [INF] Now listening on: https://localhost:7008
+2026-03-03 17:28:02.931 +02:00 [INF] Now listening on: http://localhost:5175
+2026-03-03 17:28:02.964 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-03 17:28:02.964 +02:00 [INF] Hosting environment: Development
+2026-03-03 17:28:02.964 +02:00 [INF] Content root path: E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI
+2026-03-03 17:28:04.487 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 17:28:04.619 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 17:28:04.637 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 17:28:04.652 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:28:04.995 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:28:05.106 +02:00 [INF] Executed ViewResult - view Index executed in 459.9481ms.
+2026-03-03 17:28:05.110 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 471.8092ms
+2026-03-03 17:28:05.110 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 17:28:05.113 +02:00 [INF] HTTP GET / responded 200 in 588.9652 ms
+2026-03-03 17:28:05.128 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 643.1682ms
+2026-03-03 17:28:05.362 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:28:05.368 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 5.5866ms
+2026-03-03 17:28:05.907 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:28:05.939 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.9637ms
+2026-03-03 17:28:12.106 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Flight - null null
+2026-03-03 17:28:12.127 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-03-03 17:28:12.136 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Flight", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.FlightController (BookFlightTickets.UI).
+2026-03-03 17:28:12.141 +02:00 [INF] Attempting to get all flights from cache or database
+2026-03-03 17:28:12.147 +02:00 [DBG] Cache miss for key: flights:all
+2026-03-03 17:28:12.151 +02:00 [INF] Cache miss for flights:all. Retrieving from database.
+2026-03-03 17:28:12.442 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status], [a].[Id], [a].[Code], [a].[Name], [a0].[Id], [a0].[AirlineId], [a0].[Model], [a0].[SeatCapacity], [a1].[Id], [a1].[City], [a1].[Code], [a1].[Country], [a1].[Name], [a2].[Id], [a2].[City], [a2].[Code], [a2].[Country], [a2].[Name]
+FROM [Flights] AS [f]
+INNER JOIN [Airlines] AS [a] ON [f].[AirlineId] = [a].[Id]
+INNER JOIN [Airplanes] AS [a0] ON [f].[AirplaneId] = [a0].[Id]
+INNER JOIN [Airports] AS [a1] ON [f].[DepartureAirportID] = [a1].[Id]
+INNER JOIN [Airports] AS [a2] ON [f].[ArrivalAirportID] = [a2].[Id]
+2026-03-03 17:28:12.584 +02:00 [DBG] Cache set for key: flights:all with absolute expiry: "00:15:00"
+2026-03-03 17:28:12.589 +02:00 [INF] Returning 12 flights
+2026-03-03 17:28:12.596 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:28:12.680 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:28:12.693 +02:00 [INF] Executed ViewResult - view Index executed in 98.91ms.
+2026-03-03 17:28:12.694 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI) in 557.7084ms
+2026-03-03 17:28:12.694 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-03-03 17:28:12.694 +02:00 [INF] HTTP GET /Admin/Flight responded 200 in 584.1099 ms
+2026-03-03 17:28:12.696 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Flight - 200 null text/html; charset=utf-8 589.8538ms
+2026-03-03 17:28:12.750 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:28:12.751 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:28:12.752 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 1.4356ms
+2026-03-03 17:28:12.771 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.5357ms
+2026-03-03 17:28:40.265 +02:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-03 17:28:42.132 +02:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 17:28:42.166 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 17:28:42.185 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 17:28:42.598 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 17:28:43.306 +02:00 [INF] Now listening on: https://localhost:7008
+2026-03-03 17:28:43.306 +02:00 [INF] Now listening on: http://localhost:5175
+2026-03-03 17:28:43.367 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-03 17:28:43.367 +02:00 [INF] Hosting environment: Development
+2026-03-03 17:28:43.367 +02:00 [INF] Content root path: E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI
+2026-03-03 17:28:44.907 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 17:28:45.053 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 17:28:45.266 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 17:28:45.281 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:28:45.519 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:28:45.640 +02:00 [INF] Executed ViewResult - view Index executed in 360.3906ms.
+2026-03-03 17:28:45.646 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 378.4184ms
+2026-03-03 17:28:45.647 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 17:28:45.654 +02:00 [INF] HTTP GET / responded 200 in 704.2989 ms
+2026-03-03 17:28:45.672 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 767.6396ms
+2026-03-03 17:28:45.733 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:28:45.743 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 9.4314ms
+2026-03-03 17:28:46.361 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:28:46.395 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.5588ms
+2026-03-03 17:28:51.699 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Flight - null null
+2026-03-03 17:28:51.718 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-03-03 17:28:51.725 +02:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Flight", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.FlightController (BookFlightTickets.UI).
+2026-03-03 17:28:51.731 +02:00 [INF] Attempting to get all flights from cache or database
+2026-03-03 17:28:51.737 +02:00 [DBG] Cache miss for key: flights:all
+2026-03-03 17:28:51.740 +02:00 [INF] Cache miss for flights:all. Retrieving from database.
+2026-03-03 17:28:52.031 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status], [a].[Id], [a].[Code], [a].[Name], [a0].[Id], [a0].[AirlineId], [a0].[Model], [a0].[SeatCapacity], [a1].[Id], [a1].[City], [a1].[Code], [a1].[Country], [a1].[Name], [a2].[Id], [a2].[City], [a2].[Code], [a2].[Country], [a2].[Name]
+FROM [Flights] AS [f]
+INNER JOIN [Airlines] AS [a] ON [f].[AirlineId] = [a].[Id]
+INNER JOIN [Airplanes] AS [a0] ON [f].[AirplaneId] = [a0].[Id]
+INNER JOIN [Airports] AS [a1] ON [f].[DepartureAirportID] = [a1].[Id]
+INNER JOIN [Airports] AS [a2] ON [f].[ArrivalAirportID] = [a2].[Id]
+2026-03-03 17:28:52.241 +02:00 [DBG] Cache set for key: flights:all with absolute expiry: "00:15:00"
+2026-03-03 17:28:52.248 +02:00 [INF] Returning 12 flights
+2026-03-03 17:28:52.291 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 17:28:52.366 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 17:28:52.380 +02:00 [INF] Executed ViewResult - view Index executed in 91.2093ms.
+2026-03-03 17:28:52.381 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI) in 655.1718ms
+2026-03-03 17:28:52.381 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-03-03 17:28:52.381 +02:00 [INF] HTTP GET /Admin/Flight responded 200 in 677.9896 ms
+2026-03-03 17:28:52.384 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Flight - 200 null text/html; charset=utf-8 684.4826ms
+2026-03-03 17:28:52.455 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 17:28:52.456 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 17:28:52.458 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 1.8558ms
+2026-03-03 17:28:52.482 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.4666ms
+2026-03-03 21:35:28.221 +02:00 [INF] Executed DbCommand (125ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:35:28.418 +02:00 [INF] Executed DbCommand (113ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:35:28.510 +02:00 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:35:28.597 +02:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:35:28.706 +02:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 21:35:28.720 +02:00 [INF] Reverting migration '20260302151438_InitialCreate'.
+2026-03-03 21:35:28.921 +02:00 [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Payments];
+2026-03-03 21:35:29.012 +02:00 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Security].[RoleClaims];
+2026-03-03 21:35:29.149 +02:00 [INF] Executed DbCommand (136ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [TicketAddOns];
+2026-03-03 21:35:29.241 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Security].[UserClaims];
+2026-03-03 21:35:29.336 +02:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Security].[UserLogins];
+2026-03-03 21:35:29.432 +02:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Security].[UserRoles];
+2026-03-03 21:35:29.524 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Security].[UserTokens];
+2026-03-03 21:35:29.616 +02:00 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [AddOns];
+2026-03-03 21:35:29.747 +02:00 [INF] Executed DbCommand (131ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Tickets];
+2026-03-03 21:35:29.839 +02:00 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Security].[Roles];
+2026-03-03 21:35:29.930 +02:00 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Bookings];
+2026-03-03 21:35:30.335 +02:00 [INF] Executed DbCommand (405ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [FlightSeats];
+2026-03-03 21:35:30.426 +02:00 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Security].[Users];
+2026-03-03 21:35:30.525 +02:00 [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Flights];
+2026-03-03 21:35:30.618 +02:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Seats];
+2026-03-03 21:35:30.711 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Airports];
+2026-03-03 21:35:30.805 +02:00 [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Airplanes];
+2026-03-03 21:35:30.896 +02:00 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP TABLE [Airlines];
+2026-03-03 21:35:31.098 +02:00 [INF] Executed DbCommand (202ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM [__EFMigrationsHistory]
+WHERE [MigrationId] = N'20260302151438_InitialCreate';
+2026-03-03 21:36:42.599 +02:00 [INF] Executed DbCommand (127ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:36:42.823 +02:00 [INF] Executed DbCommand (110ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:36:42.921 +02:00 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 21:37:35.499 +02:00 [INF] Executed DbCommand (123ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:37:35.680 +02:00 [INF] Executed DbCommand (106ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:37:35.768 +02:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:37:35.854 +02:00 [INF] Executed DbCommand (85ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:37:35.960 +02:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 21:37:35.987 +02:00 [INF] Applying migration '20260303193713_InitialCreate'.
+2026-03-03 21:37:36.302 +02:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF SCHEMA_ID(N'Security') IS NULL EXEC(N'CREATE SCHEMA [Security];');
+2026-03-03 21:37:36.398 +02:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AddOns] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Price] smallint NOT NULL,
+    CONSTRAINT [PK_AddOns] PRIMARY KEY ([Id])
+);
+2026-03-03 21:37:36.488 +02:00 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airlines] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Code] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Airlines] PRIMARY KEY ([Id])
+);
+2026-03-03 21:37:36.578 +02:00 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airports] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Code] nvarchar(50) NOT NULL,
+    [City] nvarchar(100) NULL,
+    [Country] nvarchar(100) NULL,
+    CONSTRAINT [PK_Airports] PRIMARY KEY ([Id])
+);
+2026-03-03 21:37:36.667 +02:00 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[Roles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+2026-03-03 21:37:36.760 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[Users] (
+    [Id] nvarchar(450) NOT NULL,
+    [FirstName] nvarchar(100) NOT NULL,
+    [LastName] nvarchar(100) NULL,
+    [PassportNumber] nvarchar(100) NULL,
+    [Role] nvarchar(500) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2026-03-03 21:37:36.856 +02:00 [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airplanes] (
+    [Id] int NOT NULL IDENTITY,
+    [AirlineId] int NOT NULL,
+    [Model] nvarchar(100) NOT NULL,
+    [SeatCapacity] smallint NOT NULL,
+    CONSTRAINT [PK_Airplanes] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Airplanes_Airlines_AirlineId] FOREIGN KEY ([AirlineId]) REFERENCES [Airlines] ([Id]) ON DELETE NO ACTION
+);
+2026-03-03 21:37:36.948 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[RoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_RoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RoleClaims_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Security].[Roles] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:37:37.042 +02:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_UserClaims_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:37:37.137 +02:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_UserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_UserLogins_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:37:37.230 +02:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Security].[Roles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserRoles_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:37:37.320 +02:00 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_UserTokens_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:37:37.416 +02:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Flights] (
+    [Id] int NOT NULL IDENTITY,
+    [AirlineId] int NOT NULL,
+    [AirplaneId] int NOT NULL,
+    [DepartureAirportID] int NOT NULL,
+    [ArrivalAirportID] int NOT NULL,
+    [DepartureTime] datetime2 NOT NULL,
+    [ArrivalTime] datetime2 NOT NULL,
+    [BasePrice] decimal(9,2) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Flights] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Flights_Airlines_AirlineId] FOREIGN KEY ([AirlineId]) REFERENCES [Airlines] ([Id]),
+    CONSTRAINT [FK_Flights_Airplanes_AirplaneId] FOREIGN KEY ([AirplaneId]) REFERENCES [Airplanes] ([Id]),
+    CONSTRAINT [FK_Flights_Airports_ArrivalAirportID] FOREIGN KEY ([ArrivalAirportID]) REFERENCES [Airports] ([Id]),
+    CONSTRAINT [FK_Flights_Airports_DepartureAirportID] FOREIGN KEY ([DepartureAirportID]) REFERENCES [Airports] ([Id])
+);
+2026-03-03 21:37:37.509 +02:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Seats] (
+    [Id] int NOT NULL IDENTITY,
+    [AirplaneId] int NOT NULL,
+    [Row] nvarchar(100) NOT NULL,
+    [Number] smallint NOT NULL,
+    [Class] int NOT NULL,
+    [Price] int NOT NULL,
+    CONSTRAINT [PK_Seats] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Seats_Airplanes_AirplaneId] FOREIGN KEY ([AirplaneId]) REFERENCES [Airplanes] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:37:37.602 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [FlightId] int NOT NULL,
+    [BookingDate] datetime2 NOT NULL,
+    [PNR] nvarchar(50) NOT NULL,
+    [TotalPrice] decimal(9,2) NOT NULL,
+    [Status] int NOT NULL,
+    [LastUpdated] datetime2 NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Bookings_Flights_FlightId] FOREIGN KEY ([FlightId]) REFERENCES [Flights] ([Id]),
+    CONSTRAINT [FK_Bookings_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id])
+);
+2026-03-03 21:37:37.695 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [FlightSeats] (
+    [Id] int NOT NULL IDENTITY,
+    [FlightId] int NOT NULL,
+    [SeatId] int NOT NULL,
+    [TicketId] int NULL,
+    [IsAvailable] bit NOT NULL,
+    CONSTRAINT [PK_FlightSeats] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_FlightSeats_Flights_FlightId] FOREIGN KEY ([FlightId]) REFERENCES [Flights] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_FlightSeats_Seats_SeatId] FOREIGN KEY ([SeatId]) REFERENCES [Seats] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:37:37.782 +02:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Payments] (
+    [Id] int NOT NULL IDENTITY,
+    [BookingID] int NOT NULL,
+    [SessionId] nvarchar(200) NULL,
+    [PaymentIntentId] nvarchar(200) NULL,
+    [Amount] decimal(9,2) NOT NULL,
+    [PaymentDate] datetime2 NOT NULL,
+    [PaymentStatus] int NOT NULL,
+    CONSTRAINT [PK_Payments] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Payments_Bookings_BookingID] FOREIGN KEY ([BookingID]) REFERENCES [Bookings] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:37:37.880 +02:00 [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Tickets] (
+    [Id] int NOT NULL IDENTITY,
+    [BookingID] int NOT NULL,
+    [TicketNumber] nvarchar(50) NOT NULL,
+    [FlightSeatId] int NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NULL,
+    [PassportNumber] nvarchar(max) NOT NULL,
+    [TicketPrice] decimal(9,2) NOT NULL,
+    [SeatId] int NULL,
+    CONSTRAINT [PK_Tickets] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Tickets_Bookings_BookingID] FOREIGN KEY ([BookingID]) REFERENCES [Bookings] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Tickets_FlightSeats_FlightSeatId] FOREIGN KEY ([FlightSeatId]) REFERENCES [FlightSeats] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Tickets_Seats_SeatId] FOREIGN KEY ([SeatId]) REFERENCES [Seats] ([Id])
+);
+2026-03-03 21:37:37.997 +02:00 [INF] Executed DbCommand (117ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TicketAddOns] (
+    [Id] int NOT NULL IDENTITY,
+    [TicketId] int NOT NULL,
+    [AddOnID] int NOT NULL,
+    CONSTRAINT [PK_TicketAddOns] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_TicketAddOns_AddOns_AddOnID] FOREIGN KEY ([AddOnID]) REFERENCES [AddOns] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_TicketAddOns_Tickets_TicketId] FOREIGN KEY ([TicketId]) REFERENCES [Tickets] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:37:38.173 +02:00 [INF] Executed DbCommand (175ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'Price') AND [object_id] = OBJECT_ID(N'[AddOns]'))
+    SET IDENTITY_INSERT [AddOns] ON;
+INSERT INTO [AddOns] ([Id], [Name], [Price])
+VALUES (1, N'Extra Baggage', CAST(150 AS smallint)),
+(3, N'Premium Meal', CAST(100 AS smallint)),
+(4, N'Priority Boarding', CAST(50 AS smallint));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'Price') AND [object_id] = OBJECT_ID(N'[AddOns]'))
+    SET IDENTITY_INSERT [AddOns] OFF;
+2026-03-03 21:37:38.377 +02:00 [INF] Executed DbCommand (203ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Code', N'Name') AND [object_id] = OBJECT_ID(N'[Airlines]'))
+    SET IDENTITY_INSERT [Airlines] ON;
+INSERT INTO [Airlines] ([Id], [Code], [Name])
+VALUES (1, N'EGY', N'EgyptAir');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Code', N'Name') AND [object_id] = OBJECT_ID(N'[Airlines]'))
+    SET IDENTITY_INSERT [Airlines] OFF;
+2026-03-03 21:37:38.582 +02:00 [INF] Executed DbCommand (205ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'City', N'Code', N'Country', N'Name') AND [object_id] = OBJECT_ID(N'[Airports]'))
+    SET IDENTITY_INSERT [Airports] ON;
+INSERT INTO [Airports] ([Id], [City], [Code], [Country], [Name])
+VALUES (1, NULL, N'CAI', NULL, N'Cairo International Airport'),
+(2, NULL, N'DXB', NULL, N'Dubai International Airport');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'City', N'Code', N'Country', N'Name') AND [object_id] = OBJECT_ID(N'[Airports]'))
+    SET IDENTITY_INSERT [Airports] OFF;
+2026-03-03 21:37:38.791 +02:00 [INF] Executed DbCommand (208ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'Model', N'SeatCapacity') AND [object_id] = OBJECT_ID(N'[Airplanes]'))
+    SET IDENTITY_INSERT [Airplanes] ON;
+INSERT INTO [Airplanes] ([Id], [AirlineId], [Model], [SeatCapacity])
+VALUES (1, 1, N'Boeing 999', CAST(8 AS smallint));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'Model', N'SeatCapacity') AND [object_id] = OBJECT_ID(N'[Airplanes]'))
+    SET IDENTITY_INSERT [Airplanes] OFF;
+2026-03-03 21:37:38.936 +02:00 [INF] Executed DbCommand (145ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'AirplaneId', N'ArrivalAirportID', N'ArrivalTime', N'BasePrice', N'DepartureAirportID', N'DepartureTime', N'Status') AND [object_id] = OBJECT_ID(N'[Flights]'))
+    SET IDENTITY_INSERT [Flights] ON;
+INSERT INTO [Flights] ([Id], [AirlineId], [AirplaneId], [ArrivalAirportID], [ArrivalTime], [BasePrice], [DepartureAirportID], [DepartureTime], [Status])
+VALUES (1, 1, 1, 2, '2025-01-01T15:00:00.0000000', 2500.0, 1, '2025-01-01T10:30:00.0000000', 1),
+(2, 1, 1, 1, '2025-01-12T12:00:00.0000000', 3200.0, 2, '2025-01-12T08:00:00.0000000', 1);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'AirplaneId', N'ArrivalAirportID', N'ArrivalTime', N'BasePrice', N'DepartureAirportID', N'DepartureTime', N'Status') AND [object_id] = OBJECT_ID(N'[Flights]'))
+    SET IDENTITY_INSERT [Flights] OFF;
+2026-03-03 21:37:39.058 +02:00 [INF] Executed DbCommand (121ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirplaneId', N'Class', N'Number', N'Price', N'Row') AND [object_id] = OBJECT_ID(N'[Seats]'))
+    SET IDENTITY_INSERT [Seats] ON;
+INSERT INTO [Seats] ([Id], [AirplaneId], [Class], [Number], [Price], [Row])
+VALUES (1, 1, 1, CAST(1 AS smallint), 100, N'A'),
+(2, 1, 1, CAST(2 AS smallint), 100, N'A'),
+(3, 1, 2, CAST(1 AS smallint), 200, N'B'),
+(4, 1, 2, CAST(2 AS smallint), 200, N'B'),
+(5, 1, 3, CAST(1 AS smallint), 300, N'C'),
+(6, 1, 3, CAST(2 AS smallint), 300, N'C'),
+(7, 1, 1, CAST(1 AS smallint), 100, N'D'),
+(8, 1, 1, CAST(2 AS smallint), 100, N'D');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirplaneId', N'Class', N'Number', N'Price', N'Row') AND [object_id] = OBJECT_ID(N'[Seats]'))
+    SET IDENTITY_INSERT [Seats] OFF;
+2026-03-03 21:37:39.179 +02:00 [INF] Executed DbCommand (121ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'FlightId', N'IsAvailable', N'SeatId', N'TicketId') AND [object_id] = OBJECT_ID(N'[FlightSeats]'))
+    SET IDENTITY_INSERT [FlightSeats] ON;
+INSERT INTO [FlightSeats] ([Id], [FlightId], [IsAvailable], [SeatId], [TicketId])
+VALUES (1, 1, CAST(1 AS bit), 1, NULL),
+(2, 1, CAST(1 AS bit), 2, NULL),
+(3, 1, CAST(1 AS bit), 3, NULL),
+(4, 1, CAST(1 AS bit), 4, NULL),
+(5, 1, CAST(1 AS bit), 5, NULL),
+(6, 1, CAST(1 AS bit), 6, NULL),
+(7, 1, CAST(1 AS bit), 7, NULL),
+(8, 1, CAST(1 AS bit), 8, NULL);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'FlightId', N'IsAvailable', N'SeatId', N'TicketId') AND [object_id] = OBJECT_ID(N'[FlightSeats]'))
+    SET IDENTITY_INSERT [FlightSeats] OFF;
+2026-03-03 21:37:39.272 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Airplanes_AirlineId] ON [Airplanes] ([AirlineId]);
+2026-03-03 21:37:39.358 +02:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_FlightId] ON [Bookings] ([FlightId]);
+2026-03-03 21:37:39.444 +02:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Bookings_PNR] ON [Bookings] ([PNR]);
+2026-03-03 21:37:39.530 +02:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_UserId] ON [Bookings] ([UserId]);
+2026-03-03 21:37:39.623 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_AirlineId] ON [Flights] ([AirlineId]);
+2026-03-03 21:37:39.717 +02:00 [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_AirplaneId] ON [Flights] ([AirplaneId]);
+2026-03-03 21:37:39.810 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_ArrivalAirportID] ON [Flights] ([ArrivalAirportID]);
+2026-03-03 21:37:39.900 +02:00 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_DepartureAirportID] ON [Flights] ([DepartureAirportID]);
+2026-03-03 21:37:39.993 +02:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_FlightSeats_FlightId_SeatId] ON [FlightSeats] ([FlightId], [SeatId]);
+2026-03-03 21:37:40.090 +02:00 [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_FlightSeats_SeatId] ON [FlightSeats] ([SeatId]);
+2026-03-03 21:37:40.184 +02:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Payments_BookingID] ON [Payments] ([BookingID]);
+2026-03-03 21:37:40.272 +02:00 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_RoleClaims_RoleId] ON [Security].[RoleClaims] ([RoleId]);
+2026-03-03 21:37:40.361 +02:00 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [Security].[Roles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2026-03-03 21:37:40.453 +02:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Seats_AirplaneId] ON [Seats] ([AirplaneId]);
+2026-03-03 21:37:40.541 +02:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_TicketAddOns_AddOnID] ON [TicketAddOns] ([AddOnID]);
+2026-03-03 21:37:40.628 +02:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_TicketAddOns_TicketId_AddOnID] ON [TicketAddOns] ([TicketId], [AddOnID]);
+2026-03-03 21:37:40.713 +02:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tickets_BookingID] ON [Tickets] ([BookingID]);
+2026-03-03 21:37:40.801 +02:00 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Tickets_FlightSeatId] ON [Tickets] ([FlightSeatId]);
+2026-03-03 21:37:40.888 +02:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tickets_SeatId] ON [Tickets] ([SeatId]);
+2026-03-03 21:37:40.976 +02:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Tickets_TicketNumber] ON [Tickets] ([TicketNumber]);
+2026-03-03 21:37:41.077 +02:00 [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserClaims_UserId] ON [Security].[UserClaims] ([UserId]);
+2026-03-03 21:37:41.165 +02:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserLogins_UserId] ON [Security].[UserLogins] ([UserId]);
+2026-03-03 21:37:41.262 +02:00 [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserRoles_RoleId] ON [Security].[UserRoles] ([RoleId]);
+2026-03-03 21:37:41.356 +02:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [Security].[Users] ([NormalizedEmail]);
+2026-03-03 21:37:41.445 +02:00 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [Security].[Users] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2026-03-03 21:37:41.533 +02:00 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260303193713_InitialCreate', N'8.0.22');
+2026-03-03 21:38:34.073 +02:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-03 21:38:35.560 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:38:35.602 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:38:35.642 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 21:38:35.654 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:38:35.655 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:38:35.656 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:38:35.657 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:38:35.658 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 21:38:35.667 +02:00 [INF] Applying migration '20260303193713_InitialCreate'.
+2026-03-03 21:38:35.934 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF SCHEMA_ID(N'Security') IS NULL EXEC(N'CREATE SCHEMA [Security];');
+2026-03-03 21:38:35.943 +02:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AddOns] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Price] smallint NOT NULL,
+    CONSTRAINT [PK_AddOns] PRIMARY KEY ([Id])
+);
+2026-03-03 21:38:59.111 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:38:59.211 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:38:59.214 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:38:59.215 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:38:59.232 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 21:38:59.253 +02:00 [INF] Applying migration '20260303193713_InitialCreate'.
+2026-03-03 21:38:59.472 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF SCHEMA_ID(N'Security') IS NULL EXEC(N'CREATE SCHEMA [Security];');
+2026-03-03 21:38:59.479 +02:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AddOns] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Price] smallint NOT NULL,
+    CONSTRAINT [PK_AddOns] PRIMARY KEY ([Id])
+);
+2026-03-03 21:40:13.821 +02:00 [INF] Executed DbCommand (348ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [BookFilghts];
+2026-03-03 21:40:14.006 +02:00 [INF] Executed DbCommand (116ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [BookFilghts] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2026-03-03 21:40:14.041 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:40:14.164 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2026-03-03 21:40:14.167 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:40:14.203 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:40:14.224 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 21:40:14.255 +02:00 [INF] Applying migration '20260303193713_InitialCreate'.
+2026-03-03 21:40:14.493 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF SCHEMA_ID(N'Security') IS NULL EXEC(N'CREATE SCHEMA [Security];');
+2026-03-03 21:40:14.497 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AddOns] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Price] smallint NOT NULL,
+    CONSTRAINT [PK_AddOns] PRIMARY KEY ([Id])
+);
+2026-03-03 21:40:14.500 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airlines] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Code] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Airlines] PRIMARY KEY ([Id])
+);
+2026-03-03 21:40:14.502 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airports] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Code] nvarchar(50) NOT NULL,
+    [City] nvarchar(100) NULL,
+    [Country] nvarchar(100) NULL,
+    CONSTRAINT [PK_Airports] PRIMARY KEY ([Id])
+);
+2026-03-03 21:40:14.506 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[Roles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+2026-03-03 21:40:14.511 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[Users] (
+    [Id] nvarchar(450) NOT NULL,
+    [FirstName] nvarchar(100) NOT NULL,
+    [LastName] nvarchar(100) NULL,
+    [PassportNumber] nvarchar(100) NULL,
+    [Role] nvarchar(500) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2026-03-03 21:40:14.516 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airplanes] (
+    [Id] int NOT NULL IDENTITY,
+    [AirlineId] int NOT NULL,
+    [Model] nvarchar(100) NOT NULL,
+    [SeatCapacity] smallint NOT NULL,
+    CONSTRAINT [PK_Airplanes] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Airplanes_Airlines_AirlineId] FOREIGN KEY ([AirlineId]) REFERENCES [Airlines] ([Id]) ON DELETE NO ACTION
+);
+2026-03-03 21:40:14.520 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[RoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_RoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RoleClaims_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Security].[Roles] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:40:14.524 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_UserClaims_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:40:14.530 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_UserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_UserLogins_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:40:14.535 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Security].[Roles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserRoles_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:40:14.539 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_UserTokens_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:40:14.546 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Flights] (
+    [Id] int NOT NULL IDENTITY,
+    [AirlineId] int NOT NULL,
+    [AirplaneId] int NOT NULL,
+    [DepartureAirportID] int NOT NULL,
+    [ArrivalAirportID] int NOT NULL,
+    [DepartureTime] datetime2 NOT NULL,
+    [ArrivalTime] datetime2 NOT NULL,
+    [BasePrice] decimal(9,2) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Flights] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Flights_Airlines_AirlineId] FOREIGN KEY ([AirlineId]) REFERENCES [Airlines] ([Id]),
+    CONSTRAINT [FK_Flights_Airplanes_AirplaneId] FOREIGN KEY ([AirplaneId]) REFERENCES [Airplanes] ([Id]),
+    CONSTRAINT [FK_Flights_Airports_ArrivalAirportID] FOREIGN KEY ([ArrivalAirportID]) REFERENCES [Airports] ([Id]),
+    CONSTRAINT [FK_Flights_Airports_DepartureAirportID] FOREIGN KEY ([DepartureAirportID]) REFERENCES [Airports] ([Id])
+);
+2026-03-03 21:40:14.550 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Seats] (
+    [Id] int NOT NULL IDENTITY,
+    [AirplaneId] int NOT NULL,
+    [Row] nvarchar(100) NOT NULL,
+    [Number] smallint NOT NULL,
+    [Class] int NOT NULL,
+    [Price] int NOT NULL,
+    CONSTRAINT [PK_Seats] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Seats_Airplanes_AirplaneId] FOREIGN KEY ([AirplaneId]) REFERENCES [Airplanes] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:40:14.555 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [FlightId] int NOT NULL,
+    [BookingDate] datetime2 NOT NULL,
+    [PNR] nvarchar(50) NOT NULL,
+    [TotalPrice] decimal(9,2) NOT NULL,
+    [Status] int NOT NULL,
+    [LastUpdated] datetime2 NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Bookings_Flights_FlightId] FOREIGN KEY ([FlightId]) REFERENCES [Flights] ([Id]),
+    CONSTRAINT [FK_Bookings_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id])
+);
+2026-03-03 21:40:14.560 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [FlightSeats] (
+    [Id] int NOT NULL IDENTITY,
+    [FlightId] int NOT NULL,
+    [SeatId] int NOT NULL,
+    [TicketId] int NULL,
+    [IsAvailable] bit NOT NULL,
+    CONSTRAINT [PK_FlightSeats] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_FlightSeats_Flights_FlightId] FOREIGN KEY ([FlightId]) REFERENCES [Flights] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_FlightSeats_Seats_SeatId] FOREIGN KEY ([SeatId]) REFERENCES [Seats] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:40:14.566 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Payments] (
+    [Id] int NOT NULL IDENTITY,
+    [BookingID] int NOT NULL,
+    [SessionId] nvarchar(200) NULL,
+    [PaymentIntentId] nvarchar(200) NULL,
+    [Amount] decimal(9,2) NOT NULL,
+    [PaymentDate] datetime2 NOT NULL,
+    [PaymentStatus] int NOT NULL,
+    CONSTRAINT [PK_Payments] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Payments_Bookings_BookingID] FOREIGN KEY ([BookingID]) REFERENCES [Bookings] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:40:14.572 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Tickets] (
+    [Id] int NOT NULL IDENTITY,
+    [BookingID] int NOT NULL,
+    [TicketNumber] nvarchar(50) NOT NULL,
+    [FlightSeatId] int NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NULL,
+    [PassportNumber] nvarchar(max) NOT NULL,
+    [TicketPrice] decimal(9,2) NOT NULL,
+    [SeatId] int NULL,
+    CONSTRAINT [PK_Tickets] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Tickets_Bookings_BookingID] FOREIGN KEY ([BookingID]) REFERENCES [Bookings] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Tickets_FlightSeats_FlightSeatId] FOREIGN KEY ([FlightSeatId]) REFERENCES [FlightSeats] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Tickets_Seats_SeatId] FOREIGN KEY ([SeatId]) REFERENCES [Seats] ([Id])
+);
+2026-03-03 21:40:14.577 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TicketAddOns] (
+    [Id] int NOT NULL IDENTITY,
+    [TicketId] int NOT NULL,
+    [AddOnID] int NOT NULL,
+    CONSTRAINT [PK_TicketAddOns] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_TicketAddOns_AddOns_AddOnID] FOREIGN KEY ([AddOnID]) REFERENCES [AddOns] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_TicketAddOns_Tickets_TicketId] FOREIGN KEY ([TicketId]) REFERENCES [Tickets] ([Id]) ON DELETE CASCADE
+);
+2026-03-03 21:40:14.636 +02:00 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'Price') AND [object_id] = OBJECT_ID(N'[AddOns]'))
+    SET IDENTITY_INSERT [AddOns] ON;
+INSERT INTO [AddOns] ([Id], [Name], [Price])
+VALUES (1, N'Extra Baggage', CAST(150 AS smallint)),
+(3, N'Premium Meal', CAST(100 AS smallint)),
+(4, N'Priority Boarding', CAST(50 AS smallint));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'Price') AND [object_id] = OBJECT_ID(N'[AddOns]'))
+    SET IDENTITY_INSERT [AddOns] OFF;
+2026-03-03 21:40:14.667 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Code', N'Name') AND [object_id] = OBJECT_ID(N'[Airlines]'))
+    SET IDENTITY_INSERT [Airlines] ON;
+INSERT INTO [Airlines] ([Id], [Code], [Name])
+VALUES (1, N'EGY', N'EgyptAir');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Code', N'Name') AND [object_id] = OBJECT_ID(N'[Airlines]'))
+    SET IDENTITY_INSERT [Airlines] OFF;
+2026-03-03 21:40:14.699 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'City', N'Code', N'Country', N'Name') AND [object_id] = OBJECT_ID(N'[Airports]'))
+    SET IDENTITY_INSERT [Airports] ON;
+INSERT INTO [Airports] ([Id], [City], [Code], [Country], [Name])
+VALUES (1, NULL, N'CAI', NULL, N'Cairo International Airport'),
+(2, NULL, N'DXB', NULL, N'Dubai International Airport');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'City', N'Code', N'Country', N'Name') AND [object_id] = OBJECT_ID(N'[Airports]'))
+    SET IDENTITY_INSERT [Airports] OFF;
+2026-03-03 21:40:14.729 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'Model', N'SeatCapacity') AND [object_id] = OBJECT_ID(N'[Airplanes]'))
+    SET IDENTITY_INSERT [Airplanes] ON;
+INSERT INTO [Airplanes] ([Id], [AirlineId], [Model], [SeatCapacity])
+VALUES (1, 1, N'Boeing 999', CAST(8 AS smallint));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'Model', N'SeatCapacity') AND [object_id] = OBJECT_ID(N'[Airplanes]'))
+    SET IDENTITY_INSERT [Airplanes] OFF;
+2026-03-03 21:40:14.773 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'AirplaneId', N'ArrivalAirportID', N'ArrivalTime', N'BasePrice', N'DepartureAirportID', N'DepartureTime', N'Status') AND [object_id] = OBJECT_ID(N'[Flights]'))
+    SET IDENTITY_INSERT [Flights] ON;
+INSERT INTO [Flights] ([Id], [AirlineId], [AirplaneId], [ArrivalAirportID], [ArrivalTime], [BasePrice], [DepartureAirportID], [DepartureTime], [Status])
+VALUES (1, 1, 1, 2, '2025-01-01T15:00:00.0000000', 2500.0, 1, '2025-01-01T10:30:00.0000000', 1),
+(2, 1, 1, 1, '2025-01-12T12:00:00.0000000', 3200.0, 2, '2025-01-12T08:00:00.0000000', 1);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'AirplaneId', N'ArrivalAirportID', N'ArrivalTime', N'BasePrice', N'DepartureAirportID', N'DepartureTime', N'Status') AND [object_id] = OBJECT_ID(N'[Flights]'))
+    SET IDENTITY_INSERT [Flights] OFF;
+2026-03-03 21:40:14.808 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirplaneId', N'Class', N'Number', N'Price', N'Row') AND [object_id] = OBJECT_ID(N'[Seats]'))
+    SET IDENTITY_INSERT [Seats] ON;
+INSERT INTO [Seats] ([Id], [AirplaneId], [Class], [Number], [Price], [Row])
+VALUES (1, 1, 1, CAST(1 AS smallint), 100, N'A'),
+(2, 1, 1, CAST(2 AS smallint), 100, N'A'),
+(3, 1, 2, CAST(1 AS smallint), 200, N'B'),
+(4, 1, 2, CAST(2 AS smallint), 200, N'B'),
+(5, 1, 3, CAST(1 AS smallint), 300, N'C'),
+(6, 1, 3, CAST(2 AS smallint), 300, N'C'),
+(7, 1, 1, CAST(1 AS smallint), 100, N'D'),
+(8, 1, 1, CAST(2 AS smallint), 100, N'D');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirplaneId', N'Class', N'Number', N'Price', N'Row') AND [object_id] = OBJECT_ID(N'[Seats]'))
+    SET IDENTITY_INSERT [Seats] OFF;
+2026-03-03 21:40:14.854 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'FlightId', N'IsAvailable', N'SeatId', N'TicketId') AND [object_id] = OBJECT_ID(N'[FlightSeats]'))
+    SET IDENTITY_INSERT [FlightSeats] ON;
+INSERT INTO [FlightSeats] ([Id], [FlightId], [IsAvailable], [SeatId], [TicketId])
+VALUES (1, 1, CAST(1 AS bit), 1, NULL),
+(2, 1, CAST(1 AS bit), 2, NULL),
+(3, 1, CAST(1 AS bit), 3, NULL),
+(4, 1, CAST(1 AS bit), 4, NULL),
+(5, 1, CAST(1 AS bit), 5, NULL),
+(6, 1, CAST(1 AS bit), 6, NULL),
+(7, 1, CAST(1 AS bit), 7, NULL),
+(8, 1, CAST(1 AS bit), 8, NULL);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'FlightId', N'IsAvailable', N'SeatId', N'TicketId') AND [object_id] = OBJECT_ID(N'[FlightSeats]'))
+    SET IDENTITY_INSERT [FlightSeats] OFF;
+2026-03-03 21:40:14.876 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Airplanes_AirlineId] ON [Airplanes] ([AirlineId]);
+2026-03-03 21:40:14.878 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_FlightId] ON [Bookings] ([FlightId]);
+2026-03-03 21:40:14.880 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Bookings_PNR] ON [Bookings] ([PNR]);
+2026-03-03 21:40:14.883 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_UserId] ON [Bookings] ([UserId]);
+2026-03-03 21:40:14.888 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_AirlineId] ON [Flights] ([AirlineId]);
+2026-03-03 21:40:14.894 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_AirplaneId] ON [Flights] ([AirplaneId]);
+2026-03-03 21:40:14.900 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_ArrivalAirportID] ON [Flights] ([ArrivalAirportID]);
+2026-03-03 21:40:14.906 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_DepartureAirportID] ON [Flights] ([DepartureAirportID]);
+2026-03-03 21:40:14.912 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_FlightSeats_FlightId_SeatId] ON [FlightSeats] ([FlightId], [SeatId]);
+2026-03-03 21:40:14.918 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_FlightSeats_SeatId] ON [FlightSeats] ([SeatId]);
+2026-03-03 21:40:14.920 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Payments_BookingID] ON [Payments] ([BookingID]);
+2026-03-03 21:40:14.922 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_RoleClaims_RoleId] ON [Security].[RoleClaims] ([RoleId]);
+2026-03-03 21:40:14.925 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [Security].[Roles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2026-03-03 21:40:14.931 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Seats_AirplaneId] ON [Seats] ([AirplaneId]);
+2026-03-03 21:40:14.933 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_TicketAddOns_AddOnID] ON [TicketAddOns] ([AddOnID]);
+2026-03-03 21:40:14.935 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_TicketAddOns_TicketId_AddOnID] ON [TicketAddOns] ([TicketId], [AddOnID]);
+2026-03-03 21:40:14.938 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tickets_BookingID] ON [Tickets] ([BookingID]);
+2026-03-03 21:40:14.940 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Tickets_FlightSeatId] ON [Tickets] ([FlightSeatId]);
+2026-03-03 21:40:14.942 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tickets_SeatId] ON [Tickets] ([SeatId]);
+2026-03-03 21:40:14.945 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Tickets_TicketNumber] ON [Tickets] ([TicketNumber]);
+2026-03-03 21:40:14.946 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserClaims_UserId] ON [Security].[UserClaims] ([UserId]);
+2026-03-03 21:40:14.948 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserLogins_UserId] ON [Security].[UserLogins] ([UserId]);
+2026-03-03 21:40:14.950 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserRoles_RoleId] ON [Security].[UserRoles] ([RoleId]);
+2026-03-03 21:40:14.952 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [Security].[Users] ([NormalizedEmail]);
+2026-03-03 21:40:14.954 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [Security].[Users] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2026-03-03 21:40:14.959 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260303193713_InitialCreate', N'8.0.22');
+2026-03-03 21:40:36.633 +02:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-03 21:40:38.647 +02:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:40:38.688 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:40:38.710 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 21:40:39.193 +02:00 [INF] Executed DbCommand (69ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 21:40:39.234 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 21:40:39.455 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Security].[Roles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2026-03-03 21:40:39.479 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 21:40:39.485 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Security].[Roles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2026-03-03 21:40:39.750 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-03 21:40:39.892 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 100), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 100), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 500), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Security].[Users] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PassportNumber], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [Role], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2026-03-03 21:40:39.914 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2026-03-03 21:40:39.970 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[RoleId]
+FROM [Security].[UserRoles] AS [u]
+WHERE [u].[UserId] = @__p_0 AND [u].[RoleId] = @__p_1
+2026-03-03 21:40:39.975 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2026-03-03 21:40:40.008 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-03 21:40:40.077 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p20='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p21='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 100), @p7='?' (Size = 100), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 100), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 500), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Security].[UserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [Security].[Users] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PassportNumber] = @p12, [PasswordHash] = @p13, [PhoneNumber] = @p14, [PhoneNumberConfirmed] = @p15, [Role] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+OUTPUT 1
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+2026-03-03 21:40:40.561 +02:00 [INF] Now listening on: https://localhost:7008
+2026-03-03 21:40:40.561 +02:00 [INF] Now listening on: http://localhost:5175
+2026-03-03 21:40:40.627 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-03 21:40:40.628 +02:00 [INF] Hosting environment: Development
+2026-03-03 21:40:40.628 +02:00 [INF] Content root path: E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI
+2026-03-03 21:40:42.163 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 21:40:42.469 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 21:40:42.474 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2026-03-03 21:40:42.476 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-03-03 21:40:42.477 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2026-03-03 21:40:42.477 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorRememberMe signed out.
+2026-03-03 21:40:42.481 +02:00 [INF] Identity.Application was not authenticated. Failure message: No principal.
+2026-03-03 21:40:42.487 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 21:40:42.509 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 21:40:42.525 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 21:40:42.719 +02:00 [INF] Executed ViewResult - view Index executed in 197.3351ms.
+2026-03-03 21:40:42.722 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 212.5399ms
+2026-03-03 21:40:42.723 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 21:40:42.727 +02:00 [INF] HTTP GET / responded 200 in 418.8531 ms
+2026-03-03 21:40:42.745 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 585.0522ms
+2026-03-03 21:40:43.049 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - null null
+2026-03-03 21:40:43.049 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 21:40:43.054 +02:00 [INF] The file /css/site.css was not modified
+2026-03-03 21:40:43.054 +02:00 [INF] HTTP GET /css/site.css responded 304 in 5.1491 ms
+2026-03-03 21:40:43.055 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - 304 null text/css 6.138ms
+2026-03-03 21:40:43.058 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 9.3705ms
+2026-03-03 21:40:43.851 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 21:40:43.914 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 63.1367ms
+2026-03-03 21:40:45.945 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Identity/Account/Login - null null
+2026-03-03 21:40:45.956 +02:00 [INF] Executing endpoint '/Account/Login'
+2026-03-03 21:40:45.994 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-03-03 21:40:46.033 +02:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-03-03 21:40:46.036 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-03-03 21:40:46.039 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-03-03 21:40:46.045 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-03-03 21:40:46.045 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-03-03 21:40:46.226 +02:00 [INF] Executed page /Account/Login in 230.617ms
+2026-03-03 21:40:46.226 +02:00 [INF] Executed endpoint '/Account/Login'
+2026-03-03 21:40:46.226 +02:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 277.2266 ms
+2026-03-03 21:40:46.227 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Identity/Account/Login - 200 null text/html; charset=utf-8 282.1058ms
+2026-03-03 21:40:46.305 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 21:40:46.307 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 1.8133ms
+2026-03-03 21:40:46.527 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 21:40:46.542 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.2749ms
+2026-03-03 21:40:48.756 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7008/Identity/Account/Login - application/x-www-form-urlencoded 262
+2026-03-03 21:40:48.763 +02:00 [INF] Executing endpoint '/Account/Login'
+2026-03-03 21:40:48.763 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-03-03 21:40:48.828 +02:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2026-03-03 21:40:49.070 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-03 21:40:49.506 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[ClaimType], [u].[ClaimValue], [u].[UserId]
+FROM [Security].[UserClaims] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+2026-03-03 21:40:49.573 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Security].[UserRoles] AS [u]
+INNER JOIN [Security].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2026-03-03 21:40:49.577 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 21:40:49.591 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ClaimType], [r].[ClaimValue]
+FROM [Security].[RoleClaims] AS [r]
+WHERE [r].[RoleId] = @__role_Id_0
+2026-03-03 21:40:49.597 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-03-03 21:40:49.600 +02:00 [INF] User logged in.
+2026-03-03 21:40:49.603 +02:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2026-03-03 21:40:49.606 +02:00 [INF] Executing LocalRedirectResult, redirecting to /.
+2026-03-03 21:40:49.609 +02:00 [INF] Executed page /Account/Login in 845.6604ms
+2026-03-03 21:40:49.610 +02:00 [INF] Executed endpoint '/Account/Login'
+2026-03-03 21:40:49.611 +02:00 [INF] HTTP POST /Identity/Account/Login responded 302 in 853.4576 ms
+2026-03-03 21:40:49.611 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7008/Identity/Account/Login - 302 0 null 855.5931ms
+2026-03-03 21:40:49.619 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 21:40:49.623 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 21:40:49.624 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 21:40:49.625 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 21:40:49.656 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 21:40:49.682 +02:00 [INF] Executed ViewResult - view Index executed in 57.6817ms.
+2026-03-03 21:40:49.685 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 61.2677ms
+2026-03-03 21:40:49.686 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 21:40:49.686 +02:00 [INF] HTTP GET / responded 200 in 64.6849 ms
+2026-03-03 21:40:49.686 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 67.1778ms
+2026-03-03 21:40:49.733 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 21:40:49.733 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 21:40:49.734 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.3268ms
+2026-03-03 21:40:49.738 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 4.0745ms
+2026-03-03 21:40:51.505 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Dashboard/Dashboard - null null
+2026-03-03 21:40:51.514 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController.Dashboard (BookFlightTickets.UI)'
+2026-03-03 21:40:51.518 +02:00 [INF] Route matched with {area = "Admin", action = "Dashboard", controller = "Dashboard", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Dashboard() on controller BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController (BookFlightTickets.UI).
+2026-03-03 21:40:51.520 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController.Dashboard (BookFlightTickets.UI) in 1.0718ms
+2026-03-03 21:40:51.520 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController.Dashboard (BookFlightTickets.UI)'
+2026-03-03 21:40:51.520 +02:00 [ERR] HTTP GET /Admin/Dashboard/Dashboard responded 500 in 13.2179 ms
+System.InvalidOperationException: Unable to resolve service for type 'BookFlightTickets.Core.ServiceContracts.IDashboardService' while attempting to activate 'BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method500(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-03-03 21:40:51.561 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'BookFlightTickets.Core.ServiceContracts.IDashboardService' while attempting to activate 'BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method500(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-03-03 21:40:51.589 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Dashboard/Dashboard - 500 null text/html; charset=utf-8 83.5176ms
+2026-03-03 21:40:51.638 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 21:40:51.638 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 21:40:51.638 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.5186ms
+2026-03-03 21:40:51.643 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 5.48ms
+2026-03-03 21:42:09.250 +02:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-03 21:42:10.759 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 21:42:10.799 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 21:42:10.833 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 21:42:11.195 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 21:42:11.582 +02:00 [INF] Now listening on: https://localhost:7008
+2026-03-03 21:42:11.582 +02:00 [INF] Now listening on: http://localhost:5175
+2026-03-03 21:42:11.617 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-03 21:42:11.618 +02:00 [INF] Hosting environment: Development
+2026-03-03 21:42:11.618 +02:00 [INF] Content root path: E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI
+2026-03-03 21:42:12.615 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 21:42:12.782 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 21:42:12.795 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 21:42:12.844 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 21:42:13.080 +02:00 [INF] Executed ViewResult - view Index executed in 246.6835ms.
+2026-03-03 21:42:13.083 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 286.9717ms
+2026-03-03 21:42:13.083 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 21:42:13.086 +02:00 [INF] HTTP GET / responded 200 in 379.7999 ms
+2026-03-03 21:42:13.091 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 487.5446ms
+2026-03-03 21:42:13.302 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 21:42:13.310 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 8.6146ms
+2026-03-03 21:42:13.887 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 21:42:13.920 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.494ms
+2026-03-03 21:42:15.872 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Identity/Account/Login - null null
+2026-03-03 21:42:15.880 +02:00 [INF] Executing endpoint '/Account/Login'
+2026-03-03 21:42:15.897 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-03-03 21:42:15.915 +02:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-03-03 21:42:15.935 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-03-03 21:42:15.937 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-03-03 21:42:15.943 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-03-03 21:42:15.943 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-03-03 21:42:16.127 +02:00 [INF] Executed page /Account/Login in 229.4968ms
+2026-03-03 21:42:16.128 +02:00 [INF] Executed endpoint '/Account/Login'
+2026-03-03 21:42:16.128 +02:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 251.4429 ms
+2026-03-03 21:42:16.129 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Identity/Account/Login - 200 null text/html; charset=utf-8 256.9061ms
+2026-03-03 21:42:16.228 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 21:42:16.231 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 2.326ms
+2026-03-03 21:42:16.408 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 21:42:16.422 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.6824ms
+2026-03-03 21:42:18.989 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7008/Identity/Account/Login - application/x-www-form-urlencoded 262
+2026-03-03 21:42:18.999 +02:00 [INF] Executing endpoint '/Account/Login'
+2026-03-03 21:42:19.000 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-03-03 21:42:19.037 +02:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2026-03-03 21:42:19.083 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-03 21:42:19.452 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[ClaimType], [u].[ClaimValue], [u].[UserId]
+FROM [Security].[UserClaims] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+2026-03-03 21:42:19.477 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Security].[UserRoles] AS [u]
+INNER JOIN [Security].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2026-03-03 21:42:19.483 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 21:42:19.490 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ClaimType], [r].[ClaimValue]
+FROM [Security].[RoleClaims] AS [r]
+WHERE [r].[RoleId] = @__role_Id_0
+2026-03-03 21:42:19.494 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-03-03 21:42:19.495 +02:00 [INF] User logged in.
+2026-03-03 21:42:19.497 +02:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2026-03-03 21:42:19.499 +02:00 [INF] Executing LocalRedirectResult, redirecting to /.
+2026-03-03 21:42:19.501 +02:00 [INF] Executed page /Account/Login in 500.6066ms
+2026-03-03 21:42:19.501 +02:00 [INF] Executed endpoint '/Account/Login'
+2026-03-03 21:42:19.502 +02:00 [INF] HTTP POST /Identity/Account/Login responded 302 in 511.3125 ms
+2026-03-03 21:42:19.505 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7008/Identity/Account/Login - 302 0 null 516.3833ms
+2026-03-03 21:42:19.507 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 21:42:19.511 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 21:42:19.511 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 21:42:19.512 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 21:42:19.659 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 21:42:19.689 +02:00 [INF] Executed ViewResult - view Index executed in 177.6726ms.
+2026-03-03 21:42:19.692 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 180.0858ms
+2026-03-03 21:42:19.692 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 21:42:19.692 +02:00 [INF] HTTP GET / responded 200 in 183.2094 ms
+2026-03-03 21:42:19.692 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 185.0714ms
+2026-03-03 21:42:19.742 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 21:42:19.743 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 21:42:19.743 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.7602ms
+2026-03-03 21:42:19.750 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.4045ms
+2026-03-03 21:42:20.739 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Admin/Dashboard/Dashboard - null null
+2026-03-03 21:42:20.746 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController.Dashboard (BookFlightTickets.UI)'
+2026-03-03 21:42:20.751 +02:00 [INF] Route matched with {area = "Admin", action = "Dashboard", controller = "Dashboard", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Dashboard() on controller BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController (BookFlightTickets.UI).
+2026-03-03 21:42:20.759 +02:00 [INF] Loading dashboard data from database
+2026-03-03 21:42:20.885 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-03-03 21:42:20.895 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-03-03 21:42:20.899 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-03-03 21:42:20.903 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-03-03 21:42:20.906 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-03-03 21:42:20.908 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-03-03 21:42:20.920 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Security].[Users] AS [u]
+2026-03-03 21:42:20.931 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+2026-03-03 21:42:20.941 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Airlines] AS [a]
+2026-03-03 21:42:20.952 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Airplanes] AS [a]
+2026-03-03 21:42:20.961 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b]
+2026-03-03 21:42:21.093 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Name], COUNT(*) AS [Count]
+FROM [Flights] AS [f]
+INNER JOIN [Airlines] AS [a] ON [f].[AirlineId] = [a].[Id]
+GROUP BY [a].[Name]
+2026-03-03 21:42:21.277 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AirlineId], [t].[AirplaneId], [t].[ArrivalAirportID], [t].[ArrivalTime], [t].[BasePrice], [t].[DepartureAirportID], [t].[DepartureTime], [t].[Status], [a].[Id], [a].[Code], [a].[Name], [a0].[Id], [a0].[AirlineId], [a0].[Model], [a0].[SeatCapacity], [a1].[Id], [a1].[City], [a1].[Code], [a1].[Country], [a1].[Name], [a2].[Id], [a2].[City], [a2].[Code], [a2].[Country], [a2].[Name]
+FROM (
+    SELECT [f].[Id], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status]
+    FROM [Flights] AS [f]
+    ORDER BY [f].[DepartureTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Airlines] AS [a] ON [t].[AirlineId] = [a].[Id]
+INNER JOIN [Airplanes] AS [a0] ON [t].[AirplaneId] = [a0].[Id]
+INNER JOIN [Airports] AS [a1] ON [t].[DepartureAirportID] = [a1].[Id]
+INNER JOIN [Airports] AS [a2] ON [t].[ArrivalAirportID] = [a2].[Id]
+ORDER BY [t].[DepartureTime] DESC
+2026-03-03 21:42:21.325 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[BookingDate], [t].[FlightId], [t].[LastUpdated], [t].[PNR], [t].[Status], [t].[TotalPrice], [t].[UserId], [f].[Id], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status]
+FROM (
+    SELECT [b].[Id], [b].[BookingDate], [b].[FlightId], [b].[LastUpdated], [b].[PNR], [b].[Status], [b].[TotalPrice], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Flights] AS [f] ON [t].[FlightId] = [f].[Id]
+ORDER BY [t].[BookingDate] DESC
+2026-03-03 21:42:21.329 +02:00 [INF] Dashboard loaded successfully with 2 recent flights and 0 recent bookings
+2026-03-03 21:42:21.337 +02:00 [INF] Executing ViewResult, running view Dashboard.
+2026-03-03 21:42:21.371 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-03-03 21:42:21.504 +02:00 [INF] Executed ViewResult - view Dashboard executed in 169.3809ms.
+2026-03-03 21:42:21.504 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController.Dashboard (BookFlightTickets.UI) in 753.0101ms
+2026-03-03 21:42:21.504 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController.Dashboard (BookFlightTickets.UI)'
+2026-03-03 21:42:21.504 +02:00 [INF] HTTP GET /Admin/Dashboard/Dashboard responded 200 in 763.6033 ms
+2026-03-03 21:42:21.506 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Admin/Dashboard/Dashboard - 200 null text/html; charset=utf-8 767.2702ms
+2026-03-03 21:42:21.564 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 21:42:21.565 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.5871ms
+2026-03-03 21:42:21.708 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 21:42:21.737 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.5309ms
+2026-03-03 21:42:21.820 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7008/dashboardHub/negotiate?negotiateVersion=1 - null 0
+2026-03-03 21:42:21.826 +02:00 [INF] Executing endpoint '/dashboardHub/negotiate'
+2026-03-03 21:42:21.835 +02:00 [INF] Executed endpoint '/dashboardHub/negotiate'
+2026-03-03 21:42:21.835 +02:00 [INF] HTTP POST /dashboardHub/negotiate responded 200 in 15.1659 ms
+2026-03-03 21:42:21.836 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7008/dashboardHub/negotiate?negotiateVersion=1 - 200 316 application/json 15.616ms
+2026-03-03 21:42:22.079 +02:00 [INF] Request starting HTTP/2 CONNECT https://localhost:7008/dashboardHub?id=-CiGFGHWOdQJMG4QhDyvNw - null null
+2026-03-03 21:42:22.083 +02:00 [INF] Executing endpoint '/dashboardHub'
+2026-03-03 21:42:45.328 +02:00 [INF] Executed endpoint '/dashboardHub'
+2026-03-03 21:42:45.329 +02:00 [INF] HTTP CONNECT /dashboardHub responded 200 in 23249.3877 ms
+2026-03-03 21:42:45.329 +02:00 [INF] Request finished HTTP/2 CONNECT https://localhost:7008/dashboardHub?id=-CiGFGHWOdQJMG4QhDyvNw - 200 null null 23249.8266ms
+2026-03-03 23:18:58.588 +02:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-03 23:19:00.529 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-03-03 23:19:00.552 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-03-03 23:19:00.566 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-03-03 23:19:01.051 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-03-03 23:19:01.903 +02:00 [INF] Now listening on: https://localhost:7008
+2026-03-03 23:19:01.903 +02:00 [INF] Now listening on: http://localhost:5175
+2026-03-03 23:19:01.952 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-03 23:19:01.952 +02:00 [INF] Hosting environment: Development
+2026-03-03 23:19:01.952 +02:00 [INF] Content root path: E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI
+2026-03-03 23:19:03.373 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 23:19:03.557 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 23:19:03.582 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 23:19:03.594 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 23:19:03.866 +02:00 [INF] Executed ViewResult - view Index executed in 274.5948ms.
+2026-03-03 23:19:03.867 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 284.5479ms
+2026-03-03 23:19:03.867 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 23:19:03.869 +02:00 [INF] HTTP GET / responded 200 in 393.3650 ms
+2026-03-03 23:19:03.874 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 504.3185ms
+2026-03-03 23:19:05.086 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - null null
+2026-03-03 23:19:05.091 +02:00 [INF] The file /css/site.css was not modified
+2026-03-03 23:19:05.091 +02:00 [INF] HTTP GET /css/site.css responded 304 in 5.3796 ms
+2026-03-03 23:19:05.092 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - 304 null text/css 6.2515ms
+2026-03-03 23:19:05.115 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 23:19:05.115 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 23:19:05.123 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 7.8714ms
+2026-03-03 23:19:05.335 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 219.4573ms
+2026-03-03 23:19:57.454 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-03-03 23:19:57.469 +02:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 23:19:57.470 +02:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-03-03 23:19:57.473 +02:00 [INF] Executing ViewResult, running view Index.
+2026-03-03 23:19:57.494 +02:00 [INF] Executed ViewResult - view Index executed in 21.8743ms.
+2026-03-03 23:19:57.494 +02:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 23.2735ms
+2026-03-03 23:19:57.494 +02:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-03-03 23:19:57.494 +02:00 [INF] HTTP GET / responded 200 in 35.4385 ms
+2026-03-03 23:19:57.495 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 40.1775ms
+2026-03-03 23:19:58.508 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 23:19:58.510 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 1.8791ms
+2026-03-03 23:19:59.097 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 23:19:59.102 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 4.3696ms
+2026-03-03 23:20:00.754 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Identity/Account/Login - null null
+2026-03-03 23:20:00.764 +02:00 [INF] Executing endpoint '/Account/Login'
+2026-03-03 23:20:00.785 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-03-03 23:20:00.813 +02:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-03-03 23:20:00.816 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-03-03 23:20:00.817 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-03-03 23:20:00.820 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-03-03 23:20:00.820 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-03-03 23:20:01.002 +02:00 [INF] Executed page /Account/Login in 216.3867ms
+2026-03-03 23:20:01.002 +02:00 [INF] Executed endpoint '/Account/Login'
+2026-03-03 23:20:01.003 +02:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 245.8990 ms
+2026-03-03 23:20:01.003 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Identity/Account/Login - 200 null text/html; charset=utf-8 248.4433ms
+2026-03-03 23:20:01.073 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-03 23:20:01.074 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 1.0665ms
+2026-03-03 23:20:01.297 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-03-03 23:20:01.309 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.618ms

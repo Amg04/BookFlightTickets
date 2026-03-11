@@ -1,0 +1,91 @@
+﻿@model IEnumerable<UserViewModel>
+<p>
+	<a asp-area="Identity" asp-page="/Account/Register" 
+	   class="btn btn-success">
+		<i class="fas fa-plus"></i> Add New User
+	</a>
+</p>
+<partial name="_notification" />
+<div class="card shadow border-0 mt-4">
+	<div class="card-header bg-secondary bg-black ml-0 py-3">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h2 class="text-white py-2">User List</h2>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-4">
+		<div class="table-responsive">
+			<table class="table table-bordered table-striped" style="width:100%">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Phone</th>
+						<th>PassportNumber</th>
+						<th>Role</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var user in Model)
+					{
+						<tr>
+							<td>@((user.FirstName + " " + user.LastName).Trim())</td>
+							<td>@user.Email</td>
+							<td>@user.Phone</td>
+							<td>@user.PassportNumber</td>
+							<td>@user.Role</td>
+							<td>
+								@{
+									var isLocked = user.LockoutEnd.HasValue && user.LockoutEnd > DateTimeOffset.UtcNow;
+								}
+								@if (isLocked)
+								{
+									<button onclick="LockUnlock('@user.Id')" class="btn btn-danger text-white" style="width:100px; cursor:pointer;">
+										<i class="bi bi-lock-fill"></i> lock
+									</button>
+								}
+								else
+								{
+									<button onclick="LockUnlock('@user.Id')" class="btn btn-success text-white" style="width:100px; cursor:pointer;">
+										<i class="bi bi-unlock-fill"></i> Unlock
+									</button>
+								}
+								<a href="/admin/user/RoleManagment?userId=@user.Id" class="btn btn-danger text-white" style="width:150px; cursor:pointer;">
+									<i class="bi bi-pencil-square"></i> Permission
+								</a>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	<script>
+		function LockUnlock(id) {
+			$.ajax({
+				type: "POST",
+				url: '/Admin/User/LockUnlock',
+				data: JSON.stringify(id),
+				contentType: 'application/json',
+				success: function (data) {
+					if (data.success) {
+						toastr.success(data.message);
+						setTimeout(function () {
+							location.reload();
+						}, 1500);
+					} else {
+						toastr.error(data.message || "An error occurred.");
+					}
+				},
+				error: function () {
+					toastr.error("Request failed.");
+				}
+			});
+		}
+	</script>
+}

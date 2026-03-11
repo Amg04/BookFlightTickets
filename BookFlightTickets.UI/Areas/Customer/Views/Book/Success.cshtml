@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Success";
+}
+
+<h2 class="text-center text-success mb-4">✅ Payment Successful!</h2>
+<partial name="_notification" />
+@model int
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="position-relative">
+                <img src="~/Images/BookConfirmed.png" alt="Booking Confirmed" 
+                class="img-fluid" style="object-fit: contain; width: 100%; height: 200px;">
+
+                <div class="card shadow-lg border-0 mt-4">
+                    <div class="card-header bg-gradient bg-success text-white">
+                        <h3 class="m-0">✈️ Booking Confirmation</h3>
+                    </div>
+                    <div class="card-body p-5 bg-dark text-light">
+                        <div class="mb-4">
+                            <h4 class="text-success fw-bold mb-3">🎉 Congratulations! Your booking is confirmed 🎉</h4>
+                            <div class="alert alert-success border-0">
+                                <i class="fas fa-check-circle me-2"></i>
+                                <strong>Booking ID:</strong> <span class="fw-bolder fs-4 text-warning">@Model</span>
+                            </div>
+                        </div>
+
+                        <div class="row text-start mb-4">
+                            <div class="col-md-6">
+                                <h6 class="text-info"><i class="fas fa-plane me-2"></i>Have a Safe Flight! 🌟</h6>
+                                <p class="small text-muted">Enjoy your safe and comfortable journey with us</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="text-info"><i class="fas fa-envelope me-2"></i>Confirmation Email</h6>
+                                <p class="small text-muted">You'll receive your booking confirmation email shortly</p>
+                            </div>
+                        </div>
+
+                        <hr class="border-light opacity-25" />
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                            <a asp-controller="MyBookings" asp-action="Index" class="btn btn-outline-info btn-lg px-4">
+                                <i class="fas fa-ticket-alt me-2"></i>View My Tickets
+                            </a>
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-dark btn-lg px-4">
+                                <i class="fas fa-home me-2"></i>Back to Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

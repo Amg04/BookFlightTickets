@@ -1,0 +1,105 @@
+﻿@model IEnumerable<AddOnViewModel>
+@{
+	ViewData["Title"] = "Add-Ons";
+}
+
+<p>
+	<a asp-action="Create" class="btn btn-success">
+		<i class="fas fa-plus"></i> Add New Add-On
+	</a>
+</p>
+<partial name="_notification" />
+
+@if (Model.Any())
+{
+	<div class="card shadow border-0 mt-4">
+		<div class="card-header bg-secondary bg-black ml-0 py-3">
+			<div class="row">
+				<div class="col-12 text-center">
+					<h2 class="text-white py-2">Add-Ons List</h2>
+				</div>
+			</div>
+		</div>
+		<div class="card-body p-4">
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped" style="width:100%">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Price (EGP)</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.Name</td>
+								<td>@item.Price.ToString("N2")</td>
+								<td>
+									<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i> Edit</a> |
+									@{
+										var deleteUrl = Url.Action("Delete", "AddOn", new { area = SD.Admin, id = item.Id });
+									}
+									<a onclick="Delete('@deleteUrl')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</a>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+}
+else
+{
+	<div class="alert alert-info text-center" role="alert">
+		<div class="d-flex flex-column align-items-center">
+			<i class="fas fa-inbox fa-3x mb-3 text-muted"></i>
+			<h4 class="alert-heading">No Add-Ons Found!</h4>
+			<p>There are currently no add-ons available. Start by adding a new add-on.</p>
+			<a asp-action="Create" class="btn btn-success mt-2">
+				<i class="fas fa-plus"></i> Add First Add-On
+			</a>
+		</div>
+	</div>
+}
+
+@section Scripts {
+	<script>
+		function Delete(url) {
+			Swal.fire({
+				title: "Are you sure?",
+				text: "You won't be able to revert this!",
+				icon: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#d33",
+				cancelButtonColor: "#3085d6",
+				confirmButtonText: "Yes, delete it!"
+			}).then((result) => {
+				if (result.isConfirmed) {
+					$.ajax({
+						url: url,
+						type: 'DELETE',
+						success: function (data) {
+							 if (data.success) {
+							toastr.success(data.message, 'Done!', {
+								timeOut: 2000,
+								onHidden: function() {
+									window.location.reload();
+								}
+							});
+							} else {
+								toastr.error(data.message);
+							}
+						},
+						error: function (xhr) {
+							toastr.error("Something went wrong.");
+						}
+					})
+				}
+			});
+		}
+	</script>
+}
+

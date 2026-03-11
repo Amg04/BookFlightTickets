@@ -1,0 +1,57 @@
+﻿@model AirplaneViewModel
+
+@{
+	ViewData["Title"] = "Edit Airplane";
+}
+
+<div class="card shadow border-0 my-4">
+	<div class="card-header bg-secondary bg-black ml-0 py-3 ">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h2 class="text-white py-2">Edit Airplane</h2>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-4">
+		<form asp-action="Edit" method="post">
+			@Html.AntiForgeryToken()
+			<input hidden asp-for="Id" />
+			<div class="row">
+				<div class="col-12">
+					<div class="border p-3">
+						<div class="form-floating py-2 col-12">
+							<input asp-for="Model" class="form-control border-0 shadow" />
+							<label asp-for="Model" class="ms-2"></label>
+							<span asp-validation-for="Model" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<input asp-for="SeatCapacity" class="form-control border-0 shadow" />
+							<label asp-for="SeatCapacity" class="ms-2"></label>
+							<span asp-validation-for="SeatCapacity" class="text-danger"></span>
+						</div>
+
+						<div class="form-floating py-2 col-12">
+							<label asp-for="AirlineId" class="control-label"></label>
+							<select asp-for="AirlineId" asp-items="@ViewBag.Airlines" class="form-select"></select>
+							<span asp-validation-for="AirlineId" class="text-danger"></span>
+						</div>
+
+						<div asp-validation-summary="All" class="text-danger"></div>
+
+						<div class="mt-3">
+							<button type="submit" class="btn btn-primary"><i class="bi bi-check-circle me-1"></i>Save Changes</button>
+							<a asp-action="Index" class="btn btn-secondary"><i class="bi bi-arrow-left me-1"></i>Back to list</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
