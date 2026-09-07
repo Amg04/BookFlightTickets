@@ -1,0 +1,339 @@
+2026-09-07 15:17:25.796 +03:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-07 15:17:28.781 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-09-07 15:17:28.866 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-09-07 15:17:28.920 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-09-07 15:17:29.564 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-09-07 15:17:30.400 +03:00 [INF] Now listening on: http://localhost:5175
+2026-09-07 15:17:30.482 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-07 15:17:30.483 +03:00 [INF] Hosting environment: Development
+2026-09-07 15:17:30.483 +03:00 [INF] Content root path: E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI
+2026-09-07 15:17:35.388 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/ - null null
+2026-09-07 15:17:35.558 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-09-07 15:17:35.683 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-09-07 15:17:35.699 +03:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-09-07 15:17:35.716 +03:00 [INF] Executing ViewResult, running view Index.
+2026-09-07 15:17:36.181 +03:00 [INF] Executed ViewResult - view Index executed in 469.5718ms.
+2026-09-07 15:17:36.189 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 488.5514ms
+2026-09-07 15:17:36.189 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-09-07 15:17:36.199 +03:00 [INF] HTTP GET / responded 200 in 636.0704 ms
+2026-09-07 15:17:36.210 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/ - 200 null text/html; charset=utf-8 825.8548ms
+2026-09-07 15:17:36.290 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-09-07 15:17:36.295 +03:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2026-09-07 15:17:36.296 +03:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 304 in 5.5785 ms
+2026-09-07 15:17:36.296 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 6.6405ms
+2026-09-07 15:17:36.297 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Images/Home.jpg - null null
+2026-09-07 15:17:36.298 +03:00 [INF] The file /Images/Home.jpg was not modified
+2026-09-07 15:17:36.298 +03:00 [INF] HTTP GET /Images/Home.jpg responded 304 in 0.4666 ms
+2026-09-07 15:17:36.298 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Images/Home.jpg - 304 null image/jpeg 0.7707ms
+2026-09-07 15:17:37.188 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - null null
+2026-09-07 15:17:37.190 +03:00 [INF] The file /css/site.css was not modified
+2026-09-07 15:17:37.190 +03:00 [INF] HTTP GET /css/site.css responded 304 in 1.5343 ms
+2026-09-07 15:17:37.190 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - 304 null text/css 2.2137ms
+2026-09-07 15:17:37.197 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/lib/jquery/dist/jquery.min.js - null null
+2026-09-07 15:17:37.198 +03:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2026-09-07 15:17:37.198 +03:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 304 in 0.4243 ms
+2026-09-07 15:17:37.198 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/lib/jquery/dist/jquery.min.js - 304 null text/javascript 1.0003ms
+2026-09-07 15:17:37.216 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-09-07 15:17:37.216 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2026-09-07 15:17:37.216 +03:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2026-09-07 15:17:37.216 +03:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 304 in 0.4529 ms
+2026-09-07 15:17:37.216 +03:00 [INF] The file /js/site.js was not modified
+2026-09-07 15:17:37.217 +03:00 [INF] HTTP GET /js/site.js responded 304 in 0.5888 ms
+2026-09-07 15:17:37.217 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 1.332ms
+2026-09-07 15:17:37.217 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 304 null text/javascript 1.1099ms
+2026-09-07 15:17:37.233 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:17:37.237 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 4.1853ms
+2026-09-07 15:17:37.245 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-09-07 15:17:37.374 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 128.8355ms
+2026-09-07 15:17:39.937 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/favicon.ico - null null
+2026-09-07 15:17:39.945 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI\wwwroot\favicon.ico'
+2026-09-07 15:17:39.945 +03:00 [INF] HTTP GET /favicon.ico responded 200 in 8.1333 ms
+2026-09-07 15:17:39.945 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/favicon.ico - 200 5430 image/x-icon 8.6274ms
+2026-09-07 15:17:49.620 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - null null
+2026-09-07 15:17:49.628 +03:00 [INF] Executing endpoint '/Account/Login'
+2026-09-07 15:17:49.660 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-09-07 15:17:49.700 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-09-07 15:17:49.723 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-09-07 15:17:49.725 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-09-07 15:17:49.732 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-09-07 15:17:49.733 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-09-07 15:17:49.885 +03:00 [INF] Executed page /Account/Login in 224.8673ms
+2026-09-07 15:17:49.885 +03:00 [INF] Executed endpoint '/Account/Login'
+2026-09-07 15:17:49.885 +03:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 261.5520 ms
+2026-09-07 15:17:49.886 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - 200 null text/html; charset=utf-8 266.5038ms
+2026-09-07 15:17:49.979 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-09-07 15:17:49.979 +03:00 [INF] The file /lib/jquery-validation/dist/jquery.validate.min.js was not modified
+2026-09-07 15:17:49.980 +03:00 [INF] HTTP GET /lib/jquery-validation/dist/jquery.validate.min.js responded 304 in 0.5237 ms
+2026-09-07 15:17:49.980 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/lib/jquery-validation/dist/jquery.validate.min.js - 304 null text/javascript 0.9923ms
+2026-09-07 15:17:49.980 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:17:49.980 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-09-07 15:17:49.981 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.4113ms
+2026-09-07 15:17:49.981 +03:00 [INF] The file /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js was not modified
+2026-09-07 15:17:49.981 +03:00 [INF] HTTP GET /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js responded 304 in 0.4228 ms
+2026-09-07 15:17:49.981 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 304 null text/javascript 0.8228ms
+2026-09-07 15:17:50.078 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-09-07 15:17:50.082 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 3.9828ms
+2026-09-07 15:17:51.607 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/ForgotPassword - null null
+2026-09-07 15:17:51.620 +03:00 [INF] Executing endpoint '/Account/ForgotPassword'
+2026-09-07 15:17:51.627 +03:00 [INF] Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing page /Account/ForgotPassword
+2026-09-07 15:17:51.651 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-09-07 15:17:51.651 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-09-07 15:17:51.695 +03:00 [INF] Executed page /Account/ForgotPassword in 67.785ms
+2026-09-07 15:17:51.695 +03:00 [INF] Executed endpoint '/Account/ForgotPassword'
+2026-09-07 15:17:51.695 +03:00 [INF] HTTP GET /Identity/Account/ForgotPassword responded 200 in 85.1467 ms
+2026-09-07 15:17:51.696 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/ForgotPassword - 200 null text/html; charset=utf-8 88.8341ms
+2026-09-07 15:17:51.768 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-09-07 15:17:51.769 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:17:51.769 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.3471ms
+2026-09-07 15:17:51.773 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 5.0548ms
+2026-09-07 15:17:53.812 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5175/Identity/Account/ForgotPassword - application/x-www-form-urlencoded 216
+2026-09-07 15:17:53.814 +03:00 [INF] Executing endpoint '/Account/ForgotPassword'
+2026-09-07 15:17:53.814 +03:00 [INF] Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing page /Account/ForgotPassword
+2026-09-07 15:17:53.844 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.ForgotPasswordModel.OnPostAsync - ModelState is "Valid"
+2026-09-07 15:17:53.938 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-07 15:17:54.060 +03:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult.
+2026-09-07 15:17:54.064 +03:00 [INF] Executing RedirectToPageResult, redirecting to ./ForgotPasswordConfirmation.
+2026-09-07 15:17:54.066 +03:00 [INF] Executed page /Account/ForgotPassword in 251.3312ms
+2026-09-07 15:17:54.067 +03:00 [INF] Executed endpoint '/Account/ForgotPassword'
+2026-09-07 15:17:54.069 +03:00 [INF] HTTP POST /Identity/Account/ForgotPassword responded 302 in 254.9790 ms
+2026-09-07 15:17:54.077 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5175/Identity/Account/ForgotPassword - 302 0 null 264.7174ms
+2026-09-07 15:17:54.077 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/ForgotPasswordConfirmation - null null
+2026-09-07 15:17:54.080 +03:00 [INF] Executing endpoint '/Account/ForgotPasswordConfirmation'
+2026-09-07 15:17:54.084 +03:00 [INF] Route matched with {page = "/Account/ForgotPasswordConfirmation", area = "Identity", action = "", controller = ""}. Executing page /Account/ForgotPasswordConfirmation
+2026-09-07 15:17:54.084 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.ForgotPasswordConfirmation.OnGet - ModelState is "Valid"
+2026-09-07 15:17:54.085 +03:00 [INF] Executed handler method OnGet, returned result .
+2026-09-07 15:17:54.085 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-09-07 15:17:54.085 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-09-07 15:17:54.090 +03:00 [INF] Executed page /Account/ForgotPasswordConfirmation in 5.8724ms
+2026-09-07 15:17:54.090 +03:00 [INF] Executed endpoint '/Account/ForgotPasswordConfirmation'
+2026-09-07 15:17:54.090 +03:00 [INF] HTTP GET /Identity/Account/ForgotPasswordConfirmation responded 200 in 10.5806 ms
+2026-09-07 15:17:54.090 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/ForgotPasswordConfirmation - 200 null text/html; charset=utf-8 13.0361ms
+2026-09-07 15:17:54.149 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-09-07 15:17:54.149 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:17:54.150 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.345ms
+2026-09-07 15:17:54.152 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 3.267ms
+2026-09-07 15:24:08.869 +03:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-07 15:24:11.577 +03:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-09-07 15:24:11.638 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-09-07 15:24:11.663 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-09-07 15:24:12.387 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-09-07 15:24:13.158 +03:00 [INF] Now listening on: http://localhost:5175
+2026-09-07 15:24:13.252 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-07 15:24:13.253 +03:00 [INF] Hosting environment: Development
+2026-09-07 15:24:13.253 +03:00 [INF] Content root path: E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI
+2026-09-07 15:24:14.387 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/ - null null
+2026-09-07 15:24:14.502 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-09-07 15:24:14.601 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-09-07 15:24:14.614 +03:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-09-07 15:24:14.630 +03:00 [INF] Executing ViewResult, running view Index.
+2026-09-07 15:24:14.977 +03:00 [INF] Executed ViewResult - view Index executed in 347.2305ms.
+2026-09-07 15:24:14.984 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 368.3767ms
+2026-09-07 15:24:14.984 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-09-07 15:24:14.995 +03:00 [INF] HTTP GET / responded 200 in 487.8820 ms
+2026-09-07 15:24:15.014 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/ - 200 null text/html; charset=utf-8 642.0907ms
+2026-09-07 15:24:15.052 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:24:15.056 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 4.1678ms
+2026-09-07 15:24:15.675 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-09-07 15:24:15.710 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.7067ms
+2026-09-07 15:24:18.046 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - null null
+2026-09-07 15:24:18.055 +03:00 [INF] Executing endpoint '/Account/Login'
+2026-09-07 15:24:18.091 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-09-07 15:24:18.131 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-09-07 15:24:18.141 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-09-07 15:24:18.143 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-09-07 15:24:18.150 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-09-07 15:24:18.150 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-09-07 15:24:18.306 +03:00 [INF] Executed page /Account/Login in 213.9951ms
+2026-09-07 15:24:18.306 +03:00 [INF] Executed endpoint '/Account/Login'
+2026-09-07 15:24:18.306 +03:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 255.5729 ms
+2026-09-07 15:24:18.307 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - 200 null text/html; charset=utf-8 260.9275ms
+2026-09-07 15:24:18.379 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:24:18.381 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 1.4172ms
+2026-09-07 15:24:18.509 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-09-07 15:24:18.535 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.0872ms
+2026-09-07 15:24:19.684 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/ForgotPassword - null null
+2026-09-07 15:24:19.694 +03:00 [INF] Executing endpoint '/Account/ForgotPassword'
+2026-09-07 15:24:19.701 +03:00 [INF] Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing page /Account/ForgotPassword
+2026-09-07 15:24:19.726 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-09-07 15:24:19.726 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-09-07 15:24:19.766 +03:00 [INF] Executed page /Account/ForgotPassword in 64.534ms
+2026-09-07 15:24:19.766 +03:00 [INF] Executed endpoint '/Account/ForgotPassword'
+2026-09-07 15:24:19.766 +03:00 [INF] HTTP GET /Identity/Account/ForgotPassword responded 200 in 80.4878 ms
+2026-09-07 15:24:19.767 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/ForgotPassword - 200 null text/html; charset=utf-8 82.6855ms
+2026-09-07 15:24:19.838 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:24:19.838 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-09-07 15:24:19.839 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.7096ms
+2026-09-07 15:24:19.855 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.0862ms
+2026-09-07 15:24:22.071 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5175/Identity/Account/ForgotPassword - application/x-www-form-urlencoded 216
+2026-09-07 15:24:22.073 +03:00 [INF] Executing endpoint '/Account/ForgotPassword'
+2026-09-07 15:24:22.074 +03:00 [INF] Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing page /Account/ForgotPassword
+2026-09-07 15:24:22.108 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.ForgotPasswordModel.OnPostAsync - ModelState is "Valid"
+2026-09-07 15:24:22.188 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-07 15:24:22.307 +03:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult.
+2026-09-07 15:24:22.312 +03:00 [INF] Executing RedirectToPageResult, redirecting to ./ForgotPasswordConfirmation.
+2026-09-07 15:24:22.315 +03:00 [INF] Executed page /Account/ForgotPassword in 240.6382ms
+2026-09-07 15:24:22.316 +03:00 [INF] Executed endpoint '/Account/ForgotPassword'
+2026-09-07 15:24:22.318 +03:00 [INF] HTTP POST /Identity/Account/ForgotPassword responded 302 in 244.8702 ms
+2026-09-07 15:24:22.326 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5175/Identity/Account/ForgotPassword - 302 0 null 254.7229ms
+2026-09-07 15:24:22.326 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/ForgotPasswordConfirmation - null null
+2026-09-07 15:24:22.329 +03:00 [INF] Executing endpoint '/Account/ForgotPasswordConfirmation'
+2026-09-07 15:24:22.335 +03:00 [INF] Route matched with {page = "/Account/ForgotPasswordConfirmation", area = "Identity", action = "", controller = ""}. Executing page /Account/ForgotPasswordConfirmation
+2026-09-07 15:24:22.335 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.ForgotPasswordConfirmation.OnGet - ModelState is "Valid"
+2026-09-07 15:24:22.336 +03:00 [INF] Executed handler method OnGet, returned result .
+2026-09-07 15:24:22.336 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-09-07 15:24:22.336 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-09-07 15:24:22.344 +03:00 [INF] Executed page /Account/ForgotPasswordConfirmation in 8.8589ms
+2026-09-07 15:24:22.344 +03:00 [INF] Executed endpoint '/Account/ForgotPasswordConfirmation'
+2026-09-07 15:24:22.344 +03:00 [INF] HTTP GET /Identity/Account/ForgotPasswordConfirmation responded 200 in 15.4074 ms
+2026-09-07 15:24:22.344 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/ForgotPasswordConfirmation - 200 null text/html; charset=utf-8 17.9797ms
+2026-09-07 15:24:22.409 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:24:22.409 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-09-07 15:24:22.409 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.3573ms
+2026-09-07 15:24:22.415 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 5.8194ms
+2026-09-07 15:26:19.663 +03:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-07 15:26:23.208 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-09-07 15:26:23.282 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-09-07 15:26:23.311 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-09-07 15:26:24.125 +03:00 [INF] Executed DbCommand (61ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-09-07 15:26:25.467 +03:00 [INF] Now listening on: https://localhost:7008
+2026-09-07 15:26:25.468 +03:00 [INF] Now listening on: http://localhost:5175
+2026-09-07 15:26:25.565 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-07 15:26:25.566 +03:00 [INF] Hosting environment: Development
+2026-09-07 15:26:25.566 +03:00 [INF] Content root path: E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI
+2026-09-07 15:26:27.359 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/ - null null
+2026-09-07 15:26:27.554 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-09-07 15:26:27.570 +03:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-09-07 15:26:27.586 +03:00 [INF] Executing ViewResult, running view Index.
+2026-09-07 15:26:28.043 +03:00 [INF] Executed ViewResult - view Index executed in 456.6741ms.
+2026-09-07 15:26:28.046 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 474.309ms
+2026-09-07 15:26:28.046 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-09-07 15:26:28.052 +03:00 [INF] HTTP GET / responded 200 in 620.7414 ms
+2026-09-07 15:26:28.069 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/ - 200 null text/html; charset=utf-8 728.651ms
+2026-09-07 15:26:28.133 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-09-07 15:26:28.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - null null
+2026-09-07 15:26:28.138 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/lib/jquery/dist/jquery.min.js - null null
+2026-09-07 15:26:28.138 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-09-07 15:26:28.138 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Images/Home.jpg - null null
+2026-09-07 15:26:28.162 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2026-09-07 15:26:28.176 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:26:28.211 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 35.9544ms
+2026-09-07 15:26:28.213 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI\wwwroot\css\site.css'
+2026-09-07 15:26:28.213 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI\wwwroot\js\site.js'
+2026-09-07 15:26:28.214 +03:00 [INF] HTTP GET /js/site.js responded 200 in 51.1794 ms
+2026-09-07 15:26:28.214 +03:00 [INF] HTTP GET /css/site.css responded 200 in 75.6385 ms
+2026-09-07 15:26:28.216 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 231 text/javascript 53.6272ms
+2026-09-07 15:26:28.216 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - 200 2798 text/css 80.8469ms
+2026-09-07 15:26:28.225 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI\wwwroot\lib\jquery\dist\jquery.min.js'
+2026-09-07 15:26:28.225 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2026-09-07 15:26:28.225 +03:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 200 in 86.9292 ms
+2026-09-07 15:26:28.225 +03:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 200 in 86.8260 ms
+2026-09-07 15:26:28.226 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 89.3623ms
+2026-09-07 15:26:28.226 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 87.8301ms
+2026-09-07 15:26:28.228 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2026-09-07 15:26:28.229 +03:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 200 in 94.1097 ms
+2026-09-07 15:26:28.229 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 96.9305ms
+2026-09-07 15:26:28.304 +03:00 [INF] Sending file. Request path: '/Images/Home.jpg'. Physical path: 'E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI\wwwroot\Images\Home.jpg'
+2026-09-07 15:26:28.305 +03:00 [INF] HTTP GET /Images/Home.jpg responded 200 in 161.8471 ms
+2026-09-07 15:26:28.305 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Images/Home.jpg - 200 2051215 image/jpeg 170.4857ms
+2026-09-07 15:26:28.835 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-09-07 15:26:28.902 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 67.4322ms
+2026-09-07 15:26:30.079 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/favicon.ico - null null
+2026-09-07 15:26:30.083 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI\wwwroot\favicon.ico'
+2026-09-07 15:26:30.083 +03:00 [INF] HTTP GET /favicon.ico responded 200 in 3.1276 ms
+2026-09-07 15:26:30.084 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/favicon.ico - 200 5430 image/x-icon 5.2701ms
+2026-09-07 15:26:31.466 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Identity/Account/Login - null null
+2026-09-07 15:26:31.482 +03:00 [INF] Executing endpoint '/Account/Login'
+2026-09-07 15:26:31.519 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-09-07 15:26:31.573 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-09-07 15:26:31.586 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-09-07 15:26:31.589 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-09-07 15:26:31.598 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-09-07 15:26:31.602 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-09-07 15:26:31.878 +03:00 [INF] Executed page /Account/Login in 358.2941ms
+2026-09-07 15:26:31.879 +03:00 [INF] Executed endpoint '/Account/Login'
+2026-09-07 15:26:31.879 +03:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 404.2074 ms
+2026-09-07 15:26:31.881 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Identity/Account/Login - 200 null text/html; charset=utf-8 415.5318ms
+2026-09-07 15:26:31.954 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-09-07 15:26:31.955 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:26:31.955 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-09-07 15:26:31.958 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 2.5085ms
+2026-09-07 15:26:31.964 +03:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'. Physical path: 'E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'
+2026-09-07 15:26:31.964 +03:00 [INF] HTTP GET /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js responded 200 in 8.7475 ms
+2026-09-07 15:26:31.964 +03:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.UI\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js'
+2026-09-07 15:26:31.965 +03:00 [INF] HTTP GET /lib/jquery-validation/dist/jquery.validate.min.js responded 200 in 7.4840 ms
+2026-09-07 15:26:31.966 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/lib/jquery-validation/dist/jquery.validate.min.js - 200 24601 text/javascript 11.178ms
+2026-09-07 15:26:31.966 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 200 5824 text/javascript 11.2473ms
+2026-09-07 15:26:32.076 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-09-07 15:26:32.112 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 35.8416ms
+2026-09-07 15:26:33.075 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Identity/Account/ForgotPassword - null null
+2026-09-07 15:26:33.089 +03:00 [INF] Executing endpoint '/Account/ForgotPassword'
+2026-09-07 15:26:33.095 +03:00 [INF] Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing page /Account/ForgotPassword
+2026-09-07 15:26:33.123 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-09-07 15:26:33.123 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-09-07 15:26:33.179 +03:00 [INF] Executed page /Account/ForgotPassword in 83.6498ms
+2026-09-07 15:26:33.184 +03:00 [INF] Executed endpoint '/Account/ForgotPassword'
+2026-09-07 15:26:33.189 +03:00 [INF] HTTP GET /Identity/Account/ForgotPassword responded 200 in 110.7700 ms
+2026-09-07 15:26:33.190 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Identity/Account/ForgotPassword - 200 null text/html; charset=utf-8 115.2844ms
+2026-09-07 15:26:33.244 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-09-07 15:26:33.245 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:26:33.248 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 3.112ms
+2026-09-07 15:26:33.271 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.3814ms
+2026-09-07 15:26:38.992 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7008/Identity/Account/ForgotPassword - application/x-www-form-urlencoded 216
+2026-09-07 15:26:38.996 +03:00 [INF] Executing endpoint '/Account/ForgotPassword'
+2026-09-07 15:26:38.997 +03:00 [INF] Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing page /Account/ForgotPassword
+2026-09-07 15:26:39.046 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.ForgotPasswordModel.OnPostAsync - ModelState is "Valid"
+2026-09-07 15:26:49.402 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-07 15:27:12.134 +03:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult.
+2026-09-07 15:27:12.141 +03:00 [INF] Executing RedirectToPageResult, redirecting to ./ForgotPasswordConfirmation.
+2026-09-07 15:27:12.142 +03:00 [INF] Executed page /Account/ForgotPassword in 33144.9827ms
+2026-09-07 15:27:12.142 +03:00 [INF] Executed endpoint '/Account/ForgotPassword'
+2026-09-07 15:27:12.143 +03:00 [INF] HTTP POST /Identity/Account/ForgotPassword responded 302 in 33146.6443 ms
+2026-09-07 15:27:12.150 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7008/Identity/Account/ForgotPassword - 302 0 null 33158.1889ms
+2026-09-07 15:27:12.152 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/Identity/Account/ForgotPasswordConfirmation - null null
+2026-09-07 15:27:12.189 +03:00 [INF] Executing endpoint '/Account/ForgotPasswordConfirmation'
+2026-09-07 15:27:12.198 +03:00 [INF] Route matched with {page = "/Account/ForgotPasswordConfirmation", area = "Identity", action = "", controller = ""}. Executing page /Account/ForgotPasswordConfirmation
+2026-09-07 15:27:12.204 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.ForgotPasswordConfirmation.OnGet - ModelState is "Valid"
+2026-09-07 15:27:12.208 +03:00 [INF] Executed handler method OnGet, returned result .
+2026-09-07 15:27:12.208 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-09-07 15:27:12.209 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-09-07 15:27:12.214 +03:00 [INF] Executed page /Account/ForgotPasswordConfirmation in 16.5979ms
+2026-09-07 15:27:12.214 +03:00 [INF] Executed endpoint '/Account/ForgotPasswordConfirmation'
+2026-09-07 15:27:12.215 +03:00 [INF] HTTP GET /Identity/Account/ForgotPasswordConfirmation responded 200 in 25.8861 ms
+2026-09-07 15:27:12.215 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/Identity/Account/ForgotPasswordConfirmation - 200 null text/html; charset=utf-8 63.2844ms
+2026-09-07 15:27:12.280 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 15:27:12.281 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7008/_vs/browserLink - null null
+2026-09-07 15:27:12.283 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 3.4882ms
+2026-09-07 15:27:12.307 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.0563ms

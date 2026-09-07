@@ -1,0 +1,1592 @@
+2026-06-29 14:23:35.377 +03:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-29 14:23:38.858 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-29 14:23:38.909 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-06-29 14:23:38.935 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-06-29 14:23:38.945 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-29 14:23:38.947 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-06-29 14:23:38.948 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-29 14:23:38.948 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-06-29 14:23:38.949 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-06-29 14:23:38.959 +03:00 [INF] Applying migration '20260306210342_InitialCreate'.
+2026-06-29 14:23:39.224 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF SCHEMA_ID(N'Security') IS NULL EXEC(N'CREATE SCHEMA [Security];');
+2026-06-29 14:23:39.235 +03:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AddOns] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Price] smallint NOT NULL,
+    CONSTRAINT [PK_AddOns] PRIMARY KEY ([Id])
+);
+2026-06-29 14:29:18.625 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-29 14:29:18.689 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-06-29 14:29:18.692 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-29 14:29:18.693 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-06-29 14:29:18.708 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-06-29 14:29:18.722 +03:00 [INF] No migrations were applied. The database is already up to date.
+2026-06-29 14:30:46.134 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-29 14:30:46.240 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-06-29 14:30:46.245 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-29 14:30:46.246 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-06-29 14:30:46.270 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-06-29 14:30:46.296 +03:00 [INF] No migrations were applied. The database is already up to date.
+2026-06-29 14:32:15.253 +03:00 [INF] User profile is available. Using 'C:\Users\ahmed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-29 14:32:20.067 +03:00 [INF] Executed DbCommand (391ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [BookFilghts];
+2026-06-29 14:32:20.210 +03:00 [INF] Executed DbCommand (139ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [BookFilghts] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2026-06-29 14:32:20.274 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-29 14:32:20.486 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2026-06-29 14:32:20.487 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-29 14:32:20.528 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-06-29 14:32:20.553 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-06-29 14:32:20.577 +03:00 [INF] Applying migration '20260306210342_InitialCreate'.
+2026-06-29 14:32:20.889 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF SCHEMA_ID(N'Security') IS NULL EXEC(N'CREATE SCHEMA [Security];');
+2026-06-29 14:32:20.892 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AddOns] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Price] smallint NOT NULL,
+    CONSTRAINT [PK_AddOns] PRIMARY KEY ([Id])
+);
+2026-06-29 14:32:20.896 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airlines] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Code] nvarchar(50) NOT NULL,
+    CONSTRAINT [PK_Airlines] PRIMARY KEY ([Id])
+);
+2026-06-29 14:32:20.898 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airports] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    [Code] nvarchar(50) NOT NULL,
+    [City] nvarchar(100) NULL,
+    [Country] nvarchar(100) NULL,
+    CONSTRAINT [PK_Airports] PRIMARY KEY ([Id])
+);
+2026-06-29 14:32:20.913 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[Roles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+2026-06-29 14:32:20.918 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[Users] (
+    [Id] nvarchar(450) NOT NULL,
+    [FirstName] nvarchar(100) NOT NULL,
+    [LastName] nvarchar(100) NULL,
+    [PassportNumber] nvarchar(100) NULL,
+    [Role] nvarchar(500) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2026-06-29 14:32:20.922 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Airplanes] (
+    [Id] int NOT NULL IDENTITY,
+    [AirlineId] int NOT NULL,
+    [Model] nvarchar(100) NOT NULL,
+    [SeatCapacity] smallint NOT NULL,
+    CONSTRAINT [PK_Airplanes] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Airplanes_Airlines_AirlineId] FOREIGN KEY ([AirlineId]) REFERENCES [Airlines] ([Id]) ON DELETE NO ACTION
+);
+2026-06-29 14:32:20.926 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[RoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_RoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RoleClaims_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Security].[Roles] ([Id]) ON DELETE CASCADE
+);
+2026-06-29 14:32:20.930 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_UserClaims_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-06-29 14:32:20.936 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_UserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_UserLogins_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-06-29 14:32:20.942 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_UserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_UserRoles_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Security].[Roles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserRoles_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-06-29 14:32:20.945 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Security].[UserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_UserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_UserTokens_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id]) ON DELETE CASCADE
+);
+2026-06-29 14:32:20.952 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Flights] (
+    [Id] int NOT NULL IDENTITY,
+    [AirlineId] int NOT NULL,
+    [AirplaneId] int NOT NULL,
+    [DepartureAirportID] int NOT NULL,
+    [ArrivalAirportID] int NOT NULL,
+    [DepartureTime] datetime2 NOT NULL,
+    [ArrivalTime] datetime2 NOT NULL,
+    [BasePrice] decimal(9,2) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Flights] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Flights_Airlines_AirlineId] FOREIGN KEY ([AirlineId]) REFERENCES [Airlines] ([Id]),
+    CONSTRAINT [FK_Flights_Airplanes_AirplaneId] FOREIGN KEY ([AirplaneId]) REFERENCES [Airplanes] ([Id]),
+    CONSTRAINT [FK_Flights_Airports_ArrivalAirportID] FOREIGN KEY ([ArrivalAirportID]) REFERENCES [Airports] ([Id]),
+    CONSTRAINT [FK_Flights_Airports_DepartureAirportID] FOREIGN KEY ([DepartureAirportID]) REFERENCES [Airports] ([Id])
+);
+2026-06-29 14:32:20.956 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Seats] (
+    [Id] int NOT NULL IDENTITY,
+    [AirplaneId] int NOT NULL,
+    [Row] nvarchar(100) NOT NULL,
+    [Number] smallint NOT NULL,
+    [Class] int NOT NULL,
+    [Price] int NOT NULL,
+    CONSTRAINT [PK_Seats] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Seats_Airplanes_AirplaneId] FOREIGN KEY ([AirplaneId]) REFERENCES [Airplanes] ([Id]) ON DELETE CASCADE
+);
+2026-06-29 14:32:20.961 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Bookings] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [FlightId] int NOT NULL,
+    [BookingDate] datetime2 NOT NULL,
+    [PNR] nvarchar(50) NOT NULL,
+    [TotalPrice] decimal(9,2) NOT NULL,
+    [Status] int NOT NULL,
+    [LastUpdated] datetime2 NOT NULL,
+    CONSTRAINT [PK_Bookings] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Bookings_Flights_FlightId] FOREIGN KEY ([FlightId]) REFERENCES [Flights] ([Id]),
+    CONSTRAINT [FK_Bookings_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Security].[Users] ([Id])
+);
+2026-06-29 14:32:20.965 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [FlightSeats] (
+    [Id] int NOT NULL IDENTITY,
+    [FlightId] int NOT NULL,
+    [SeatId] int NOT NULL,
+    [TicketId] int NULL,
+    [IsAvailable] bit NOT NULL,
+    CONSTRAINT [PK_FlightSeats] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_FlightSeats_Flights_FlightId] FOREIGN KEY ([FlightId]) REFERENCES [Flights] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_FlightSeats_Seats_SeatId] FOREIGN KEY ([SeatId]) REFERENCES [Seats] ([Id]) ON DELETE CASCADE
+);
+2026-06-29 14:32:20.971 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Payments] (
+    [Id] int NOT NULL IDENTITY,
+    [BookingID] int NOT NULL,
+    [SessionId] nvarchar(200) NULL,
+    [PaymentIntentId] nvarchar(200) NULL,
+    [Amount] decimal(9,2) NOT NULL,
+    [PaymentDate] datetime2 NOT NULL,
+    [PaymentStatus] int NOT NULL,
+    CONSTRAINT [PK_Payments] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Payments_Bookings_BookingID] FOREIGN KEY ([BookingID]) REFERENCES [Bookings] ([Id]) ON DELETE CASCADE
+);
+2026-06-29 14:32:20.978 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Tickets] (
+    [Id] int NOT NULL IDENTITY,
+    [BookingID] int NOT NULL,
+    [TicketNumber] nvarchar(50) NOT NULL,
+    [FlightSeatId] int NOT NULL,
+    [FirstName] nvarchar(max) NOT NULL,
+    [LastName] nvarchar(max) NULL,
+    [PassportNumber] nvarchar(max) NOT NULL,
+    [TicketPrice] decimal(9,2) NOT NULL,
+    [SeatId] int NULL,
+    CONSTRAINT [PK_Tickets] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Tickets_Bookings_BookingID] FOREIGN KEY ([BookingID]) REFERENCES [Bookings] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Tickets_FlightSeats_FlightSeatId] FOREIGN KEY ([FlightSeatId]) REFERENCES [FlightSeats] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Tickets_Seats_SeatId] FOREIGN KEY ([SeatId]) REFERENCES [Seats] ([Id])
+);
+2026-06-29 14:32:20.983 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TicketAddOns] (
+    [Id] int NOT NULL IDENTITY,
+    [TicketId] int NOT NULL,
+    [AddOnID] int NOT NULL,
+    CONSTRAINT [PK_TicketAddOns] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_TicketAddOns_AddOns_AddOnID] FOREIGN KEY ([AddOnID]) REFERENCES [AddOns] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_TicketAddOns_Tickets_TicketId] FOREIGN KEY ([TicketId]) REFERENCES [Tickets] ([Id]) ON DELETE CASCADE
+);
+2026-06-29 14:32:21.054 +03:00 [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'Price') AND [object_id] = OBJECT_ID(N'[AddOns]'))
+    SET IDENTITY_INSERT [AddOns] ON;
+INSERT INTO [AddOns] ([Id], [Name], [Price])
+VALUES (1, N'Extra Baggage', CAST(150 AS smallint)),
+(3, N'Premium Meal', CAST(100 AS smallint)),
+(4, N'Priority Boarding', CAST(50 AS smallint));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'Price') AND [object_id] = OBJECT_ID(N'[AddOns]'))
+    SET IDENTITY_INSERT [AddOns] OFF;
+2026-06-29 14:32:21.077 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Code', N'Name') AND [object_id] = OBJECT_ID(N'[Airlines]'))
+    SET IDENTITY_INSERT [Airlines] ON;
+INSERT INTO [Airlines] ([Id], [Code], [Name])
+VALUES (1, N'EGY', N'EgyptAir');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Code', N'Name') AND [object_id] = OBJECT_ID(N'[Airlines]'))
+    SET IDENTITY_INSERT [Airlines] OFF;
+2026-06-29 14:32:21.106 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'City', N'Code', N'Country', N'Name') AND [object_id] = OBJECT_ID(N'[Airports]'))
+    SET IDENTITY_INSERT [Airports] ON;
+INSERT INTO [Airports] ([Id], [City], [Code], [Country], [Name])
+VALUES (1, NULL, N'CAI', NULL, N'Cairo International Airport'),
+(2, NULL, N'DXB', NULL, N'Dubai International Airport');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'City', N'Code', N'Country', N'Name') AND [object_id] = OBJECT_ID(N'[Airports]'))
+    SET IDENTITY_INSERT [Airports] OFF;
+2026-06-29 14:32:21.133 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'Model', N'SeatCapacity') AND [object_id] = OBJECT_ID(N'[Airplanes]'))
+    SET IDENTITY_INSERT [Airplanes] ON;
+INSERT INTO [Airplanes] ([Id], [AirlineId], [Model], [SeatCapacity])
+VALUES (1, 1, N'Boeing 999', CAST(8 AS smallint));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'Model', N'SeatCapacity') AND [object_id] = OBJECT_ID(N'[Airplanes]'))
+    SET IDENTITY_INSERT [Airplanes] OFF;
+2026-06-29 14:32:21.185 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'AirplaneId', N'ArrivalAirportID', N'ArrivalTime', N'BasePrice', N'DepartureAirportID', N'DepartureTime', N'Status') AND [object_id] = OBJECT_ID(N'[Flights]'))
+    SET IDENTITY_INSERT [Flights] ON;
+INSERT INTO [Flights] ([Id], [AirlineId], [AirplaneId], [ArrivalAirportID], [ArrivalTime], [BasePrice], [DepartureAirportID], [DepartureTime], [Status])
+VALUES (1, 1, 1, 2, '2025-01-01T15:00:00.0000000', 2500.0, 1, '2025-01-01T10:30:00.0000000', 1),
+(2, 1, 1, 1, '2025-01-12T12:00:00.0000000', 3200.0, 2, '2025-01-12T08:00:00.0000000', 1);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirlineId', N'AirplaneId', N'ArrivalAirportID', N'ArrivalTime', N'BasePrice', N'DepartureAirportID', N'DepartureTime', N'Status') AND [object_id] = OBJECT_ID(N'[Flights]'))
+    SET IDENTITY_INSERT [Flights] OFF;
+2026-06-29 14:32:21.224 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirplaneId', N'Class', N'Number', N'Price', N'Row') AND [object_id] = OBJECT_ID(N'[Seats]'))
+    SET IDENTITY_INSERT [Seats] ON;
+INSERT INTO [Seats] ([Id], [AirplaneId], [Class], [Number], [Price], [Row])
+VALUES (1, 1, 1, CAST(1 AS smallint), 100, N'A'),
+(2, 1, 1, CAST(2 AS smallint), 100, N'A'),
+(3, 1, 2, CAST(1 AS smallint), 200, N'B'),
+(4, 1, 2, CAST(2 AS smallint), 200, N'B'),
+(5, 1, 3, CAST(1 AS smallint), 300, N'C'),
+(6, 1, 3, CAST(2 AS smallint), 300, N'C'),
+(7, 1, 1, CAST(1 AS smallint), 100, N'D'),
+(8, 1, 1, CAST(2 AS smallint), 100, N'D');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AirplaneId', N'Class', N'Number', N'Price', N'Row') AND [object_id] = OBJECT_ID(N'[Seats]'))
+    SET IDENTITY_INSERT [Seats] OFF;
+2026-06-29 14:32:21.283 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'FlightId', N'IsAvailable', N'SeatId', N'TicketId') AND [object_id] = OBJECT_ID(N'[FlightSeats]'))
+    SET IDENTITY_INSERT [FlightSeats] ON;
+INSERT INTO [FlightSeats] ([Id], [FlightId], [IsAvailable], [SeatId], [TicketId])
+VALUES (1, 1, CAST(1 AS bit), 1, NULL),
+(2, 1, CAST(1 AS bit), 2, NULL),
+(3, 1, CAST(1 AS bit), 3, NULL),
+(4, 1, CAST(1 AS bit), 4, NULL),
+(5, 1, CAST(1 AS bit), 5, NULL),
+(6, 1, CAST(1 AS bit), 6, NULL),
+(7, 1, CAST(1 AS bit), 7, NULL),
+(8, 1, CAST(1 AS bit), 8, NULL),
+(9, 2, CAST(1 AS bit), 1, NULL),
+(10, 2, CAST(1 AS bit), 2, NULL),
+(11, 2, CAST(1 AS bit), 3, NULL),
+(12, 2, CAST(1 AS bit), 4, NULL),
+(13, 2, CAST(1 AS bit), 5, NULL),
+(14, 2, CAST(1 AS bit), 6, NULL),
+(15, 2, CAST(1 AS bit), 7, NULL),
+(16, 2, CAST(1 AS bit), 8, NULL);
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'FlightId', N'IsAvailable', N'SeatId', N'TicketId') AND [object_id] = OBJECT_ID(N'[FlightSeats]'))
+    SET IDENTITY_INSERT [FlightSeats] OFF;
+2026-06-29 14:32:21.299 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Airplanes_AirlineId] ON [Airplanes] ([AirlineId]);
+2026-06-29 14:32:21.302 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_FlightId] ON [Bookings] ([FlightId]);
+2026-06-29 14:32:21.304 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Bookings_PNR] ON [Bookings] ([PNR]);
+2026-06-29 14:32:21.306 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Bookings_UserId] ON [Bookings] ([UserId]);
+2026-06-29 14:32:21.311 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_AirlineId] ON [Flights] ([AirlineId]);
+2026-06-29 14:32:21.317 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_AirplaneId] ON [Flights] ([AirplaneId]);
+2026-06-29 14:32:21.322 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_ArrivalAirportID] ON [Flights] ([ArrivalAirportID]);
+2026-06-29 14:32:21.328 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Flights_DepartureAirportID] ON [Flights] ([DepartureAirportID]);
+2026-06-29 14:32:21.333 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_FlightSeats_FlightId_SeatId] ON [FlightSeats] ([FlightId], [SeatId]);
+2026-06-29 14:32:21.338 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_FlightSeats_SeatId] ON [FlightSeats] ([SeatId]);
+2026-06-29 14:32:21.340 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Payments_BookingID] ON [Payments] ([BookingID]);
+2026-06-29 14:32:21.342 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_RoleClaims_RoleId] ON [Security].[RoleClaims] ([RoleId]);
+2026-06-29 14:32:21.344 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [Security].[Roles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2026-06-29 14:32:21.349 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Seats_AirplaneId] ON [Seats] ([AirplaneId]);
+2026-06-29 14:32:21.351 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_TicketAddOns_AddOnID] ON [TicketAddOns] ([AddOnID]);
+2026-06-29 14:32:21.353 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_TicketAddOns_TicketId_AddOnID] ON [TicketAddOns] ([TicketId], [AddOnID]);
+2026-06-29 14:32:21.355 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tickets_BookingID] ON [Tickets] ([BookingID]);
+2026-06-29 14:32:21.357 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Tickets_FlightSeatId] ON [Tickets] ([FlightSeatId]);
+2026-06-29 14:32:21.359 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tickets_SeatId] ON [Tickets] ([SeatId]);
+2026-06-29 14:32:21.360 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Tickets_TicketNumber] ON [Tickets] ([TicketNumber]);
+2026-06-29 14:32:21.362 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserClaims_UserId] ON [Security].[UserClaims] ([UserId]);
+2026-06-29 14:32:21.364 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserLogins_UserId] ON [Security].[UserLogins] ([UserId]);
+2026-06-29 14:32:21.365 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserRoles_RoleId] ON [Security].[UserRoles] ([RoleId]);
+2026-06-29 14:32:21.367 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [Security].[Users] ([NormalizedEmail]);
+2026-06-29 14:32:21.369 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [Security].[Users] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2026-06-29 14:32:21.372 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260306210342_InitialCreate', N'8.0.22');
+2026-06-29 14:32:22.373 +03:00 [INF] Executed DbCommand (110ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-06-29 14:32:22.442 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-06-29 14:32:22.798 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Security].[Roles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2026-06-29 14:32:22.840 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-06-29 14:32:22.851 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Security].[Roles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2026-06-29 14:32:23.253 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-06-29 14:32:23.447 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 100), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 100), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 500), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Security].[Users] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PassportNumber], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [Role], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2026-06-29 14:32:23.472 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2026-06-29 14:32:23.570 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[RoleId]
+FROM [Security].[UserRoles] AS [u]
+WHERE [u].[UserId] = @__p_0 AND [u].[RoleId] = @__p_1
+2026-06-29 14:32:23.582 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2026-06-29 14:32:23.644 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-06-29 14:32:23.731 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p20='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p21='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 100), @p7='?' (Size = 100), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 100), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 500), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Security].[UserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [Security].[Users] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PassportNumber] = @p12, [PasswordHash] = @p13, [PhoneNumber] = @p14, [PhoneNumberConfirmed] = @p15, [Role] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+OUTPUT 1
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+2026-06-29 14:32:24.877 +03:00 [INF] Now listening on: http://localhost:5175
+2026-06-29 14:32:24.965 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-29 14:32:24.965 +03:00 [INF] Hosting environment: Development
+2026-06-29 14:32:24.965 +03:00 [INF] Content root path: E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI
+2026-06-29 14:32:27.139 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/ - null null
+2026-06-29 14:32:27.317 +03:00 [WRN] Failed to determine the https port for redirect.
+2026-06-29 14:32:27.432 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-06-29 14:32:27.452 +03:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-06-29 14:32:27.474 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:32:27.915 +03:00 [INF] Executed ViewResult - view Index executed in 446.6214ms.
+2026-06-29 14:32:27.917 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 463.1246ms
+2026-06-29 14:32:27.917 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-06-29 14:32:27.921 +03:00 [INF] HTTP GET / responded 200 in 607.4572 ms
+2026-06-29 14:32:27.929 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/ - 200 null text/html; charset=utf-8 802.1485ms
+2026-06-29 14:32:28.015 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-06-29 14:32:28.015 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - null null
+2026-06-29 14:32:28.017 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/lib/jquery/dist/jquery.min.js - null null
+2026-06-29 14:32:28.022 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Images/Home.jpg - null null
+2026-06-29 14:32:28.043 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-06-29 14:32:28.044 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2026-06-29 14:32:28.060 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI\wwwroot\css\site.css'
+2026-06-29 14:32:28.060 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI\wwwroot\js\site.js'
+2026-06-29 14:32:28.060 +03:00 [INF] HTTP GET /css/site.css responded 200 in 44.7198 ms
+2026-06-29 14:32:28.061 +03:00 [INF] HTTP GET /js/site.js responded 200 in 16.0086 ms
+2026-06-29 14:32:28.061 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 231 text/javascript 16.5902ms
+2026-06-29 14:32:28.061 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/css/site.css?v=CFHa3thuSH-Kd2ZTNBgF3WCTTQcitHM7ZyR95-IC3FE - 200 2798 text/css 47.5419ms
+2026-06-29 14:32:28.062 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:32:28.067 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 4.4562ms
+2026-06-29 14:32:28.084 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2026-06-29 14:32:28.084 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI\wwwroot\lib\jquery\dist\jquery.min.js'
+2026-06-29 14:32:28.086 +03:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 200 in 42.4688 ms
+2026-06-29 14:32:28.086 +03:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 200 in 68.4588 ms
+2026-06-29 14:32:28.090 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 46.8509ms
+2026-06-29 14:32:28.090 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 72.9184ms
+2026-06-29 14:32:28.092 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2026-06-29 14:32:28.092 +03:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 200 in 76.5366 ms
+2026-06-29 14:32:28.093 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 79.9721ms
+2026-06-29 14:32:28.104 +03:00 [INF] Sending file. Request path: '/Images/Home.jpg'. Physical path: 'E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI\wwwroot\Images\Home.jpg'
+2026-06-29 14:32:28.104 +03:00 [INF] HTTP GET /Images/Home.jpg responded 200 in 79.7905 ms
+2026-06-29 14:32:28.104 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Images/Home.jpg - 200 2051215 image/jpeg 86.8309ms
+2026-06-29 14:32:28.617 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:32:28.756 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 139.6041ms
+2026-06-29 14:32:29.569 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/favicon.ico - null null
+2026-06-29 14:32:29.572 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI\wwwroot\favicon.ico'
+2026-06-29 14:32:29.574 +03:00 [INF] HTTP GET /favicon.ico responded 200 in 4.6032 ms
+2026-06-29 14:32:29.575 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/favicon.ico - 200 5430 image/x-icon 5.7989ms
+2026-06-29 14:32:44.319 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - null null
+2026-06-29 14:32:44.331 +03:00 [INF] Executing endpoint '/Account/Login'
+2026-06-29 14:32:44.385 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-06-29 14:32:44.441 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-06-29 14:32:44.467 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-06-29 14:32:44.471 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-06-29 14:32:44.478 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-29 14:32:44.479 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-29 14:32:44.671 +03:00 [INF] Executed page /Account/Login in 284.7273ms
+2026-06-29 14:32:44.671 +03:00 [INF] Executed endpoint '/Account/Login'
+2026-06-29 14:32:44.671 +03:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 347.2106 ms
+2026-06-29 14:32:44.672 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - 200 null text/html; charset=utf-8 353.3317ms
+2026-06-29 14:32:44.749 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-06-29 14:32:44.752 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-06-29 14:32:44.760 +03:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'. Physical path: 'E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'
+2026-06-29 14:32:44.761 +03:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.UI\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js'
+2026-06-29 14:32:44.761 +03:00 [INF] HTTP GET /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js responded 200 in 9.0448 ms
+2026-06-29 14:32:44.762 +03:00 [INF] HTTP GET /lib/jquery-validation/dist/jquery.validate.min.js responded 200 in 12.0681 ms
+2026-06-29 14:32:44.762 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:32:44.763 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/lib/jquery-validation/dist/jquery.validate.min.js - 200 24601 text/javascript 14.1248ms
+2026-06-29 14:32:44.763 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 200 5824 text/javascript 11.5157ms
+2026-06-29 14:32:44.764 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 2.1096ms
+2026-06-29 14:32:44.869 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:32:44.890 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.3831ms
+2026-06-29 14:33:19.475 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5175/Identity/Account/Login - application/x-www-form-urlencoded 284
+2026-06-29 14:33:19.491 +03:00 [INF] Executing endpoint '/Account/Login'
+2026-06-29 14:33:19.493 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-06-29 14:33:19.594 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2026-06-29 14:33:19.682 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-06-29 14:33:20.226 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[ClaimType], [u].[ClaimValue], [u].[UserId]
+FROM [Security].[UserClaims] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+2026-06-29 14:33:20.286 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Security].[UserRoles] AS [u]
+INNER JOIN [Security].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2026-06-29 14:33:20.290 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-06-29 14:33:20.301 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ClaimType], [r].[ClaimValue]
+FROM [Security].[RoleClaims] AS [r]
+WHERE [r].[RoleId] = @__role_Id_0
+2026-06-29 14:33:20.311 +03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-06-29 14:33:20.314 +03:00 [INF] User logged in.
+2026-06-29 14:33:20.316 +03:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2026-06-29 14:33:20.319 +03:00 [INF] Executing LocalRedirectResult, redirecting to /.
+2026-06-29 14:33:20.323 +03:00 [INF] Executed page /Account/Login in 830.3107ms
+2026-06-29 14:33:20.324 +03:00 [INF] Executed endpoint '/Account/Login'
+2026-06-29 14:33:20.325 +03:00 [INF] HTTP POST /Identity/Account/Login responded 302 in 847.1610 ms
+2026-06-29 14:33:20.329 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5175/Identity/Account/Login - 302 0 null 854.6071ms
+2026-06-29 14:33:20.330 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/ - null null
+2026-06-29 14:33:20.337 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:20.337 +03:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-06-29 14:33:20.338 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:33:20.493 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:33:20.528 +03:00 [INF] Executed ViewResult - view Index executed in 189.6467ms.
+2026-06-29 14:33:20.531 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 193.235ms
+2026-06-29 14:33:20.531 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:20.531 +03:00 [INF] HTTP GET / responded 200 in 198.5336 ms
+2026-06-29 14:33:20.532 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/ - 200 null text/html; charset=utf-8 201.7392ms
+2026-06-29 14:33:20.584 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:33:20.594 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.4694ms
+2026-06-29 14:33:20.599 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:33:20.599 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.4137ms
+2026-06-29 14:33:26.115 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Admin/Flight - null null
+2026-06-29 14:33:26.128 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:26.135 +03:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Flight", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.FlightController (BookFlightTickets.UI).
+2026-06-29 14:33:26.152 +03:00 [INF] Attempting to get all flights from cache or database
+2026-06-29 14:33:26.159 +03:00 [DBG] Cache miss for key: flights:all
+2026-06-29 14:33:26.164 +03:00 [INF] Cache miss for flights:all. Retrieving from database.
+2026-06-29 14:33:26.291 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status], [a].[Id], [a].[Code], [a].[Name], [a0].[Id], [a0].[AirlineId], [a0].[Model], [a0].[SeatCapacity], [a1].[Id], [a1].[City], [a1].[Code], [a1].[Country], [a1].[Name], [a2].[Id], [a2].[City], [a2].[Code], [a2].[Country], [a2].[Name]
+FROM [Flights] AS [f]
+INNER JOIN [Airlines] AS [a] ON [f].[AirlineId] = [a].[Id]
+INNER JOIN [Airplanes] AS [a0] ON [f].[AirplaneId] = [a0].[Id]
+INNER JOIN [Airports] AS [a1] ON [f].[DepartureAirportID] = [a1].[Id]
+INNER JOIN [Airports] AS [a2] ON [f].[ArrivalAirportID] = [a2].[Id]
+2026-06-29 14:33:26.508 +03:00 [DBG] Cache set for key: flights:all with absolute expiry: "00:15:00"
+2026-06-29 14:33:26.511 +03:00 [INF] Returning 2 flights
+2026-06-29 14:33:26.519 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:33:26.589 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:33:26.599 +03:00 [INF] Executed ViewResult - view Index executed in 80.9171ms.
+2026-06-29 14:33:26.602 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI) in 467.1017ms
+2026-06-29 14:33:26.602 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:26.602 +03:00 [INF] HTTP GET /Admin/Flight responded 200 in 484.3530 ms
+2026-06-29 14:33:26.604 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Admin/Flight - 200 null text/html; charset=utf-8 489.2276ms
+2026-06-29 14:33:26.665 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:33:26.668 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:33:26.669 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.744ms
+2026-06-29 14:33:26.685 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.1029ms
+2026-06-29 14:33:30.238 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Admin/Airline - null null
+2026-06-29 14:33:30.248 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:30.252 +03:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Airline", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController (BookFlightTickets.UI).
+2026-06-29 14:33:30.269 +03:00 [INF] Attempting to get all airlines from cache or database
+2026-06-29 14:33:30.270 +03:00 [DBG] Cache miss for key: airlines:all
+2026-06-29 14:33:30.273 +03:00 [INF] Cache miss for airlines:all. Retrieving from database.
+2026-06-29 14:33:30.290 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Code], [a].[Name]
+FROM [Airlines] AS [a]
+2026-06-29 14:33:30.299 +03:00 [DBG] Cache set for key: airlines:all with absolute expiry: "00:30:00"
+2026-06-29 14:33:30.300 +03:00 [INF] Returning 1 airlines
+2026-06-29 14:33:30.302 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:33:30.326 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:33:30.335 +03:00 [INF] Executed ViewResult - view Index executed in 34.6197ms.
+2026-06-29 14:33:30.336 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI) in 83.965ms
+2026-06-29 14:33:30.336 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirlineController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:30.337 +03:00 [INF] HTTP GET /Admin/Airline responded 200 in 96.4454 ms
+2026-06-29 14:33:30.337 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Admin/Airline - 200 null text/html; charset=utf-8 99.588ms
+2026-06-29 14:33:30.399 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:33:30.401 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:33:30.403 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 2.3966ms
+2026-06-29 14:33:30.410 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.6211ms
+2026-06-29 14:33:33.978 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Admin/Airport - null null
+2026-06-29 14:33:33.983 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:33.988 +03:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Airport", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.AirportController (BookFlightTickets.UI).
+2026-06-29 14:33:34.012 +03:00 [INF] Attempting to get all airports from cache or database
+2026-06-29 14:33:34.013 +03:00 [DBG] Cache miss for key: airports:all
+2026-06-29 14:33:34.015 +03:00 [INF] Cache miss for airports:all. Retrieving from database.
+2026-06-29 14:33:34.027 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[City], [a].[Code], [a].[Country], [a].[Name]
+FROM [Airports] AS [a]
+2026-06-29 14:33:34.033 +03:00 [DBG] Cache set for key: airports:all with absolute expiry: "00:30:00"
+2026-06-29 14:33:34.034 +03:00 [INF] Returning 2 airports
+2026-06-29 14:33:34.036 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:33:34.054 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:33:34.060 +03:00 [INF] Executed ViewResult - view Index executed in 25.1391ms.
+2026-06-29 14:33:34.060 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI) in 72.2848ms
+2026-06-29 14:33:34.060 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AirportController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:34.060 +03:00 [INF] HTTP GET /Admin/Airport responded 200 in 79.7616 ms
+2026-06-29 14:33:34.061 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Admin/Airport - 200 null text/html; charset=utf-8 82.4951ms
+2026-06-29 14:33:34.103 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:33:34.106 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:33:34.106 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.4408ms
+2026-06-29 14:33:34.110 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.1827ms
+2026-06-29 14:33:37.026 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Admin/AddOn - null null
+2026-06-29 14:33:37.029 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:37.033 +03:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "AddOn", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController (BookFlightTickets.UI).
+2026-06-29 14:33:37.036 +03:00 [INF] Attempting to get all addons from cache or database
+2026-06-29 14:33:37.037 +03:00 [DBG] Cache miss for key: addons:all
+2026-06-29 14:33:37.040 +03:00 [INF] Cache miss for addons:all. Retrieving from database.
+2026-06-29 14:33:37.053 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name], [a].[Price]
+FROM [AddOns] AS [a]
+2026-06-29 14:33:37.065 +03:00 [DBG] Cache set for key: addons:all with absolute expiry: "00:30:00"
+2026-06-29 14:33:37.066 +03:00 [INF] Returning 3 addons
+2026-06-29 14:33:37.068 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:33:37.088 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:33:37.094 +03:00 [INF] Executed ViewResult - view Index executed in 27.2769ms.
+2026-06-29 14:33:37.094 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController.Index (BookFlightTickets.UI) in 61.0736ms
+2026-06-29 14:33:37.094 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.AddOnController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:37.095 +03:00 [INF] HTTP GET /Admin/AddOn responded 200 in 66.5629 ms
+2026-06-29 14:33:37.095 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Admin/AddOn - 200 null text/html; charset=utf-8 69.3219ms
+2026-06-29 14:33:37.131 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:33:37.131 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:33:37.131 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.4586ms
+2026-06-29 14:33:37.137 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 5.9288ms
+2026-06-29 14:33:39.435 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Admin/Tickets - null null
+2026-06-29 14:33:39.438 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.TicketsController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:39.443 +03:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Tickets", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.TicketsController (BookFlightTickets.UI).
+2026-06-29 14:33:39.459 +03:00 [INF] Attempting to get all tickets from database
+2026-06-29 14:33:39.500 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[BookingID], [t].[FirstName], [t].[FlightSeatId], [t].[LastName], [t].[PassportNumber], [t].[SeatId], [t].[TicketNumber], [t].[TicketPrice], [f].[Id], [f].[FlightId], [f].[IsAvailable], [f].[SeatId], [f].[TicketId], [s].[Id], [s].[AirplaneId], [s].[Class], [s].[Number], [s].[Price], [s].[Row]
+FROM [Tickets] AS [t]
+INNER JOIN [FlightSeats] AS [f] ON [t].[FlightSeatId] = [f].[Id]
+INNER JOIN [Seats] AS [s] ON [f].[SeatId] = [s].[Id]
+2026-06-29 14:33:39.502 +03:00 [INF] No tickets found in database
+2026-06-29 14:33:39.511 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:33:39.550 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:33:39.559 +03:00 [INF] Executed ViewResult - view Index executed in 49.6692ms.
+2026-06-29 14:33:39.564 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.TicketsController.Index (BookFlightTickets.UI) in 120.1481ms
+2026-06-29 14:33:39.564 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.TicketsController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:39.564 +03:00 [INF] HTTP GET /Admin/Tickets responded 200 in 127.2148 ms
+2026-06-29 14:33:39.565 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Admin/Tickets - 200 null text/html; charset=utf-8 130.5201ms
+2026-06-29 14:33:39.630 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:33:39.633 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:33:39.633 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.5421ms
+2026-06-29 14:33:39.640 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.318ms
+2026-06-29 14:33:42.816 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Admin/TicketAddOns - null null
+2026-06-29 14:33:42.819 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.TicketAddOnsController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:42.824 +03:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "TicketAddOns", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.TicketAddOnsController (BookFlightTickets.UI).
+2026-06-29 14:33:42.827 +03:00 [INF] Attempting to get all ticket add-ons from database
+2026-06-29 14:33:42.839 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AddOnID], [t].[TicketId]
+FROM [TicketAddOns] AS [t]
+2026-06-29 14:33:42.843 +03:00 [INF] No ticket AddOns found in database
+2026-06-29 14:33:42.849 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:33:42.867 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:33:42.871 +03:00 [INF] Executed ViewResult - view Index executed in 22.8305ms.
+2026-06-29 14:33:42.871 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.TicketAddOnsController.Index (BookFlightTickets.UI) in 47.1964ms
+2026-06-29 14:33:42.872 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.TicketAddOnsController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:42.872 +03:00 [INF] HTTP GET /Admin/TicketAddOns responded 200 in 53.5481 ms
+2026-06-29 14:33:42.873 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Admin/TicketAddOns - 200 null text/html; charset=utf-8 56.6751ms
+2026-06-29 14:33:42.911 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:33:42.912 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:33:42.912 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.4233ms
+2026-06-29 14:33:42.926 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.8017ms
+2026-06-29 14:33:44.930 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Admin/Bookings - null null
+2026-06-29 14:33:44.933 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.BookingsController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:44.938 +03:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Bookings", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.BookingsController (BookFlightTickets.UI).
+2026-06-29 14:33:44.942 +03:00 [INF] Attempting to get all bookings from database
+2026-06-29 14:33:44.983 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BookingDate], [b].[FlightId], [b].[LastUpdated], [b].[PNR], [b].[Status], [b].[TotalPrice], [b].[UserId], [p].[Id], [p].[Amount], [p].[BookingID], [p].[PaymentDate], [p].[PaymentIntentId], [p].[PaymentStatus], [p].[SessionId]
+FROM [Bookings] AS [b]
+LEFT JOIN [Payments] AS [p] ON [b].[Id] = [p].[BookingID]
+2026-06-29 14:33:44.985 +03:00 [INF] No bookings found in database
+2026-06-29 14:33:44.991 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:33:45.007 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:33:45.012 +03:00 [INF] Executed ViewResult - view Index executed in 22.777ms.
+2026-06-29 14:33:45.013 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.BookingsController.Index (BookFlightTickets.UI) in 74.6961ms
+2026-06-29 14:33:45.013 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.BookingsController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:45.013 +03:00 [INF] HTTP GET /Admin/Bookings responded 200 in 80.7303 ms
+2026-06-29 14:33:45.013 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Admin/Bookings - 200 null text/html; charset=utf-8 83.1119ms
+2026-06-29 14:33:45.063 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:33:45.063 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:33:45.064 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.1736ms
+2026-06-29 14:33:45.068 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 4.8324ms
+2026-06-29 14:33:47.506 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Admin/User - null null
+2026-06-29 14:33:47.509 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.UserController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:47.514 +03:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "User", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Admin.Controllers.UserController (BookFlightTickets.UI).
+2026-06-29 14:33:47.530 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+2026-06-29 14:33:47.533 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:33:47.557 +03:00 [INF] Executed ViewResult - view Index executed in 24.6474ms.
+2026-06-29 14:33:47.557 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.UserController.Index (BookFlightTickets.UI) in 43.1166ms
+2026-06-29 14:33:47.557 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.UserController.Index (BookFlightTickets.UI)'
+2026-06-29 14:33:47.557 +03:00 [INF] HTTP GET /Admin/User responded 200 in 48.9090 ms
+2026-06-29 14:33:47.558 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Admin/User - 200 null text/html; charset=utf-8 51.5108ms
+2026-06-29 14:33:47.631 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:33:47.633 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:33:47.634 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 1.4977ms
+2026-06-29 14:33:47.641 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.1803ms
+2026-06-29 14:33:51.953 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Admin/Dashboard/Dashboard - null null
+2026-06-29 14:33:51.956 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController.Dashboard (BookFlightTickets.UI)'
+2026-06-29 14:33:51.961 +03:00 [INF] Route matched with {area = "Admin", action = "Dashboard", controller = "Dashboard", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Dashboard() on controller BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController (BookFlightTickets.UI).
+2026-06-29 14:33:51.971 +03:00 [INF] Loading dashboard data from database
+2026-06-29 14:33:52.110 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-06-29 14:33:52.127 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-06-29 14:33:52.131 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-06-29 14:33:52.136 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-06-29 14:33:52.142 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-06-29 14:33:52.148 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__month_Month_0='?' (DbType = Int32), @__month_Year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+WHERE DATEPART(month, [f].[DepartureTime]) = @__month_Month_0 AND DATEPART(year, [f].[DepartureTime]) = @__month_Year_1
+2026-06-29 14:33:52.164 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Security].[Users] AS [u]
+2026-06-29 14:33:52.172 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Flights] AS [f]
+2026-06-29 14:33:52.180 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Airlines] AS [a]
+2026-06-29 14:33:52.188 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Airplanes] AS [a]
+2026-06-29 14:33:52.196 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Bookings] AS [b]
+2026-06-29 14:33:52.332 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Name], COUNT(*) AS [Count]
+FROM [Flights] AS [f]
+INNER JOIN [Airlines] AS [a] ON [f].[AirlineId] = [a].[Id]
+GROUP BY [a].[Name]
+2026-06-29 14:33:52.416 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AirlineId], [t].[AirplaneId], [t].[ArrivalAirportID], [t].[ArrivalTime], [t].[BasePrice], [t].[DepartureAirportID], [t].[DepartureTime], [t].[Status], [a].[Id], [a].[Code], [a].[Name], [a0].[Id], [a0].[AirlineId], [a0].[Model], [a0].[SeatCapacity], [a1].[Id], [a1].[City], [a1].[Code], [a1].[Country], [a1].[Name], [a2].[Id], [a2].[City], [a2].[Code], [a2].[Country], [a2].[Name]
+FROM (
+    SELECT [f].[Id], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status]
+    FROM [Flights] AS [f]
+    ORDER BY [f].[DepartureTime] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Airlines] AS [a] ON [t].[AirlineId] = [a].[Id]
+INNER JOIN [Airplanes] AS [a0] ON [t].[AirplaneId] = [a0].[Id]
+INNER JOIN [Airports] AS [a1] ON [t].[DepartureAirportID] = [a1].[Id]
+INNER JOIN [Airports] AS [a2] ON [t].[ArrivalAirportID] = [a2].[Id]
+ORDER BY [t].[DepartureTime] DESC
+2026-06-29 14:33:52.441 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[BookingDate], [t].[FlightId], [t].[LastUpdated], [t].[PNR], [t].[Status], [t].[TotalPrice], [t].[UserId], [f].[Id], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status]
+FROM (
+    SELECT [b].[Id], [b].[BookingDate], [b].[FlightId], [b].[LastUpdated], [b].[PNR], [b].[Status], [b].[TotalPrice], [b].[UserId]
+    FROM [Bookings] AS [b]
+    ORDER BY [b].[BookingDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Flights] AS [f] ON [t].[FlightId] = [f].[Id]
+ORDER BY [t].[BookingDate] DESC
+2026-06-29 14:33:52.443 +03:00 [INF] Dashboard loaded successfully with 2 recent flights and 0 recent bookings
+2026-06-29 14:33:52.445 +03:00 [INF] Executing ViewResult, running view Dashboard.
+2026-06-29 14:33:52.482 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:33:52.558 +03:00 [INF] Executed ViewResult - view Dashboard executed in 113.7904ms.
+2026-06-29 14:33:52.559 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController.Dashboard (BookFlightTickets.UI) in 597.2669ms
+2026-06-29 14:33:52.559 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Admin.Controllers.DashboardController.Dashboard (BookFlightTickets.UI)'
+2026-06-29 14:33:52.559 +03:00 [INF] HTTP GET /Admin/Dashboard/Dashboard responded 200 in 603.8198 ms
+2026-06-29 14:33:52.560 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Admin/Dashboard/Dashboard - 200 null text/html; charset=utf-8 607.3598ms
+2026-06-29 14:33:52.659 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:33:52.660 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.8665ms
+2026-06-29 14:33:52.732 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:33:52.739 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.4394ms
+2026-06-29 14:33:53.090 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5175/dashboardHub/negotiate?negotiateVersion=1 - null 0
+2026-06-29 14:33:53.092 +03:00 [INF] Executing endpoint '/dashboardHub/negotiate'
+2026-06-29 14:33:53.118 +03:00 [INF] Executed endpoint '/dashboardHub/negotiate'
+2026-06-29 14:33:53.119 +03:00 [INF] HTTP POST /dashboardHub/negotiate responded 200 in 28.0690 ms
+2026-06-29 14:33:53.120 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5175/dashboardHub/negotiate?negotiateVersion=1 - 200 316 application/json 29.3518ms
+2026-06-29 14:33:53.405 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/dashboardHub?id=gGzCJZV7eWl4Y95r7hY2AQ - null null
+2026-06-29 14:33:53.408 +03:00 [INF] Executing endpoint '/dashboardHub'
+2026-06-29 14:34:08.384 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5175/Identity/Account/Logout?returnUrl=%2FIdentity%2FAccount%2FLogin - application/x-www-form-urlencoded 225
+2026-06-29 14:34:08.387 +03:00 [INF] Executing endpoint '/Account/Logout'
+2026-06-29 14:34:08.392 +03:00 [INF] Route matched with {page = "/Account/Logout", area = "Identity", action = "", controller = ""}. Executing page /Account/Logout
+2026-06-29 14:34:08.396 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LogoutModel.OnPost - ModelState is "Valid"
+2026-06-29 14:34:08.399 +03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2026-06-29 14:34:08.399 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-06-29 14:34:08.400 +03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2026-06-29 14:34:08.400 +03:00 [INF] User logged out.
+2026-06-29 14:34:08.400 +03:00 [INF] Executed handler method OnPost, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2026-06-29 14:34:08.401 +03:00 [INF] Executing LocalRedirectResult, redirecting to /Identity/Account/Login.
+2026-06-29 14:34:08.401 +03:00 [INF] Executed page /Account/Logout in 9.0677ms
+2026-06-29 14:34:08.402 +03:00 [INF] Executed endpoint '/Account/Logout'
+2026-06-29 14:34:08.402 +03:00 [INF] HTTP POST /Identity/Account/Logout responded 302 in 15.2827 ms
+2026-06-29 14:34:08.402 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5175/Identity/Account/Logout?returnUrl=%2FIdentity%2FAccount%2FLogin - 302 0 null 18.3784ms
+2026-06-29 14:34:08.406 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - null null
+2026-06-29 14:34:08.409 +03:00 [INF] Executing endpoint '/Account/Login'
+2026-06-29 14:34:08.409 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-06-29 14:34:08.410 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-06-29 14:34:08.410 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-06-29 14:34:08.410 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-06-29 14:34:08.411 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-29 14:34:08.411 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-29 14:34:08.419 +03:00 [INF] Executed page /Account/Login in 10.2266ms
+2026-06-29 14:34:08.420 +03:00 [INF] Executed endpoint '/Account/Login'
+2026-06-29 14:34:08.420 +03:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 11.3688 ms
+2026-06-29 14:34:08.420 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - 200 null text/html; charset=utf-8 14.1287ms
+2026-06-29 14:34:08.449 +03:00 [INF] Executed endpoint '/dashboardHub'
+2026-06-29 14:34:08.449 +03:00 [INF] HTTP GET /dashboardHub responded 101 in 15043.5198 ms
+2026-06-29 14:34:08.450 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/dashboardHub?id=gGzCJZV7eWl4Y95r7hY2AQ - 101 null null 15045.1864ms
+2026-06-29 14:34:08.461 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:34:08.461 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:34:08.462 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.7349ms
+2026-06-29 14:34:08.471 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.093ms
+2026-06-29 14:34:11.982 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5175/Identity/Account/ExternalLogin?returnUrl=%2F - application/x-www-form-urlencoded 198
+2026-06-29 14:34:11.984 +03:00 [INF] Executing endpoint '/Account/ExternalLogin'
+2026-06-29 14:34:11.992 +03:00 [INF] Route matched with {page = "/Account/ExternalLogin", area = "Identity", action = "", controller = ""}. Executing page /Account/ExternalLogin
+2026-06-29 14:34:12.008 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.ExternalLoginModel.OnPost - ModelState is "Invalid"
+2026-06-29 14:34:12.010 +03:00 [INF] Executed handler method OnPost, returned result Microsoft.AspNetCore.Mvc.ChallengeResult.
+2026-06-29 14:34:12.015 +03:00 [INF] Executing ChallengeResult with authentication schemes (["Google"]).
+2026-06-29 14:34:12.038 +03:00 [INF] AuthenticationScheme: Google was challenged.
+2026-06-29 14:34:12.039 +03:00 [INF] Executed page /Account/ExternalLogin in 46.5116ms
+2026-06-29 14:34:12.039 +03:00 [INF] Executed endpoint '/Account/ExternalLogin'
+2026-06-29 14:34:12.039 +03:00 [INF] HTTP POST /Identity/Account/ExternalLogin responded 302 in 54.8842 ms
+2026-06-29 14:34:12.040 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5175/Identity/Account/ExternalLogin?returnUrl=%2F - 302 0 null 58.0046ms
+2026-06-29 14:34:16.614 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - null null
+2026-06-29 14:34:16.618 +03:00 [INF] Executing endpoint '/Account/Login'
+2026-06-29 14:34:16.618 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-06-29 14:34:16.619 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-06-29 14:34:16.619 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-06-29 14:34:16.619 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-06-29 14:34:16.619 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-29 14:34:16.619 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-29 14:34:16.622 +03:00 [INF] Executed page /Account/Login in 4.4254ms
+2026-06-29 14:34:16.623 +03:00 [INF] Executed endpoint '/Account/Login'
+2026-06-29 14:34:16.623 +03:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 5.1065 ms
+2026-06-29 14:34:16.623 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - 200 null text/html; charset=utf-8 9.2761ms
+2026-06-29 14:34:16.678 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:34:16.679 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.2034ms
+2026-06-29 14:34:21.395 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/Register - null null
+2026-06-29 14:34:21.398 +03:00 [INF] Executing endpoint '/Account/Register'
+2026-06-29 14:34:21.413 +03:00 [INF] Route matched with {page = "/Account/Register", area = "Identity", action = "", controller = ""}. Executing page /Account/Register
+2026-06-29 14:34:21.415 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.RegisterModel.OnGetAsync - ModelState is "Valid"
+2026-06-29 14:34:21.420 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-06-29 14:34:21.420 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-29 14:34:21.420 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-29 14:34:21.533 +03:00 [INF] Executed page /Account/Register in 119.5736ms
+2026-06-29 14:34:21.533 +03:00 [INF] Executed endpoint '/Account/Register'
+2026-06-29 14:34:21.533 +03:00 [INF] HTTP GET /Identity/Account/Register responded 200 in 135.3840 ms
+2026-06-29 14:34:21.533 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/Register - 200 null text/html; charset=utf-8 138.6844ms
+2026-06-29 14:34:21.619 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:34:21.619 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:34:21.619 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.8441ms
+2026-06-29 14:34:21.634 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.3401ms
+2026-06-29 14:34:41.091 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5175/Identity/Account/Register - application/x-www-form-urlencoded 407
+2026-06-29 14:34:41.096 +03:00 [INF] Executing endpoint '/Account/Register'
+2026-06-29 14:34:41.097 +03:00 [INF] Route matched with {page = "/Account/Register", area = "Identity", action = "", controller = ""}. Executing page /Account/Register
+2026-06-29 14:34:41.105 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.RegisterModel.OnPostAsync - ModelState is "Valid"
+2026-06-29 14:34:41.452 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-06-29 14:34:41.472 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 100), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 100), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 500), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Security].[Users] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PassportNumber], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [Role], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2026-06-29 14:34:41.474 +03:00 [INF] User created a new account with password.
+2026-06-29 14:34:41.476 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2026-06-29 14:34:41.479 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[RoleId]
+FROM [Security].[UserRoles] AS [u]
+WHERE [u].[UserId] = @__p_0 AND [u].[RoleId] = @__p_1
+2026-06-29 14:34:41.482 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2026-06-29 14:34:41.487 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-06-29 14:34:41.493 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p20='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p21='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 100), @p7='?' (Size = 100), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 100), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 500), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Security].[UserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [Security].[Users] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PassportNumber] = @p12, [PasswordHash] = @p13, [PhoneNumber] = @p14, [PhoneNumberConfirmed] = @p15, [Role] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+OUTPUT 1
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+2026-06-29 14:34:44.017 +03:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult.
+2026-06-29 14:34:44.019 +03:00 [INF] Executing RedirectToPageResult, redirecting to /Account/Login.
+2026-06-29 14:34:44.020 +03:00 [INF] Executed page /Account/Register in 2922.9874ms
+2026-06-29 14:34:44.020 +03:00 [INF] Executed endpoint '/Account/Register'
+2026-06-29 14:34:44.020 +03:00 [INF] HTTP POST /Identity/Account/Register responded 302 in 2923.9343 ms
+2026-06-29 14:34:44.021 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5175/Identity/Account/Register - 302 0 null 2930.0789ms
+2026-06-29 14:34:44.027 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - null null
+2026-06-29 14:34:44.031 +03:00 [INF] Executing endpoint '/Account/Login'
+2026-06-29 14:34:44.031 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-06-29 14:34:44.033 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-06-29 14:34:44.033 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-06-29 14:34:44.033 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-06-29 14:34:44.034 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-29 14:34:44.034 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-29 14:34:44.037 +03:00 [INF] Executed page /Account/Login in 5.5238ms
+2026-06-29 14:34:44.037 +03:00 [INF] Executed endpoint '/Account/Login'
+2026-06-29 14:34:44.037 +03:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 6.5194 ms
+2026-06-29 14:34:44.038 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - 200 null text/html; charset=utf-8 10.8074ms
+2026-06-29 14:34:44.101 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:34:44.102 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:34:44.102 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.3198ms
+2026-06-29 14:34:44.113 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.9194ms
+2026-06-29 14:34:52.564 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5175/Identity/Account/Login - application/x-www-form-urlencoded 278
+2026-06-29 14:34:52.567 +03:00 [INF] Executing endpoint '/Account/Login'
+2026-06-29 14:34:52.567 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-06-29 14:34:52.568 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2026-06-29 14:34:52.573 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2026-06-29 14:34:52.902 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[ClaimType], [u].[ClaimValue], [u].[UserId]
+FROM [Security].[UserClaims] AS [u]
+WHERE [u].[UserId] = @__user_Id_0
+2026-06-29 14:34:52.908 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Name]
+FROM [Security].[UserRoles] AS [u]
+INNER JOIN [Security].[Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[UserId] = @__userId_0
+2026-06-29 14:34:52.911 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [Security].[Roles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2026-06-29 14:34:52.915 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ClaimType], [r].[ClaimValue]
+FROM [Security].[RoleClaims] AS [r]
+WHERE [r].[RoleId] = @__role_Id_0
+2026-06-29 14:34:52.917 +03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-06-29 14:34:52.917 +03:00 [INF] User logged in.
+2026-06-29 14:34:52.917 +03:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2026-06-29 14:34:52.918 +03:00 [INF] Executing LocalRedirectResult, redirecting to /.
+2026-06-29 14:34:52.919 +03:00 [INF] Executed page /Account/Login in 351.5693ms
+2026-06-29 14:34:52.919 +03:00 [INF] Executed endpoint '/Account/Login'
+2026-06-29 14:34:52.919 +03:00 [INF] HTTP POST /Identity/Account/Login responded 302 in 352.5487 ms
+2026-06-29 14:34:52.920 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5175/Identity/Account/Login - 302 0 null 355.7785ms
+2026-06-29 14:34:52.927 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/ - null null
+2026-06-29 14:34:52.932 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-06-29 14:34:52.933 +03:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Home", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.HomeController (BookFlightTickets.UI).
+2026-06-29 14:34:52.933 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:34:52.941 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:34:52.950 +03:00 [INF] Executed ViewResult - view Index executed in 16.6646ms.
+2026-06-29 14:34:52.950 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI) in 17.4786ms
+2026-06-29 14:34:52.950 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.HomeController.Index (BookFlightTickets.UI)'
+2026-06-29 14:34:52.951 +03:00 [INF] HTTP GET / responded 200 in 19.2480 ms
+2026-06-29 14:34:52.951 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/ - 200 null text/html; charset=utf-8 23.9081ms
+2026-06-29 14:34:53.018 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:34:53.019 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:34:53.020 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.8211ms
+2026-06-29 14:34:53.029 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.8115ms
+2026-06-29 14:34:56.085 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Customer/Flight - null null
+2026-06-29 14:34:56.094 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-06-29 14:34:56.108 +03:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "Flight", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(BookFlightTickets.Core.ViewModels.FlightFilterViewModel) on controller BookFlightTickets.UI.Areas.Customer.Controllers.FlightController (BookFlightTickets.UI).
+2026-06-29 14:34:56.126 +03:00 [INF] FlightController.Index called with parameters: {"FromDate":null,"ToDate":null,"SearchString":"","SearchBy":"","SortBy":"DepartureTime","SortOrder":"ASC","Page":1,"PageSize":10,"$type":"FlightFilterViewModel"}
+2026-06-29 14:34:56.165 +03:00 [DBG] ViewBag setup completed for flight search
+2026-06-29 14:34:56.169 +03:00 [DBG] Processing flight data with search criteria
+2026-06-29 14:34:56.173 +03:00 [INF] Starting GetFilteredFlights with parameters: SearchBy='', SearchString='', FromDate=null, ToDate=null
+2026-06-29 14:34:56.174 +03:00 [DBG] Generated cache key: flights:filtered:searchBy::search::from:none:to:none
+2026-06-29 14:34:56.175 +03:00 [DBG] Cache miss for key: flights:filtered:searchBy::search::from:none:to:none
+2026-06-29 14:34:56.211 +03:00 [DBG] Executing database query with specification
+2026-06-29 14:34:56.365 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status], [a].[Id], [a].[Code], [a].[Name], [a0].[Id], [a0].[AirlineId], [a0].[Model], [a0].[SeatCapacity], [a1].[Id], [a1].[City], [a1].[Code], [a1].[Country], [a1].[Name], [a2].[Id], [a2].[City], [a2].[Code], [a2].[Country], [a2].[Name], [t].[Id], [t].[FlightId], [t].[IsAvailable], [t].[SeatId], [t].[TicketId]
+FROM [Flights] AS [f]
+INNER JOIN [Airlines] AS [a] ON [f].[AirlineId] = [a].[Id]
+INNER JOIN [Airplanes] AS [a0] ON [f].[AirplaneId] = [a0].[Id]
+INNER JOIN [Airports] AS [a1] ON [f].[DepartureAirportID] = [a1].[Id]
+INNER JOIN [Airports] AS [a2] ON [f].[ArrivalAirportID] = [a2].[Id]
+LEFT JOIN (
+    SELECT [f0].[Id], [f0].[FlightId], [f0].[IsAvailable], [f0].[SeatId], [f0].[TicketId]
+    FROM [FlightSeats] AS [f0]
+    WHERE [f0].[IsAvailable] = CAST(1 AS bit)
+) AS [t] ON [f].[Id] = [t].[FlightId]
+ORDER BY [f].[Id], [a].[Id], [a0].[Id], [a1].[Id], [a2].[Id]
+2026-06-29 14:34:56.379 +03:00 [INF] Found 2 flights in GetFilteredFlights
+2026-06-29 14:34:56.835 +03:00 [ERR] Error setting cache for key: flights:filtered:searchBy::search::from:none:to:none
+System.Text.Json.JsonException: A possible object cycle was detected. This can either be due to a cycle or if the object depth is larger than the maximum allowed depth of 64. Consider using ReferenceHandler.Preserve on JsonSerializerOptions to support cycles. Path: $.Value.FlightSeats.Flight.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Name.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_SerializerCycleDetected(Int32 maxDepth)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.ListOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T& rootValue, Object rootValueBoxed)
+   at System.Text.Json.JsonSerializer.WriteString[TValue](TValue& value, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at BookFlightTickets.Core.Services.RedisCacheService.SetAsync[T](String key, T value, Nullable`1 expiry) in E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Core\Services\RedisCacheService.cs:line 88
+2026-06-29 14:34:56.844 +03:00 [DBG] Flight filtering returned 2 results
+2026-06-29 14:34:56.848 +03:00 [INF] Starting GetSortedFlightsAsync with parameters: SortBy='DepartureTime', SortOrder="ASC", FlightCount=2
+2026-06-29 14:34:56.856 +03:00 [DBG] Generated sort cache key: flights:sorted:f_ivl61kf3y5pmkx:2:departuretime:0
+2026-06-29 14:34:56.856 +03:00 [DBG] Cache miss for key: flights:sorted:f_ivl61kf3y5pmkx:2:departuretime:0
+2026-06-29 14:34:56.857 +03:00 [DBG] Cache miss for sort key: flights:sorted:f_ivl61kf3y5pmkx:2:departuretime:0, processing sorting
+2026-06-29 14:34:56.863 +03:00 [DBG] Applying sorting: SortBy='DepartureTime', SortOrder="ASC"
+2026-06-29 14:34:56.867 +03:00 [DBG] Applied ascending order for sort field: DepartureTime
+2026-06-29 14:34:56.870 +03:00 [DBG] Executing database query for sorting with 2 flight IDs
+2026-06-29 14:34:57.111 +03:00 [INF] Executed DbCommand (113ms) [Parameters=[@__flightIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status], [a].[Id], [a].[Code], [a].[Name], [a0].[Id], [a0].[AirlineId], [a0].[Model], [a0].[SeatCapacity], [a1].[Id], [a1].[City], [a1].[Code], [a1].[Country], [a1].[Name], [a2].[Id], [a2].[City], [a2].[Code], [a2].[Country], [a2].[Name], [t].[Id], [t].[FlightId], [t].[IsAvailable], [t].[SeatId], [t].[TicketId]
+FROM [Flights] AS [f]
+INNER JOIN [Airlines] AS [a] ON [f].[AirlineId] = [a].[Id]
+INNER JOIN [Airplanes] AS [a0] ON [f].[AirplaneId] = [a0].[Id]
+INNER JOIN [Airports] AS [a1] ON [f].[DepartureAirportID] = [a1].[Id]
+INNER JOIN [Airports] AS [a2] ON [f].[ArrivalAirportID] = [a2].[Id]
+LEFT JOIN (
+    SELECT [f1].[Id], [f1].[FlightId], [f1].[IsAvailable], [f1].[SeatId], [f1].[TicketId]
+    FROM [FlightSeats] AS [f1]
+    WHERE [f1].[IsAvailable] = CAST(1 AS bit)
+) AS [t] ON [f].[Id] = [t].[FlightId]
+WHERE [f].[Id] IN (
+    SELECT [f0].[value]
+    FROM OPENJSON(@__flightIds_0) WITH ([value] int '$') AS [f0]
+)
+ORDER BY [f].[DepartureTime], [f].[Id], [a].[Id], [a0].[Id], [a1].[Id], [a2].[Id]
+2026-06-29 14:34:57.113 +03:00 [INF] Successfully sorted 2 flights in GetSortedFlightsAsync
+2026-06-29 14:34:57.386 +03:00 [ERR] Error setting cache for key: flights:sorted:f_ivl61kf3y5pmkx:2:departuretime:0
+System.Text.Json.JsonException: A possible object cycle was detected. This can either be due to a cycle or if the object depth is larger than the maximum allowed depth of 64. Consider using ReferenceHandler.Preserve on JsonSerializerOptions to support cycles. Path: $.FlightSeats.Flight.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.Airline.Flights.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_SerializerCycleDetected(Int32 maxDepth)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.ListOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonCollectionConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T& rootValue, Object rootValueBoxed)
+   at System.Text.Json.JsonSerializer.WriteString[TValue](TValue& value, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at BookFlightTickets.Core.Services.RedisCacheService.SetAsync[T](String key, T value, Nullable`1 expiry) in E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Core\Services\RedisCacheService.cs:line 88
+2026-06-29 14:34:57.391 +03:00 [DBG] Cached sorted 2 flights for key: flights:sorted:f_ivl61kf3y5pmkx:2:departuretime:0
+2026-06-29 14:34:57.391 +03:00 [DBG] Flights sorted successfully
+2026-06-29 14:34:57.445 +03:00 [DBG] Pagination setup: Page 1 of 1, 10 items per page
+2026-06-29 14:34:57.447 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:34:57.733 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:34:57.741 +03:00 [INF] Executed ViewResult - view Index executed in 294.8642ms.
+2026-06-29 14:34:57.741 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.FlightController.Index (BookFlightTickets.UI) in 1632.8611ms
+2026-06-29 14:34:57.741 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.FlightController.Index (BookFlightTickets.UI)'
+2026-06-29 14:34:57.741 +03:00 [INF] HTTP GET /Customer/Flight responded 200 in 1650.3882 ms
+2026-06-29 14:34:57.742 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Customer/Flight - 200 null text/html; charset=utf-8 1656.8833ms
+2026-06-29 14:34:57.781 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:34:57.781 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:34:57.781 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.3069ms
+2026-06-29 14:34:57.786 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 5.2648ms
+2026-06-29 14:35:13.459 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Customer/MyBookings - null null
+2026-06-29 14:35:13.466 +03:00 [INF] Executing endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.MyBookingsController.Index (BookFlightTickets.UI)'
+2026-06-29 14:35:13.477 +03:00 [INF] Route matched with {area = "Customer", action = "Index", controller = "MyBookings", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BookFlightTickets.UI.Areas.Customer.Controllers.MyBookingsController (BookFlightTickets.UI).
+2026-06-29 14:35:13.481 +03:00 [INF] Loading bookings for user ID: a3413cae-ae77-414b-95c3-a21234815cc9
+2026-06-29 14:35:13.482 +03:00 [DBG] Executing booking query with complex includes for user: a3413cae-ae77-414b-95c3-a21234815cc9
+2026-06-29 14:35:13.588 +03:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-06-29 14:35:13.714 +03:00 [INF] Executed DbCommand (89ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BookingDate], [b].[FlightId], [b].[LastUpdated], [b].[PNR], [b].[Status], [b].[TotalPrice], [b].[UserId], [p].[Id], [p].[Amount], [p].[BookingID], [p].[PaymentDate], [p].[PaymentIntentId], [p].[PaymentStatus], [p].[SessionId], [f].[Id], [a].[Id], [a0].[Id], [a1].[Id], [a2].[Id], [t2].[Id], [t2].[BookingID], [t2].[FirstName], [t2].[FlightSeatId], [t2].[LastName], [t2].[PassportNumber], [t2].[SeatId], [t2].[TicketNumber], [t2].[TicketPrice], [t2].[Id0], [t2].[AddOnID], [t2].[TicketId], [t2].[Id00], [t2].[Name], [t2].[Price], [f].[AirlineId], [f].[AirplaneId], [f].[ArrivalAirportID], [f].[ArrivalTime], [f].[BasePrice], [f].[DepartureAirportID], [f].[DepartureTime], [f].[Status], [t3].[Id], [t3].[FlightId], [t3].[IsAvailable], [t3].[SeatId], [t3].[TicketId], [t3].[Id0], [t3].[AirplaneId], [t3].[Class], [t3].[Number], [t3].[Price], [t3].[Row], [a].[City], [a].[Code], [a].[Country], [a].[Name], [a0].[City], [a0].[Code], [a0].[Country], [a0].[Name], [a1].[Code], [a1].[Name], [a2].[AirlineId], [a2].[Model], [a2].[SeatCapacity]
+FROM [Bookings] AS [b]
+LEFT JOIN [Payments] AS [p] ON [b].[Id] = [p].[BookingID]
+INNER JOIN [Flights] AS [f] ON [b].[FlightId] = [f].[Id]
+INNER JOIN [Airports] AS [a] ON [f].[DepartureAirportID] = [a].[Id]
+INNER JOIN [Airports] AS [a0] ON [f].[ArrivalAirportID] = [a0].[Id]
+INNER JOIN [Airlines] AS [a1] ON [f].[AirlineId] = [a1].[Id]
+INNER JOIN [Airplanes] AS [a2] ON [f].[AirplaneId] = [a2].[Id]
+LEFT JOIN (
+    SELECT [t].[Id], [t].[BookingID], [t].[FirstName], [t].[FlightSeatId], [t].[LastName], [t].[PassportNumber], [t].[SeatId], [t].[TicketNumber], [t].[TicketPrice], [t0].[Id] AS [Id0], [t0].[AddOnID], [t0].[TicketId], [t0].[Id0] AS [Id00], [t0].[Name], [t0].[Price]
+    FROM [Tickets] AS [t]
+    LEFT JOIN (
+        SELECT [t1].[Id], [t1].[AddOnID], [t1].[TicketId], [a3].[Id] AS [Id0], [a3].[Name], [a3].[Price]
+        FROM [TicketAddOns] AS [t1]
+        INNER JOIN [AddOns] AS [a3] ON [t1].[AddOnID] = [a3].[Id]
+    ) AS [t0] ON [t].[Id] = [t0].[TicketId]
+) AS [t2] ON [b].[Id] = [t2].[BookingID]
+LEFT JOIN (
+    SELECT [f0].[Id], [f0].[FlightId], [f0].[IsAvailable], [f0].[SeatId], [f0].[TicketId], [s].[Id] AS [Id0], [s].[AirplaneId], [s].[Class], [s].[Number], [s].[Price], [s].[Row]
+    FROM [FlightSeats] AS [f0]
+    INNER JOIN [Seats] AS [s] ON [f0].[SeatId] = [s].[Id]
+) AS [t3] ON [f].[Id] = [t3].[FlightId]
+WHERE [b].[UserId] = @__userId_0
+ORDER BY [b].[Id] DESC, [p].[Id], [f].[Id], [a].[Id], [a0].[Id], [a1].[Id], [a2].[Id], [t2].[Id], [t2].[Id0], [t2].[Id00], [t3].[Id]
+2026-06-29 14:35:13.715 +03:00 [INF] Successfully retrieved bookings for user: a3413cae-ae77-414b-95c3-a21234815cc9
+2026-06-29 14:35:13.718 +03:00 [INF] Executing ViewResult, running view Index.
+2026-06-29 14:35:13.748 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PassportNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[Role], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Security].[Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2026-06-29 14:35:13.756 +03:00 [INF] Executed ViewResult - view Index executed in 39.3724ms.
+2026-06-29 14:35:13.757 +03:00 [INF] Executed action BookFlightTickets.UI.Areas.Customer.Controllers.MyBookingsController.Index (BookFlightTickets.UI) in 279.2204ms
+2026-06-29 14:35:13.757 +03:00 [INF] Executed endpoint 'BookFlightTickets.UI.Areas.Customer.Controllers.MyBookingsController.Index (BookFlightTickets.UI)'
+2026-06-29 14:35:13.757 +03:00 [INF] HTTP GET /Customer/MyBookings responded 200 in 295.8873 ms
+2026-06-29 14:35:13.758 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Customer/MyBookings - 200 null text/html; charset=utf-8 299.5918ms
+2026-06-29 14:35:13.827 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:35:13.829 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:35:13.829 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.5788ms
+2026-06-29 14:35:13.840 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.8661ms
+2026-06-29 14:35:18.063 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5175/Identity/Account/Logout?returnUrl=%2FIdentity%2FAccount%2FLogin - application/x-www-form-urlencoded 225
+2026-06-29 14:35:18.066 +03:00 [INF] Executing endpoint '/Account/Logout'
+2026-06-29 14:35:18.066 +03:00 [INF] Route matched with {page = "/Account/Logout", area = "Identity", action = "", controller = ""}. Executing page /Account/Logout
+2026-06-29 14:35:18.067 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LogoutModel.OnPost - ModelState is "Valid"
+2026-06-29 14:35:18.068 +03:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2026-06-29 14:35:18.068 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-06-29 14:35:18.069 +03:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2026-06-29 14:35:18.069 +03:00 [INF] User logged out.
+2026-06-29 14:35:18.069 +03:00 [INF] Executed handler method OnPost, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2026-06-29 14:35:18.069 +03:00 [INF] Executing LocalRedirectResult, redirecting to /Identity/Account/Login.
+2026-06-29 14:35:18.069 +03:00 [INF] Executed page /Account/Logout in 2.8557ms
+2026-06-29 14:35:18.070 +03:00 [INF] Executed endpoint '/Account/Logout'
+2026-06-29 14:35:18.070 +03:00 [INF] HTTP POST /Identity/Account/Logout responded 302 in 4.2082 ms
+2026-06-29 14:35:18.070 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5175/Identity/Account/Logout?returnUrl=%2FIdentity%2FAccount%2FLogin - 302 0 null 7.3524ms
+2026-06-29 14:35:18.076 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - null null
+2026-06-29 14:35:18.078 +03:00 [INF] Executing endpoint '/Account/Login'
+2026-06-29 14:35:18.079 +03:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2026-06-29 14:35:18.079 +03:00 [INF] Executing handler method BookFlightTickets.UI.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2026-06-29 14:35:18.080 +03:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-06-29 14:35:18.080 +03:00 [INF] Executed handler method OnGetAsync, returned result .
+2026-06-29 14:35:18.080 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2026-06-29 14:35:18.080 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2026-06-29 14:35:18.083 +03:00 [INF] Executed page /Account/Login in 4.2107ms
+2026-06-29 14:35:18.083 +03:00 [INF] Executed endpoint '/Account/Login'
+2026-06-29 14:35:18.083 +03:00 [INF] HTTP GET /Identity/Account/Login responded 200 in 5.0630 ms
+2026-06-29 14:35:18.083 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/Identity/Account/Login - 200 null text/html; charset=utf-8 7.7523ms
+2026-06-29 14:35:18.124 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-29 14:35:18.124 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5175/_vs/browserLink - null null
+2026-06-29 14:35:18.124 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_framework/aspnetcore-browser-refresh.js - 200 16524 application/javascript; charset=utf-8 0.2091ms
+2026-06-29 14:35:18.130 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 5.8143ms

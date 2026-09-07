@@ -1,0 +1,32 @@
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\bin\Debug\net8.0\BookFlightTickets.Infrastructure.deps.json
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\bin\Debug\net8.0\BookFlightTickets.Infrastructure.dll
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\bin\Debug\net8.0\BookFlightTickets.Infrastructure.pdb
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\bin\Debug\net8.0\BookFlightTickets.Core.dll
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\bin\Debug\net8.0\BookFlightTickets.Core.pdb
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.csproj.AssemblyReference.cache
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.AssemblyInfoInputs.cache
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.AssemblyInfo.cs
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.csproj.CoreCompileInputs.cache
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.sourcelink.json
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlig.F329BCDB.Up2Date
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.dll
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\obj\Debug\net8.0\refint\BookFlightTickets.Infrastructure.dll
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.pdb
+E:\track\tectnical\MVC\projects\p8\BookFlightTickets\BookFlightTickets\BookFlightTickets.Infrastructure\obj\Debug\net8.0\ref\BookFlightTickets.Infrastructure.dll
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\bin\Debug\net8.0\BookFlightTickets.Infrastructure.deps.json
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\bin\Debug\net8.0\BookFlightTickets.Infrastructure.dll
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\bin\Debug\net8.0\BookFlightTickets.Infrastructure.pdb
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\bin\Debug\net8.0\BookFlightTickets.Core.dll
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\bin\Debug\net8.0\BookFlightTickets.Core.pdb
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.csproj.AssemblyReference.cache
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.AssemblyInfoInputs.cache
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.AssemblyInfo.cs
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.csproj.CoreCompileInputs.cache
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.sourcelink.json
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlig.F329BCDB.Up2Date
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.dll
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\obj\Debug\net8.0\refint\BookFlightTickets.Infrastructure.dll
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\obj\Debug\net8.0\BookFlightTickets.Infrastructure.pdb
+E:\track\tectnical\MVC\projects\important projects\p4\BookFlightTickets.Infrastructure\obj\Debug\net8.0\ref\BookFlightTickets.Infrastructure.dll
