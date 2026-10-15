@@ -7,11 +7,7 @@ namespace BookFlightTickets.Infrastructure.Repositories
 {
     public class FlightRepository : GenericRepository<Flight>, IFlightRepository
     {
-        private readonly BookFilghtsDbContext _dbContext;
-        public FlightRepository(BookFilghtsDbContext dbContext) : base(dbContext)
-        {
-            _dbContext = dbContext;
-        }
+        public FlightRepository(BookFilghtsDbContext dbContext) : base(dbContext) {}
 
         public async Task<Dictionary<string, int>> GetFlightCountByAirlineAsync()
         {
